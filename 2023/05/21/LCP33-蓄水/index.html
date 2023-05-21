@@ -16,22 +16,24 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="linux环境下配置环境-javajdk环境配置 下载jdk的安装包上传到指定目录  解压安装包  tar -zxvf jdk-8u261-linux-x64.tar.gz 12345678910111213-   往配置文件里面添加环境变量    -   &#96;&#96;&#96;shell        vim &#x2F;etc&#x2F;profile          &#x2F;&#x2F; 打开配置文件         往最后添加以下几行配置">
+    <meta name="description" content="LCP 33. 蓄水给定 N 个无限容量且初始均空的水缸，每个水缸配有一个水桶用来打水，第 i 个水缸配备的水桶容量记作 bucket[i]。小扣有以下两种操作： 升级水桶：选择任意一个水桶，使其容量增加为 bucket[i]+1蓄水：将全部水桶接满水，倒入各自对应的水缸每个水缸对应最低蓄水量记作 vat[i]，返回小扣至少需要多少次操作可以完成所有水缸蓄水要求。 注意：实际蓄水量 达到或超过 最">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux环境配置">
-<meta property="og:url" content="http://example.com/2023/05/16/linux%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:title" content="LCP33-蓄水">
+<meta property="og:url" content="http://example.com/2023/05/21/LCP33-%E8%93%84%E6%B0%B4/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="linux环境下配置环境-javajdk环境配置 下载jdk的安装包上传到指定目录  解压安装包  tar -zxvf jdk-8u261-linux-x64.tar.gz 12345678910111213-   往配置文件里面添加环境变量    -   &#96;&#96;&#96;shell        vim &#x2F;etc&#x2F;profile          &#x2F;&#x2F; 打开配置文件         往最后添加以下几行配置">
+<meta property="og:description" content="LCP 33. 蓄水给定 N 个无限容量且初始均空的水缸，每个水缸配有一个水桶用来打水，第 i 个水缸配备的水桶容量记作 bucket[i]。小扣有以下两种操作： 升级水桶：选择任意一个水桶，使其容量增加为 bucket[i]+1蓄水：将全部水桶接满水，倒入各自对应的水缸每个水缸对应最低蓄水量记作 vat[i]，返回小扣至少需要多少次操作可以完成所有水缸蓄水要求。 注意：实际蓄水量 达到或超过 最">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-16T08:06:14.000Z">
-<meta property="article:modified_time" content="2023-05-16T08:18:59.855Z">
+<meta property="article:published_time" content="2023-05-21T03:41:58.000Z">
+<meta property="article:modified_time" content="2023-05-21T04:21:34.521Z">
 <meta property="article:author" content="clearSky">
-<meta property="article:tag" content="linux">
+<meta property="article:tag" content="数组">
+<meta property="article:tag" content="暴力">
+<meta property="article:tag" content="蓝桥刷题">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>linux环境配置 - clearskycpy</title>
+  <title>LCP33-蓄水 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="linux环境配置"></span>
+            <span id="subtitle" data-typed-text="LCP33-蓄水"></span>
           
         </div>
 
@@ -213,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-16 16:06" pubdate>
-          2023年5月16日
+        <time datetime="2023-05-21 11:41" pubdate>
+          2023年5月21日
         </time>
       </span>
     
@@ -258,12 +260,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">linux环境配置</h1>
+            <h1 style="display: none">LCP33-蓄水</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年5月16日
+                    本文最后更新于：2023年5月21日
                   
                 
               </p>
@@ -271,102 +273,23 @@
             
               <div class="markdown-body">
                 
-                <h2 id="linux环境下配置环境-java"><a href="#linux环境下配置环境-java" class="headerlink" title="linux环境下配置环境-java"></a>linux环境下配置环境-java</h2><h4 id="jdk环境配置"><a href="#jdk环境配置" class="headerlink" title="jdk环境配置"></a>jdk环境配置</h4><ul>
-<li><p>下载jdk的安装包上传到指定目录</p>
-</li>
-<li><p>解压安装包</p>
+                <h3 id="LCP-33-蓄水"><a href="#LCP-33-蓄水" class="headerlink" title="LCP 33. 蓄水"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/o8SXZn/">LCP 33. 蓄水</a></h3><p>给定 N 个无限容量且初始均空的水缸，每个水缸配有一个水桶用来打水，第 i 个水缸配备的水桶容量记作 bucket[i]。小扣有以下两种操作：</p>
+<p>升级水桶：选择任意一个水桶，使其容量增加为 bucket[i]+1<br>蓄水：将全部水桶接满水，倒入各自对应的水缸<br>每个水缸对应最低蓄水量记作 vat[i]，返回小扣至少需要多少次操作可以完成所有水缸蓄水要求。</p>
+<p>注意：实际蓄水量 达到或超过 最低蓄水量，即完成蓄水要求。</p>
+<p>示例 1：</p>
+<p>输入：bucket &#x3D; [1,3], vat &#x3D; [6,8]</p>
+<p>输出：4</p>
+<p>解释：<br>第 1 次操作升级 bucket[0]；<br>第 2 ~ 4 次操作均选择蓄水，即可完成蓄水要求。</p>
+<h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5><p>刚看到的时候以为是需要一个很巧妙地算法，但是再看一下该题的数据量会发现n平方的算法也是能解的，这个题用到了一个简单的贪心，甚至可能不算贪心的贪心，就是<strong>每次都先升级容量</strong>然后再遍历求值</p>
+<p>具体过程是这样的</p>
 <ul>
-<li><pre><code class="shell">tar -zxvf jdk-8u261-linux-x64.tar.gz
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs awk"><br>-   往配置文件里面添加环境变量<br><br>    -   ```shell<br>        vim <span class="hljs-regexp">/etc/</span>profile  <br>        <span class="hljs-regexp">//</span> 打开配置文件 <br>        往最后添加以下几行配置  路径对应<br>        export JAVA_HOME=<span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/java/</span>jdk1.<span class="hljs-number">8.0</span>_261<br>        export JRE_HOME=<span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/java/</span>jdk1.<span class="hljs-number">8.0</span>_261/jre<br>        export CLASS_PATH=.:<span class="hljs-variable">$JAVA_HOME</span><span class="hljs-regexp">/lib:$JRE_HOME/</span>lib<br>        export PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$JAVA_HOME</span><span class="hljs-regexp">/bin:$JRE_HOME/</span>bin<br>        shift + ;  wq 保存退出<br>        source <span class="hljs-regexp">/etc/</span>profile   重新加载配置文件<br></code></pre></td></tr></table></figure>
-</code></pre>
-</li>
+<li>枚举蓄水次数 范围是 0 - max(vat)  记录为<strong>x次</strong></li>
+<li>要保证x次能完成蓄水，那么就需要将每个桶需要升级的次数为vat[i]&#x2F;x - bucket[i]  并且vat[i] 需要向上取整。记录和为y </li>
+<li><strong>所以当蓄水次数为x时候，升级次数为y 总和 为x + y 每次求最值，返回结果</strong></li>
 </ul>
-</li>
-<li><p>检查是否配置成功</p>
-<ul>
-<li><pre><code class="shell">java -version
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs clean"><br>#### maven环境配置<br><br>-   下载maven的安装包上传到指定目录<br><br>-   解压安装包<br><br>    -   ```shell<br>        tar -xzvf apache-maven<span class="hljs-number">-3.5</span><span class="hljs-number">.4</span>-bin.tar.gz <br></code></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>往配置文件里面添加环境变量</p>
-<ul>
-<li><pre><code class="shell">vim /etc/profile  编辑配置文件
+<h5 id="代码-java"><a href="#代码-java" class="headerlink" title="代码 java"></a>代码 java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">storeWater</span><span class="hljs-params">(<span class="hljs-type">int</span>[] bucket, <span class="hljs-type">int</span>[] vat)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">maxVat</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> x : vat) maxVat = Math.max(maxVat,x); <span class="hljs-comment">// 求最值</span><br>        <span class="hljs-keyword">if</span> (maxVat == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 最小蓄水量都为0。 不用蓄水</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> Integer.MAX_VALUE;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; x &lt;= maxVat; x++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> x;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; bucket.length; i++) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">y</span> <span class="hljs-operator">=</span> vat[i]/x - bucket[i];<br>                <span class="hljs-keyword">if</span> (vat[i] % x != <span class="hljs-number">0</span>) y++;  <span class="hljs-comment">// 代替向上取整</span><br>                <span class="hljs-keyword">if</span> (y &gt; <span class="hljs-number">0</span>) temp += y;<br>            &#125;<br>            res = Math.min(res,temp);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-MAVEN_HOME=/usr/local/maven/apache-maven-3.5.4
-PATH=$MAVEN_HOME/bin:$PATH
-export MAVEN_HOME PATH
-
-重新加载配置文件
-source /etc/profile
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br>-   检查安装是否成功<br><br>    -   ```shell<br>        mvn -version<br></code></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="git环境安装"><a href="#git环境安装" class="headerlink" title="git环境安装"></a>git环境安装</h4><ul>
-<li><p>官网下载安装包</p>
-<ul>
-<li><pre><code class="http">https://git-scm.com/download/linux
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><br>-   安装插件  用于编译git安装文件<br><br>    -   ```<span class="hljs-keyword">shell</span><br><span class="hljs-keyword"></span>        yum <span class="hljs-keyword">install </span>curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-<span class="hljs-keyword">ExtUtils-MakeMaker</span><br><span class="hljs-keyword"></span>        <br></code></pre></td></tr></table></figure>
-</code></pre>
-</li>
-<li><p>卸载掉插件自带的低版本git</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum remove git<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>编译源文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">make prefix=/usr/local/git all<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">make prefix=/usr/local/git install<br></code></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>编辑环境变量 </p>
-<ul>
-<li><pre><code class="vim">vim /etc/profile
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>-   编辑的内容，路径对应修改<br><br>-   ```shell<br>    <span class="hljs-comment"># git start</span><br>    <span class="hljs-built_in">export</span> GIT_HOME=/usr/local/git<br>    <span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$JAVA_HOME</span>/bin:<span class="hljs-variable">$JRE_HOME</span>/bin:<span class="hljs-variable">$GIT_HOME</span>/bin<br>    <span class="hljs-comment"># git end</span><br></code></pre></td></tr></table></figure>
-</code></pre>
-</li>
-<li><p>重新加载配置文件</p>
-</li>
-<li><pre><code class="shell">source /etc/profile
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><br>-   配置用户名和密码  自行更改<br><br>    -   ```shell<br>        git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.name</span> <span class="hljs-string">&quot;clearSky&quot;</span><br>        git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.email</span> <span class="hljs-string">&quot;cpy20021234@163.com&quot;</span><br></code></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="nginx安装部署"><a href="#nginx安装部署" class="headerlink" title="nginx安装部署"></a>nginx安装部署</h4><ul>
-<li><p>下载linux安装包 上传到指定目录</p>
-</li>
-<li><p>解压安装包</p>
-<ul>
-<li><pre><code class="shell">tar -xzvf nginx-1.16.1.tar.gz
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br>-   运行 解压文件里面的 ./configure生成可编译文件<br><br>    -   ```shell<br>        ./configure<br></code></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>编译文件 </p>
-<ul>
-<li><pre><code class="shell">make
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br>-   安装<br><br>    -   ```shell<br>        make install<br></code></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>需要注意的是编译后的文件在 nginx-1.16.1.tar.gz同级目录下</p>
-</li>
-<li><p>以配置文件的方式启动</p>
-<ul>
-<li><pre><code class="shell">./nginx -c /usr/local/nginx/conf/nginx.conf
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>​	技术含量不高，但是确实没有想到。太久没刷题的，不会往暴力的方向去想，一直在想怎么构建最优解，其实暴力才是最直观的。</p>
 
                 
               </div>
@@ -379,7 +302,11 @@ source /etc/profile
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/linux/">#linux</a>
+        <a href="/tags/%E6%95%B0%E7%BB%84/">#数组</a>
+      
+        <a href="/tags/%E6%9A%B4%E5%8A%9B/">#暴力</a>
+      
+        <a href="/tags/%E8%93%9D%E6%A1%A5%E5%88%B7%E9%A2%98/">#蓝桥刷题</a>
       
     </div>
   
@@ -391,8 +318,8 @@ source /etc/profile
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>linux环境配置</div>
-      <div>http://example.com/2023/05/16/linux环境配置/</div>
+      <div>LCP33-蓄水</div>
+      <div>http://example.com/2023/05/21/LCP33-蓄水/</div>
     </div>
     <div class="license-meta">
       
@@ -404,7 +331,7 @@ source /etc/profile
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月16日</div>
+          <div>2023年5月21日</div>
         </div>
       
       
@@ -436,15 +363,15 @@ source /etc/profile
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/21/LCP33-%E8%93%84%E6%B0%B4/" title="LCP33-蓄水">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LCP33-蓄水</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/05/16/linux%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="linux环境配置">
+                        <span class="hidden-mobile">linux环境配置</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
