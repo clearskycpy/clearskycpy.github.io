@@ -16,21 +16,22 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="邮箱&amp;#x63;&amp;#112;&amp;#x79;&amp;#50;&amp;#x30;&amp;#x30;&amp;#50;&amp;#x31;&amp;#x32;&amp;#51;&amp;#x34;&amp;#x40;&amp;#49;&amp;#54;&amp;#51;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://example.com/about/index.html">
+    <meta name="description" content="剑指 Offer II 106. 二分图存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。 给定一个二维数组 graph ，表示图，其中 graph[u] 是一个节点数组，由节点 u 的邻接节点组成。形式上，对于 graph[u] 中的每个 v ，都存在一条位于节点 u 和节点 v 之间的无向边。该无向图同时具有以下属性： 不存在自环（graph">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LC-二分图">
+<meta property="og:url" content="http://example.com/2023/05/21/LC-%E4%BA%8C%E5%88%86%E5%9B%BE/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="邮箱&amp;#x63;&amp;#112;&amp;#x79;&amp;#50;&amp;#x30;&amp;#x30;&amp;#50;&amp;#x31;&amp;#x32;&amp;#51;&amp;#x34;&amp;#x40;&amp;#49;&amp;#54;&amp;#51;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;">
+<meta property="og:description" content="剑指 Offer II 106. 二分图存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。 给定一个二维数组 graph ，表示图，其中 graph[u] 是一个节点数组，由节点 u 的邻接节点组成。形式上，对于 graph[u] 中的每个 v ，都存在一条位于节点 u 和节点 v 之间的无向边。该无向图同时具有以下属性： 不存在自环（graph">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-16T05:38:41.000Z">
-<meta property="article:modified_time" content="2023-05-21T06:46:47.396Z">
+<meta property="article:published_time" content="2023-05-21T04:31:21.000Z">
+<meta property="article:modified_time" content="2023-05-21T06:51:19.931Z">
 <meta property="article:author" content="clearSky">
+<meta property="article:tag" content="图">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>关于 - clearskycpy</title>
+  <title>LC-二分图 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -90,7 +91,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -190,15 +191,44 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/about_banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于"></span>
+            <span id="subtitle" data-typed-text="LC-二分图"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        clearSky
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-05-21 12:31" pubdate>
+          2023年5月21日
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -214,78 +244,147 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="/img/browser_tab.jpg" srcset="/img/loading.gif" lazyload class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">clearSky</div>
-    <div class="about-intro">java</div>
-    <div class="about-icons">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-        
-        
-        
-        <a href=https://github.com/clearskycpy class="
-           hint--bottom hint--rounded"
-           aria-label=GitHub
-           target="_blank"
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">LC-二分图</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年5月21日
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="剑指-Offer-II-106-二分图"><a href="#剑指-Offer-II-106-二分图" class="headerlink" title="剑指 Offer II 106. 二分图"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/vEAB3K/">剑指 Offer II 106. 二分图</a></h3><p>存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。</p>
+<p>给定一个二维数组 graph ，表示图，其中 graph[u] 是一个节点数组，由节点 u 的邻接节点组成。形式上，对于 graph[u] 中的每个 v ，都存在一条位于节点 u 和节点 v 之间的无向边。该无向图同时具有以下属性：</p>
+<p>不存在自环（graph[u] 不包含 u）。<br>不存在平行边（graph[u] 不包含重复值）。<br>如果 v 在 graph[u] 内，那么 u 也应该在 graph[v] 内（该图是无向图）<br>这个图可能不是连通图，也就是说两个节点 u 和 v 之间可能不存在一条连通彼此的路径。<br>二分图 定义：如果能将一个图的节点集合分割成两个独立的子集 A 和 B ，并使图中的每一条边的两个节点一个来自 A 集合，一个来自 B 集合，就将这个图称为 二分图 。</p>
+<p>如果图是二分图，返回 true ；否则，返回 false 。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
       
-        
-        
-        
-        <a  class="qr-trigger
-           "
-           
-           target="_self"
-        >
-          <i class="iconfont icon-qq-fill" aria-hidden="true"></i>
-          
-            <img class="qr-img" src="/img/qq.jpg" srcset="/img/loading.gif" lazyload alt="qrcode" />
-          
-        </a>
+        <a href="/tags/%E5%9B%BE/">#图</a>
       
-        
-        
-        
-        <a  class="qr-trigger
-           "
-           
-           target="_self"
-        >
-          <i class="iconfont icon-wechat-fill" aria-hidden="true"></i>
-          
-            <img class="qr-img" src="/img/WeChat.jpg" srcset="/img/loading.gif" lazyload alt="qrcode" />
-          
-        </a>
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>LC-二分图</div>
+      <div>http://example.com/2023/05/21/LC-二分图/</div>
+    </div>
+    <div class="license-meta">
       
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>clearSky</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年5月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/05/21/LCP33-%E8%93%84%E6%B0%B4/" title="LCP33-蓄水">
+                        <span class="hidden-mobile">LCP33-蓄水</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
     </div>
   </div>
 </div>
 
-<article class="about-content page-content mt-5">
-  <div class="markdown-body">
-    <h3 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h3><p><strong><a href="mailto:&#x63;&#112;&#x79;&#50;&#x30;&#x30;&#50;&#x31;&#x32;&#51;&#x34;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#x6f;&#109;">&#x63;&#112;&#x79;&#50;&#x30;&#x30;&#50;&#x31;&#x32;&#51;&#x34;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#x6f;&#109;</a></strong></p>
-
-  </div>
-
-  
-</article>
-
 
 
 
@@ -312,11 +411,8 @@
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     
 
     
@@ -409,6 +505,46 @@
   
 
 
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
