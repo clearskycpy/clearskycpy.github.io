@@ -16,23 +16,23 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="剑指 Offer II 106. 二分图存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。 给定一个二维数组 graph ，表示图，其中 graph[u] 是一个节点数组，由节点 u 的邻接节点组成。形式上，对于 graph[u] 中的每个 v ，都存在一条位于节点 u 和节点 v 之间的无向边。该无向图同时具有以下属性： 不存在自环（graph">
+    <meta name="description" content="1080. 根到叶路径上的不足节点 给你二叉树的根节点 root 和一个整数 limit ，请你同时删除树中所有 不足节点 ，并返回最终二叉树的根节点。  假如通过节点 node 的每种可能的 “根-叶” 路径上值的总和全都小于给定的 limit，则该节点被称之为 不足节点 ，需要被删除。  叶子节点，就是没有子节点的节点。   题意分析​	题目的意思就是给定一棵树，然后判断树的结点是否符合至少存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC-二分图">
-<meta property="og:url" content="http://example.com/2023/05/21/LC-%E4%BA%8C%E5%88%86%E5%9B%BE/index.html">
+<meta property="og:title" content="LC1080.根到叶路径上的不足节点">
+<meta property="og:url" content="http://example.com/2023/05/22/LC1080-%E6%A0%B9%E5%88%B0%E5%8F%B6%E8%B7%AF%E5%BE%84%E4%B8%8A%E7%9A%84%E4%B8%8D%E8%B6%B3%E8%8A%82%E7%82%B9/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="剑指 Offer II 106. 二分图存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。 给定一个二维数组 graph ，表示图，其中 graph[u] 是一个节点数组，由节点 u 的邻接节点组成。形式上，对于 graph[u] 中的每个 v ，都存在一条位于节点 u 和节点 v 之间的无向边。该无向图同时具有以下属性： 不存在自环（graph">
+<meta property="og:description" content="1080. 根到叶路径上的不足节点 给你二叉树的根节点 root 和一个整数 limit ，请你同时删除树中所有 不足节点 ，并返回最终二叉树的根节点。  假如通过节点 node 的每种可能的 “根-叶” 路径上值的总和全都小于给定的 limit，则该节点被称之为 不足节点 ，需要被删除。  叶子节点，就是没有子节点的节点。   题意分析​	题目的意思就是给定一棵树，然后判断树的结点是否符合至少存">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-21T04:31:21.000Z">
-<meta property="article:modified_time" content="2023-05-22T16:10:08.996Z">
+<meta property="article:published_time" content="2023-05-22T00:50:15.000Z">
+<meta property="article:modified_time" content="2023-05-22T02:06:37.757Z">
 <meta property="article:author" content="clearSky">
 <meta property="article:tag" content="蓝桥刷题">
-<meta property="article:tag" content="图">
+<meta property="article:tag" content="二叉树">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LC-二分图 - clearskycpy</title>
+  <title>LC1080.根到叶路径上的不足节点 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC-二分图"></span>
+            <span id="subtitle" data-typed-text="LC1080.根到叶路径上的不足节点"></span>
           
         </div>
 
@@ -214,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-21 12:31" pubdate>
-          2023年5月21日
+        <time datetime="2023-05-22 08:50" pubdate>
+          2023年5月22日
         </time>
       </span>
     
@@ -259,12 +259,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC-二分图</h1>
+            <h1 style="display: none">LC1080.根到叶路径上的不足节点</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年5月23日
+                    本文最后更新于：2023年5月22日
                   
                 
               </p>
@@ -272,19 +272,30 @@
             
               <div class="markdown-body">
                 
-                <h3 id="剑指-Offer-II-106-二分图"><a href="#剑指-Offer-II-106-二分图" class="headerlink" title="剑指 Offer II 106. 二分图"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/vEAB3K/">剑指 Offer II 106. 二分图</a></h3><p>存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。</p>
-<p>给定一个二维数组 graph ，表示图，其中 graph[u] 是一个节点数组，由节点 u 的邻接节点组成。形式上，对于 graph[u] 中的每个 v ，都存在一条位于节点 u 和节点 v 之间的无向边。该无向图同时具有以下属性：</p>
-<p>不存在自环（graph[u] 不包含 u）。<br>不存在平行边（graph[u] 不包含重复值）。<br>如果 v 在 graph[u] 内，那么 u 也应该在 graph[v] 内（该图是无向图）<br>这个图可能不是连通图，也就是说两个节点 u 和 v 之间可能不存在一条连通彼此的路径。<br>二分图 定义：如果能将一个图的节点集合分割成两个独立的子集 A 和 B ，并使图中的每一条边的两个节点一个来自 A 集合，一个来自 B 集合，就将这个图称为 二分图 。</p>
-<p>如果图是二分图，返回 true ；否则，返回 false 。</p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>图的题做的少，也算是一个开端吧。</p>
-<p>大体的方向就是判断，图中到的每一个结点和他相邻的结点必须处于不同的集合中，并且只能有两个集合。</p>
-<h5 id="深度优先"><a href="#深度优先" class="headerlink" title="深度优先"></a>深度优先</h5><ul>
-<li><p>​	从任意结点出发，将该结点放在一个集合当中，相邻的结点放入另外一个集合中，然后循环“染色”。如果“染色”过程中发现颜色相同说明是冲突的 直接返回false 否则返回true。</p>
+                <h3 id="1080-根到叶路径上的不足节点"><a href="#1080-根到叶路径上的不足节点" class="headerlink" title="1080. 根到叶路径上的不足节点"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/insufficient-nodes-in-root-to-leaf-paths/">1080. 根到叶路径上的不足节点</a></h3><ul>
+<li><p><strong>给你二叉树的根节点 root 和一个整数 limit ，请你同时删除树中所有 不足节点 ，并返回最终二叉树的根节点。</strong></p>
 </li>
-<li><p>遍历完所有结点如果都是符合规则的说明是一个二分图</p>
+<li><p><strong>假如通过节点 node 的每种可能的 “根-叶” 路径上值的总和全都小于给定的 limit，则该节点被称之为 不足节点 ，需要被删除。</strong></p>
+</li>
+<li><p><strong>叶子节点，就是没有子节点的节点。</strong></p>
 </li>
 </ul>
-<h5 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h5>
+<h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><p>​	题目的意思就是给定一棵树，然后判断树的结点是否符合至少存在一条路径能够从根到叶子并且通过这个结点的和大于limit</p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><h6 id="解法一-递归自身"><a href="#解法一-递归自身" class="headerlink" title="解法一 - 递归自身"></a>解法一 - 递归自身</h6><ul>
+<li>如果当前结点为空则直接返回，如果是叶子结点，说明递归到了最深处，比较当前位置的值是否大于limit，如果大于不是不足结点，小于就是。</li>
+<li>分别递归两个子结点，删除左右子节点的不足结点</li>
+<li>如果两个子节点都是不足结点，那么就要判断一下自身是否是不足结点，如果子节点有一个不为空，那么说明自身肯定不是不足结点，直接返回自身</li>
+<li><strong>注意</strong>递归子节点的时候需要把当前位置的值去除，这样才能符合函数原本的意义</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>   <span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">sufficientSubset</span><span class="hljs-params">(TreeNode root, <span class="hljs-type">int</span> limit)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span> ) <span class="hljs-keyword">return</span>  <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">if</span> (root.left == <span class="hljs-literal">null</span>  &amp;&amp; root.right == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> root.val &lt; limit ? <span class="hljs-literal">null</span> : root;<br>        root.left = sufficientSubset(root.left,limit - root.val);<br>        root.right = sufficientSubset(root.right,limit - root.val);<br>        <span class="hljs-keyword">return</span> root.right == <span class="hljs-literal">null</span> &amp;&amp; root.left == <span class="hljs-literal">null</span> ? <span class="hljs-literal">null</span> : root;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h6 id="解法二-官方解法-深度优先搜索"><a href="#解法二-官方解法-深度优先搜索" class="headerlink" title="解法二 - 官方解法 深度优先搜索"></a>解法二 - 官方解法 深度优先搜索</h6><ul>
+<li>解法一在递归的时候是减去当前结点的值，而这个解法是累积节点的值。大同小异不赘述了。</li>
+<li>单独定义的这个函数的三个参数也是为了确定路径值的</li>
+<li>函数的作用也是删除不足结点，返回值的意思是该结点root是否不是不足结点</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>   <span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">sufficientSubset</span><span class="hljs-params">(TreeNode root, <span class="hljs-type">int</span> limit)</span> &#123;<br>    <span class="hljs-type">boolean</span> <span class="hljs-variable">isValid</span> <span class="hljs-operator">=</span> dfs(root,<span class="hljs-number">0</span>,limit);<br>    <span class="hljs-keyword">return</span> !isValid ? <span class="hljs-literal">null</span> : root; <span class="hljs-comment">// 当前结点如果是不足结点返回null 否则就返回当前结点</span><br>&#125;<br><br>   <span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(TreeNode root, <span class="hljs-type">int</span> sum, <span class="hljs-type">int</span> limit)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">if</span> (root.left == <span class="hljs-literal">null</span> &amp;&amp; root.right == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span>  root.val + sum &gt;= limit;<br>        <span class="hljs-type">boolean</span> <span class="hljs-variable">isValidL</span> <span class="hljs-operator">=</span> dfs(root.left,sum + root.val, limit);<br>        <span class="hljs-type">boolean</span> <span class="hljs-variable">isValidR</span> <span class="hljs-operator">=</span> dfs(root.right,sum + root.val, limit);<br>        <span class="hljs-keyword">if</span> (!isValidL) root.left = <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">if</span> (!isValidR) root.right = <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">return</span> isValidL || isValidR;  <span class="hljs-comment">// 如果子节点只要有一个不是不足结点，那么自身肯定也不是，因为经过了自身</span><br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -298,7 +309,7 @@
       
         <a href="/tags/%E8%93%9D%E6%A1%A5%E5%88%B7%E9%A2%98/">#蓝桥刷题</a>
       
-        <a href="/tags/%E5%9B%BE/">#图</a>
+        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
       
     </div>
   
@@ -310,8 +321,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC-二分图</div>
-      <div>http://example.com/2023/05/21/LC-二分图/</div>
+      <div>LC1080.根到叶路径上的不足节点</div>
+      <div>http://example.com/2023/05/22/LC1080-根到叶路径上的不足节点/</div>
     </div>
     <div class="license-meta">
       
@@ -323,7 +334,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月21日</div>
+          <div>2023年5月22日</div>
         </div>
       
       
@@ -355,9 +366,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/22/LC1080-%E6%A0%B9%E5%88%B0%E5%8F%B6%E8%B7%AF%E5%BE%84%E4%B8%8A%E7%9A%84%E4%B8%8D%E8%B6%B3%E8%8A%82%E7%82%B9/" title="LC1080.根到叶路径上的不足节点">
+                      <a href="/2023/05/22/%E7%83%AD%E9%97%A8%E5%9F%8E%E5%B8%82%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/" title="热门城市分析系统软件设计说明书">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC1080.根到叶路径上的不足节点</span>
+                        <span class="hidden-mobile">热门城市分析系统软件设计说明书</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -365,8 +376,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/21/LCP33-%E8%93%84%E6%B0%B4/" title="LCP33-蓄水">
-                        <span class="hidden-mobile">LCP33-蓄水</span>
+                      <a href="/2023/05/21/LC-%E4%BA%8C%E5%88%86%E5%9B%BE/" title="LC-二分图">
+                        <span class="hidden-mobile">LC-二分图</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
