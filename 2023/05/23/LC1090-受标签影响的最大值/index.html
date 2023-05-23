@@ -16,22 +16,22 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="并查集并查集的作用是什么？ 并查集是一种用来处理不相交集合的树状数据结构。 顾名思义，并查集主要有两个作用  1.并： 合并不相交的集合 2.查:：查找集合的代表元素,用来检测集合是否相交。 一些非常常见的算法，如最小生成树，最近公共祖先等，都用到了并查集。    并查集 – 代表元 代表元是并查集中一个集合的代表元素，确认是否是一个集合的用途 代表元是集合中用来代表整个集合某个原始，例如集合{1">
+    <meta name="description" content="1090. 受标签影响的最大值我们有一个 n 项的集合。给出两个整数数组 values 和 labels ，第 i 个元素的值和标签分别是 values[i] 和 labels[i]。还会给出两个整数 numWanted 和 useLimit 。 从 n 个元素中选择一个子集 s : 子集 s 的大小 小于或等于 numWanted 。s 中 最多 有相同标签的 useLimit 项。一个子集的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="并查集">
-<meta property="og:url" content="http://example.com/2023/05/23/%E5%B9%B6%E6%9F%A5%E9%9B%86/index.html">
+<meta property="og:title" content="LC1090.受标签影响的最大值">
+<meta property="og:url" content="http://example.com/2023/05/23/LC1090-%E5%8F%97%E6%A0%87%E7%AD%BE%E5%BD%B1%E5%93%8D%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="并查集并查集的作用是什么？ 并查集是一种用来处理不相交集合的树状数据结构。 顾名思义，并查集主要有两个作用  1.并： 合并不相交的集合 2.查:：查找集合的代表元素,用来检测集合是否相交。 一些非常常见的算法，如最小生成树，最近公共祖先等，都用到了并查集。    并查集 – 代表元 代表元是并查集中一个集合的代表元素，确认是否是一个集合的用途 代表元是集合中用来代表整个集合某个原始，例如集合{1">
+<meta property="og:description" content="1090. 受标签影响的最大值我们有一个 n 项的集合。给出两个整数数组 values 和 labels ，第 i 个元素的值和标签分别是 values[i] 和 labels[i]。还会给出两个整数 numWanted 和 useLimit 。 从 n 个元素中选择一个子集 s : 子集 s 的大小 小于或等于 numWanted 。s 中 最多 有相同标签的 useLimit 项。一个子集的">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-23T09:47:53.000Z">
-<meta property="article:modified_time" content="2023-05-23T13:02:11.076Z">
+<meta property="article:published_time" content="2023-05-23T13:07:02.000Z">
+<meta property="article:modified_time" content="2023-05-23T14:45:04.196Z">
 <meta property="article:author" content="clearSky">
-<meta property="article:tag" content="并查集">
+<meta property="article:tag" content="蓝桥刷题">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>并查集 - clearskycpy</title>
+  <title>LC1090.受标签影响的最大值 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="并查集"></span>
+            <span id="subtitle" data-typed-text="LC1090.受标签影响的最大值"></span>
           
         </div>
 
@@ -213,7 +213,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-23 17:47" pubdate>
+        <time datetime="2023-05-23 21:07" pubdate>
           2023年5月23日
         </time>
       </span>
@@ -258,7 +258,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">并查集</h1>
+            <h1 style="display: none">LC1090.受标签影响的最大值</h1>
             
               <p class="note note-info">
                 
@@ -271,42 +271,17 @@
             
               <div class="markdown-body">
                 
-                <h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><h4 id="并查集的作用是什么？"><a href="#并查集的作用是什么？" class="headerlink" title="并查集的作用是什么？"></a>并查集的作用是什么？</h4><ul>
-<li>并查集是一种用来处理不相交集合的树状数据结构。</li>
-<li>顾名思义，并查集主要有两个作用 <ul>
-<li>1.并： 合并不相交的集合</li>
-<li>2.查:：查找集合的代表元素,用来检测集合是否相交。 一些非常常见的算法，如最小生成树，最近公共祖先等，都用到了并查集。</li>
-</ul>
-</li>
-</ul>
-<h4 id="并查集-–-代表元"><a href="#并查集-–-代表元" class="headerlink" title="并查集 – 代表元"></a>并查集 – 代表元</h4><ul>
-<li>代表元是并查集中一个集合的代表元素，确认是否是一个集合的用途</li>
-<li>代表元是集合中用来代表整个集合某个原始，例如集合{1,2,3,4},可以设定1为该集合的代表元。<strong>集合内的所有元素，组织成以代表元为根的树状结构</strong>。代表元非常重要并查集的查找，其实就是查找代表元的过程，之后的合并操作，也是通过判断不同集合之间的代表元来进行的。</li>
-</ul>
-<h4 id="并查集-–-组成"><a href="#并查集-–-组成" class="headerlink" title="并查集 – 组成"></a>并查集 – 组成</h4><ul>
-<li><strong>并查集是用数组来保存的数状结构，数组用来保存父亲节点(或者前导节点)的信息。</strong></li>
-<li>也可以初始化为别的数据结构，这个题初始化使用的数组。</li>
-</ul>
-<h4 id="并查集-–-初始化算法"><a href="#并查集-–-初始化算法" class="headerlink" title="并查集 – 初始化算法"></a>并查集 – 初始化算法</h4><ul>
-<li>并查集初始化的时候默认自身是一个集合，然后根据实际需求合并和查找</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs"><br></code></pre></td></tr></table></figure>
-
-<h4 id="并查集-–-查找算法"><a href="#并查集-–-查找算法" class="headerlink" title="并查集 – 查找算法"></a>并查集 – 查找算法</h4><ul>
-<li>从某个节点出发，一直查找它的前导节点，如果前导节点为自身，则代表该节点是这个集合的代表元素，另一方面，它也是这棵子树所在的根节点。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-title function_">find</span><span class="hljs-params">(x)</span><br>&#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> x;<br>    <span class="hljs-keyword">return</span> index==pre[index]?index:find(pre[index]);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h4 id="并查集-–-合并算法"><a href="#并查集-–-合并算法" class="headerlink" title="并查集 – 合并算法"></a>并查集 – 合并算法</h4><ul>
-<li>并查集的算法实际上是森林到树的转化过程。在执行合并算法的时候，我们同时将查找两个集合的代表元，也就是两棵树的根节点，然后将一颗树转化为另一棵树的子树，也就是将一棵树的根节点作为另一棵树的子节点。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">void</span> <span class="hljs-title function_">Union</span><span class="hljs-params">(x,y)</span> &#123;<br>    <span class="hljs-keyword">if</span>(find(x)!=find(y)) <span class="hljs-comment">//两棵树属于不同的集合</span><br>   &#123;<br>     pre[find(x)] = find(y); <span class="hljs-comment">// 人为规定y所在的子树的根节点指向x所在子树的根节点</span><br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h4 id="并查集-–-路径优化"><a href="#并查集-–-路径优化" class="headerlink" title="并查集 – 路径优化"></a>并查集 – 路径优化</h4><ul>
-<li>我们可以知道，如果一个树的高度太高的话，会导致find的成本过大，所以在执行完了find之后，我们可以将所有使用过的结点指向代表元，也就是在find() 方法执行的时候进行一个小优化</li>
-<li>优化完了之后，理论上如果查的次数大于元素个数之后，find方法的时间复杂度能够达到O(1) , 也就是查的阅读，效率反而越快。 递归的方式实现有点难以理解，查找的过程我使用迭代的方式实现。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// stack 是成员变量，在初始化的时候定义 </span><br><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">find</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span> &#123;<br>            <span class="hljs-keyword">while</span> (i != roots[i])&#123;<br>                stack.push(i);<br>                i = roots[i];<br>            &#125;<br>            <span class="hljs-keyword">while</span> (!stack.isEmpty())&#123;<br>                roots[stack.pop()] = i;<br>            &#125;<br>            <span class="hljs-keyword">return</span> i;<br>        &#125;<br></code></pre></td></tr></table></figure>
+                <h2 id="1090-受标签影响的最大值"><a href="#1090-受标签影响的最大值" class="headerlink" title="1090. 受标签影响的最大值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/largest-values-from-labels/">1090. 受标签影响的最大值</a></h2><p>我们有一个 n 项的集合。给出两个整数数组 values 和 labels ，第 i 个元素的值和标签分别是 values[i] 和 labels[i]。还会给出两个整数 numWanted 和 useLimit 。</p>
+<p>从 n 个元素中选择一个子集 s :</p>
+<p>子集 s 的大小 小于或等于 numWanted 。<br>s 中 最多 有相同标签的 useLimit 项。<br>一个子集的 分数 是该子集的值之和。</p>
+<p>返回子集 s 的最大 分数 。</p>
+<h3 id="思路-贪心"><a href="#思路-贪心" class="headerlink" title="思路 - 贪心"></a>思路 - 贪心</h3><p>通过示例可以得到这么个思路： 首先将元素按照values的大小排序，因为是求最大分，然后再用map存储标签出现的次数，然后从后往前累积，达到了标签定义的上限值就过滤，</p>
+<ol>
+<li>按照value大小排序values 数组和 labels 数组</li>
+<li>初始化一个map存储已经取过的标签和对应的标签数量</li>
+<li>从后往前遍历拿元素，并且更新标签数，标签数上限的不拿，并且如果已经拿的元素个数达到最大值也不拿了</li>
+</ol>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">largestValsFromLabels</span><span class="hljs-params">(<span class="hljs-type">int</span>[] values, <span class="hljs-type">int</span>[] labels, <span class="hljs-type">int</span> numWanted, <span class="hljs-type">int</span> useLimit)</span> &#123;<br>        <span class="hljs-type">int</span>[][] array = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[values.length][<span class="hljs-number">2</span>];<br>        Map&lt;Integer,Integer&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; array.length; i++) &#123;<br>            array[i][<span class="hljs-number">0</span>] = values[i];<br>            array[i][<span class="hljs-number">1</span>] = labels[i];<br>        &#125;<br>        Arrays.sort(array,(a,b) -&gt; b[<span class="hljs-number">0</span>] - a[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// 按照value 升序排序</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; array.length &amp;&amp; count &lt; numWanted; i++) &#123;<br>            <span class="hljs-type">int</span>[] temp = array[i];<br>            <span class="hljs-keyword">if</span> (map.getOrDefault(temp[<span class="hljs-number">1</span>],<span class="hljs-number">0</span>) &lt; useLimit)&#123; <span class="hljs-comment">// 说明可以添加</span><br>                res += temp[<span class="hljs-number">0</span>];<br>                count++;<br>                map.put(temp[<span class="hljs-number">1</span>],map.getOrDefault(temp[<span class="hljs-number">1</span>],<span class="hljs-number">0</span>) + <span class="hljs-number">1</span>);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -320,7 +295,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">#并查集</a>
+        <a href="/tags/%E8%93%9D%E6%A1%A5%E5%88%B7%E9%A2%98/">#蓝桥刷题</a>
       
     </div>
   
@@ -332,8 +307,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>并查集</div>
-      <div>http://example.com/2023/05/23/并查集/</div>
+      <div>LC1090.受标签影响的最大值</div>
+      <div>http://example.com/2023/05/23/LC1090-受标签影响的最大值/</div>
     </div>
     <div class="license-meta">
       
@@ -377,18 +352,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/23/LC1090-%E5%8F%97%E6%A0%87%E7%AD%BE%E5%BD%B1%E5%93%8D%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/" title="LC1090.受标签影响的最大值">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC1090.受标签影响的最大值</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/22/%E7%83%AD%E9%97%A8%E5%9F%8E%E5%B8%82%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/" title="热门城市分析系统软件设计说明书">
-                        <span class="hidden-mobile">热门城市分析系统软件设计说明书</span>
+                      <a href="/2023/05/23/%E5%B9%B6%E6%9F%A5%E9%9B%86/" title="并查集">
+                        <span class="hidden-mobile">并查集</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

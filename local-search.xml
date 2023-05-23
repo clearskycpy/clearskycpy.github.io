@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>LC1090.受标签影响的最大值</title>
+    <link href="/2023/05/23/LC1090-%E5%8F%97%E6%A0%87%E7%AD%BE%E5%BD%B1%E5%93%8D%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/"/>
+    <url>/2023/05/23/LC1090-%E5%8F%97%E6%A0%87%E7%AD%BE%E5%BD%B1%E5%93%8D%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1090-受标签影响的最大值"><a href="#1090-受标签影响的最大值" class="headerlink" title="1090. 受标签影响的最大值"></a><a href="https://leetcode.cn/problems/largest-values-from-labels/">1090. 受标签影响的最大值</a></h2><p>我们有一个 n 项的集合。给出两个整数数组 values 和 labels ，第 i 个元素的值和标签分别是 values[i] 和 labels[i]。还会给出两个整数 numWanted 和 useLimit 。</p><p>从 n 个元素中选择一个子集 s :</p><p>子集 s 的大小 小于或等于 numWanted 。<br>s 中 最多 有相同标签的 useLimit 项。<br>一个子集的 分数 是该子集的值之和。</p><p>返回子集 s 的最大 分数 。</p><h3 id="思路-贪心"><a href="#思路-贪心" class="headerlink" title="思路 - 贪心"></a>思路 - 贪心</h3><p>通过示例可以得到这么个思路： 首先将元素按照values的大小排序，因为是求最大分，然后再用map存储标签出现的次数，然后从后往前累积，达到了标签定义的上限值就过滤，</p><ol><li>按照value大小排序values 数组和 labels 数组</li><li>初始化一个map存储已经取过的标签和对应的标签数量</li><li>从后往前遍历拿元素，并且更新标签数，标签数上限的不拿，并且如果已经拿的元素个数达到最大值也不拿了</li></ol><h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">largestValsFromLabels</span><span class="hljs-params">(<span class="hljs-type">int</span>[] values, <span class="hljs-type">int</span>[] labels, <span class="hljs-type">int</span> numWanted, <span class="hljs-type">int</span> useLimit)</span> &#123;<br>        <span class="hljs-type">int</span>[][] array = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[values.length][<span class="hljs-number">2</span>];<br>        Map&lt;Integer,Integer&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; array.length; i++) &#123;<br>            array[i][<span class="hljs-number">0</span>] = values[i];<br>            array[i][<span class="hljs-number">1</span>] = labels[i];<br>        &#125;<br>        Arrays.sort(array,(a,b) -&gt; b[<span class="hljs-number">0</span>] - a[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// 按照value 升序排序</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; array.length &amp;&amp; count &lt; numWanted; i++) &#123;<br>            <span class="hljs-type">int</span>[] temp = array[i];<br>            <span class="hljs-keyword">if</span> (map.getOrDefault(temp[<span class="hljs-number">1</span>],<span class="hljs-number">0</span>) &lt; useLimit)&#123; <span class="hljs-comment">// 说明可以添加</span><br>                res += temp[<span class="hljs-number">0</span>];<br>                count++;<br>                map.put(temp[<span class="hljs-number">1</span>],map.getOrDefault(temp[<span class="hljs-number">1</span>],<span class="hljs-number">0</span>) + <span class="hljs-number">1</span>);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>蓝桥刷题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>并查集</title>
     <link href="/2023/05/23/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     <url>/2023/05/23/%E5%B9%B6%E6%9F%A5%E9%9B%86/</url>
