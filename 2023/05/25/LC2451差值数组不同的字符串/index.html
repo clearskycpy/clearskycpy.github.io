@@ -16,24 +16,27 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="剑指 Offer II 110. 所有路径 给定一个有 n 个节点的有向无环图，用二维数组 graph 表示，请找到所有从 0 到 n-1 的路径并输出（不要求按顺序）。  graph 的第 i 个数组中的单元都表示有向图中 i 号节点所能到达的下一些结点（译者注：有向图是有方向的，即规定了 a→b 你就不能从 b→a ），若为空，就是没有下一个节点了。   解题思路题目的意思就是求一个图中从首个">
+    <meta name="description" content="2451. 差值数组不同的字符串给你一个字符串数组 words ，每一个字符串长度都相同，令所有字符串的长度都为 n 。 每个字符串 words[i] 可以被转化为一个长度为 n - 1 的 差值整数数组 difference[i] ，其中对于 0 &lt;&#x3D; j &lt;&#x3D; n - 2 有 difference[i][j] &#x3D; words[i][j+1] - wor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指Offer_II_110_所有路径">
-<meta property="og:url" content="http://example.com/2023/05/24/%E5%89%91%E6%8C%87Offer-II-110-%E6%89%80%E6%9C%89%E8%B7%AF%E5%BE%84/index.html">
+<meta property="og:title" content="LC2451差值数组不同的字符串">
+<meta property="og:url" content="http://example.com/2023/05/25/LC2451%E5%B7%AE%E5%80%BC%E6%95%B0%E7%BB%84%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="剑指 Offer II 110. 所有路径 给定一个有 n 个节点的有向无环图，用二维数组 graph 表示，请找到所有从 0 到 n-1 的路径并输出（不要求按顺序）。  graph 的第 i 个数组中的单元都表示有向图中 i 号节点所能到达的下一些结点（译者注：有向图是有方向的，即规定了 a→b 你就不能从 b→a ），若为空，就是没有下一个节点了。   解题思路题目的意思就是求一个图中从首个">
+<meta property="og:description" content="2451. 差值数组不同的字符串给你一个字符串数组 words ，每一个字符串长度都相同，令所有字符串的长度都为 n 。 每个字符串 words[i] 可以被转化为一个长度为 n - 1 的 差值整数数组 difference[i] ，其中对于 0 &lt;&#x3D; j &lt;&#x3D; n - 2 有 difference[i][j] &#x3D; words[i][j+1] - wor">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-24T13:30:10.000Z">
-<meta property="article:modified_time" content="2023-05-24T14:10:35.796Z">
+<meta property="og:image" content="http://example.com/img%5CclearSky%5CblogImg%5C9ee452a788f66ad0699f35d151c32a3.png">
+<meta property="article:published_time" content="2023-05-25T10:18:17.000Z">
+<meta property="article:modified_time" content="2023-05-25T11:17:13.060Z">
 <meta property="article:author" content="clearSky">
+<meta property="article:tag" content="数组">
 <meta property="article:tag" content="蓝桥刷题">
-<meta property="article:tag" content="图">
-<meta property="article:tag" content="广度优先搜索">
+<meta property="article:tag" content="模拟">
+<meta property="article:tag" content="哈希表">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img%5CclearSky%5CblogImg%5C9ee452a788f66ad0699f35d151c32a3.png">
   
   
   
-  <title>剑指Offer_II_110_所有路径 - clearskycpy</title>
+  <title>LC2451差值数组不同的字符串 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -193,13 +196,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/clearSky/banner01.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="剑指Offer_II_110_所有路径"></span>
+            <span id="subtitle" data-typed-text="LC2451差值数组不同的字符串"></span>
           
         </div>
 
@@ -215,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-24 21:30" pubdate>
-          2023年5月24日
+        <time datetime="2023-05-25 18:18" pubdate>
+          2023年5月25日
         </time>
       </span>
     
@@ -260,12 +263,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">剑指Offer_II_110_所有路径</h1>
+            <h1 style="display: none">LC2451差值数组不同的字符串</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年5月24日
+                    本文最后更新于：2023年5月25日
                   
                 
               </p>
@@ -273,18 +276,17 @@
             
               <div class="markdown-body">
                 
-                <h2 id="剑指-Offer-II-110-所有路径"><a href="#剑指-Offer-II-110-所有路径" class="headerlink" title="剑指 Offer II 110. 所有路径"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/bP4bmD/">剑指 Offer II 110. 所有路径</a></h2><ul>
-<li><p>给定一个有 n 个节点的有向无环图，用二维数组 graph 表示，请找到所有从 0 到 n-1 的路径并输出（不要求按顺序）。</p>
-</li>
-<li><p>graph 的第 i 个数组中的单元都表示有向图中 i 号节点所能到达的下一些结点（译者注：有向图是有方向的，即规定了 a→b 你就不能从 b→a ），若为空，就是没有下一个节点了。</p>
-</li>
+                <h2 id="2451-差值数组不同的字符串"><a href="#2451-差值数组不同的字符串" class="headerlink" title="2451. 差值数组不同的字符串"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/odd-string-difference/">2451. 差值数组不同的字符串</a></h2><p>给你一个字符串数组 words ，每一个字符串长度都相同，令所有字符串的长度都为 n 。</p>
+<p>每个字符串 words[i] 可以被转化为一个长度为 n - 1 的 差值整数数组 difference[i] ，其中对于 0 &lt;&#x3D; j &lt;&#x3D; n - 2 有 difference[i][j] &#x3D; words[i][j+1] - words[i][j] 。注意两个字母的差值定义为它们在字母表中 位置 之差，也就是说 ‘a’ 的位置是 0 ，’b’ 的位置是 1 ，’z’ 的位置是 25 。</p>
+<p>比方说，字符串 “acb” 的差值整数数组是 [2 - 0, 1 - 2] &#x3D; [2, -1] 。<br>words 中所有字符串 除了一个字符串以外 ，其他字符串的差值整数数组都相同。你需要找到那个不同的字符串。</p>
+<p>请你返回 words中 差值整数数组 不同的字符串。</p>
+<p><img src="/img%5CclearSky%5CblogImg%5C9ee452a788f66ad0699f35d151c32a3.png" srcset="/img/loading.gif" lazyload alt="示例"></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>题目的意思就是 给出n个长度一样的字符串，然后这里面的字符串有这么一个特性，就是每个字符串中的后面一个字符减去前面一个字符的值相同，只有一个不同。找出那个不符合特性的字符串</li>
+<li>使用了两个哈希表，一个将所有的差值使用字符串的方式链接起来，同时使用分割标记防止 11 和 1 | 11 和 1 这种拼接之后会归纳成同一种</li>
+<li>另外一个哈希表的作用是将拼接的字符串 对应的原字符串对应出来，方便找回。</li>
 </ul>
-<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>题目的意思就是求一个图中从首个结点到尾部结点的路径的个数，也就是一个广度优先搜索。</p>
-<ul>
-<li>深度优先搜索</li>
-<li>题目的入参就是一个图的格式，所以不用转换可以直接使用，一个标准的广度优先遍历</li>
-</ul>
-<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span>[][] graph;  <span class="hljs-comment">// 给定的图</span><br>    List&lt;List&lt;Integer&gt;&gt; res;  <span class="hljs-comment">// 返回结果集</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> N;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 求有向无环图中的所有路径 从 0 到 n - 1 的</span><br><span class="hljs-comment">     * 其中的结点个数为 n个</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> graph</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="hljs-title function_">allPathsSourceTarget</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] graph)</span> &#123;<br><span class="hljs-comment">//        初始化图</span><br>        <span class="hljs-built_in">this</span>.graph = graph;<br><span class="hljs-comment">//        初始化结果集</span><br>        res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br><span class="hljs-comment">//        初始化点的长度</span><br>        N = graph.length - <span class="hljs-number">1</span>;<br>        List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        list.add(<span class="hljs-number">0</span>);  <span class="hljs-comment">// 将首个元素加入</span><br>        dfs(<span class="hljs-number">0</span>,list);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * </span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> index  当前边所在的位置</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> item  集合</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> index, List&lt;Integer&gt; item)</span> &#123;<br><span class="hljs-comment">//        函数出口</span><br>        <span class="hljs-keyword">if</span> (index == N) &#123;<br>            res.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;(item));<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i : graph[index]) &#123;<br>            item.add(i);<br>            dfs(i,item);<br>            item.remove(item.size() - <span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">oddString</span><span class="hljs-params">(String[] words)</span> &#123;<br>        Map&lt;String, Integer&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        Map&lt;String, String&gt; map1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (String str : words) &#123;<br>            <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">stringBuilder</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; str.length(); i++) &#123;<br>                stringBuilder.append(str.charAt(i) - str.charAt(i-<span class="hljs-number">1</span>)).append(<span class="hljs-string">&quot;+&quot;</span>);<br>            &#125;<br>            map.put(stringBuilder.toString(),map.getOrDefault(stringBuilder.toString(),<span class="hljs-number">0</span>) + <span class="hljs-number">1</span>);<br>            map1.put(stringBuilder.toString(),str);<br>        &#125;<br>        <span class="hljs-keyword">for</span>(String key : map.keySet()) &#123;<br>            <span class="hljs-keyword">if</span> (map.get(key) == <span class="hljs-number">1</span>) &#123;<br>                <span class="hljs-keyword">return</span> map1.get(key);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -298,11 +300,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E6%95%B0%E7%BB%84/">#数组</a>
+      
         <a href="/tags/%E8%93%9D%E6%A1%A5%E5%88%B7%E9%A2%98/">#蓝桥刷题</a>
       
-        <a href="/tags/%E5%9B%BE/">#图</a>
+        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
       
-        <a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">#广度优先搜索</a>
+        <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">#哈希表</a>
       
     </div>
   
@@ -314,8 +318,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>剑指Offer_II_110_所有路径</div>
-      <div>http://example.com/2023/05/24/剑指Offer-II-110-所有路径/</div>
+      <div>LC2451差值数组不同的字符串</div>
+      <div>http://example.com/2023/05/25/LC2451差值数组不同的字符串/</div>
     </div>
     <div class="license-meta">
       
@@ -327,7 +331,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月24日</div>
+          <div>2023年5月25日</div>
         </div>
       
       
@@ -359,18 +363,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/25/LC2451%E5%B7%AE%E5%80%BC%E6%95%B0%E7%BB%84%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="LC2451差值数组不同的字符串">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC2451差值数组不同的字符串</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/24/LC1377T%E7%A7%92%E5%90%8E%E9%9D%92%E8%9B%99%E7%9A%84%E4%BD%8D%E7%BD%AE/" title="LC1377T秒后青蛙的位置">
-                        <span class="hidden-mobile">LC1377T秒后青蛙的位置</span>
+                      <a href="/2023/05/24/%E5%89%91%E6%8C%87Offer-II-110-%E6%89%80%E6%9C%89%E8%B7%AF%E5%BE%84/" title="剑指Offer_II_110_所有路径">
+                        <span class="hidden-mobile">剑指Offer_II_110_所有路径</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
