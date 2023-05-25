@@ -23,16 +23,16 @@
 <meta property="og:site_name" content="clearskycpy">
 <meta property="og:description" content="2451. 差值数组不同的字符串给你一个字符串数组 words ，每一个字符串长度都相同，令所有字符串的长度都为 n 。 每个字符串 words[i] 可以被转化为一个长度为 n - 1 的 差值整数数组 difference[i] ，其中对于 0 &lt;&#x3D; j &lt;&#x3D; n - 2 有 difference[i][j] &#x3D; words[i][j+1] - wor">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img%5CclearSky%5CblogImg%5C9ee452a788f66ad0699f35d151c32a3.png">
+<meta property="og:image" content="http://example.com/img/clearSky/blogImg/9ee452a788f66ad0699f35d151c32a3.png">
 <meta property="article:published_time" content="2023-05-25T10:18:17.000Z">
-<meta property="article:modified_time" content="2023-05-25T11:17:13.060Z">
+<meta property="article:modified_time" content="2023-05-25T11:29:22.924Z">
 <meta property="article:author" content="clearSky">
 <meta property="article:tag" content="数组">
 <meta property="article:tag" content="蓝桥刷题">
 <meta property="article:tag" content="模拟">
 <meta property="article:tag" content="哈希表">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img%5CclearSky%5CblogImg%5C9ee452a788f66ad0699f35d151c32a3.png">
+<meta name="twitter:image" content="http://example.com/img/clearSky/blogImg/9ee452a788f66ad0699f35d151c32a3.png">
   
   
   
@@ -280,7 +280,7 @@
 <p>每个字符串 words[i] 可以被转化为一个长度为 n - 1 的 差值整数数组 difference[i] ，其中对于 0 &lt;&#x3D; j &lt;&#x3D; n - 2 有 difference[i][j] &#x3D; words[i][j+1] - words[i][j] 。注意两个字母的差值定义为它们在字母表中 位置 之差，也就是说 ‘a’ 的位置是 0 ，’b’ 的位置是 1 ，’z’ 的位置是 25 。</p>
 <p>比方说，字符串 “acb” 的差值整数数组是 [2 - 0, 1 - 2] &#x3D; [2, -1] 。<br>words 中所有字符串 除了一个字符串以外 ，其他字符串的差值整数数组都相同。你需要找到那个不同的字符串。</p>
 <p>请你返回 words中 差值整数数组 不同的字符串。</p>
-<p><img src="/img%5CclearSky%5CblogImg%5C9ee452a788f66ad0699f35d151c32a3.png" srcset="/img/loading.gif" lazyload alt="示例"></p>
+<p><img src="/img/clearSky/blogImg/9ee452a788f66ad0699f35d151c32a3.png" srcset="/img/loading.gif" lazyload alt="示例"></p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
 <li>题目的意思就是 给出n个长度一样的字符串，然后这里面的字符串有这么一个特性，就是每个字符串中的后面一个字符减去前面一个字符的值相同，只有一个不同。找出那个不符合特性的字符串</li>
 <li>使用了两个哈希表，一个将所有的差值使用字符串的方式链接起来，同时使用分割标记防止 11 和 1 | 11 和 1 这种拼接之后会归纳成同一种</li>

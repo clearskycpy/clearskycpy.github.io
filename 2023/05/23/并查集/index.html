@@ -24,7 +24,7 @@
 <meta property="og:description" content="并查集并查集的作用是什么？ 并查集是一种用来处理不相交集合的树状数据结构。 顾名思义，并查集主要有两个作用  1.并： 合并不相交的集合 2.查:：查找集合的代表元素,用来检测集合是否相交。 一些非常常见的算法，如最小生成树，最近公共祖先等，都用到了并查集。    并查集 – 代表元 代表元是并查集中一个集合的代表元素，确认是否是一个集合的用途 代表元是集合中用来代表整个集合某个原始，例如集合{1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-23T09:47:53.000Z">
-<meta property="article:modified_time" content="2023-05-23T13:02:11.076Z">
+<meta property="article:modified_time" content="2023-05-25T11:26:30.177Z">
 <meta property="article:author" content="clearSky">
 <meta property="article:tag" content="并查集">
 <meta name="twitter:card" content="summary_large_image">
@@ -263,7 +263,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年5月23日
+                    本文最后更新于：2023年5月25日
                   
                 
               </p>
@@ -290,7 +290,7 @@
 <h4 id="并查集-–-初始化算法"><a href="#并查集-–-初始化算法" class="headerlink" title="并查集 – 初始化算法"></a>并查集 – 初始化算法</h4><ul>
 <li>并查集初始化的时候默认自身是一个集合，然后根据实际需求合并和查找</li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs"><br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">int</span>[] roots;<br><span class="hljs-keyword">public</span> <span class="hljs-title function_">UnionFind</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123; <span class="hljs-comment">// 初始化</span><br>    roots = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        roots[i] = i;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h4 id="并查集-–-查找算法"><a href="#并查集-–-查找算法" class="headerlink" title="并查集 – 查找算法"></a>并查集 – 查找算法</h4><ul>
 <li>从某个节点出发，一直查找它的前导节点，如果前导节点为自身，则代表该节点是这个集合的代表元素，另一方面，它也是这棵子树所在的根节点。</li>
