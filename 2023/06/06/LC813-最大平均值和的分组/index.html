@@ -16,26 +16,25 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="剑指 Offer II 107. 矩阵中的距离给定一个由 0 和 1 组成的矩阵 mat ，请输出一个大小相同的矩阵，其中每一个格子是 mat 中对应位置元素到最近的 0 的距离。 两个相邻元素间的距离为 1 。  思路 使用了广度优先的方式遍历，首先遍历找到所有位置上为零的位置， 然后类似于扩散的方式进行广度优先遍历，每遍历一圈就则离0 最近的位置则是里面的距离加1， 同时为了不重复遍历需要个数">
+    <meta name="description" content="813. 最大平均值和的分组给定数组 nums 和一个整数 k 。我们将给定的数组 nums 分成 最多 k 个相邻的非空子数组 。 分数 由每个子数组内的平均值的总和构成。  注意我们必须使用 nums 数组中的每一个数进行分组，并且分数不一定需要是整数。  返回我们所能得到的最大 分数 是多少。答案误差在 10-6 内被视为是正确的。   123456输入: nums &#x3D; [9,1,2,3,9">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指Offer.II.107.矩阵中的距离">
-<meta property="og:url" content="http://example.com/2023/05/23/%E5%89%91%E6%8C%87Offer-II-107-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%9D%E7%A6%BB/index.html">
+<meta property="og:title" content="LC813_最大平均值和的分组">
+<meta property="og:url" content="http://example.com/2023/06/06/LC813-%E6%9C%80%E5%A4%A7%E5%B9%B3%E5%9D%87%E5%80%BC%E5%92%8C%E7%9A%84%E5%88%86%E7%BB%84/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="剑指 Offer II 107. 矩阵中的距离给定一个由 0 和 1 组成的矩阵 mat ，请输出一个大小相同的矩阵，其中每一个格子是 mat 中对应位置元素到最近的 0 的距离。 两个相邻元素间的距离为 1 。  思路 使用了广度优先的方式遍历，首先遍历找到所有位置上为零的位置， 然后类似于扩散的方式进行广度优先遍历，每遍历一圈就则离0 最近的位置则是里面的距离加1， 同时为了不重复遍历需要个数">
+<meta property="og:description" content="813. 最大平均值和的分组给定数组 nums 和一个整数 k 。我们将给定的数组 nums 分成 最多 k 个相邻的非空子数组 。 分数 由每个子数组内的平均值的总和构成。  注意我们必须使用 nums 数组中的每一个数进行分组，并且分数不一定需要是整数。  返回我们所能得到的最大 分数 是多少。答案误差在 10-6 内被视为是正确的。   123456输入: nums &#x3D; [9,1,2,3,9">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/clearSky/blogImg/202305232322.png">
-<meta property="article:published_time" content="2023-05-23T15:17:32.000Z">
-<meta property="article:modified_time" content="2023-05-23T15:34:04.259Z">
+<meta property="article:published_time" content="2023-06-06T12:41:57.000Z">
+<meta property="article:modified_time" content="2023-06-06T13:05:13.181Z">
 <meta property="article:author" content="clearSky">
 <meta property="article:tag" content="蓝桥刷题">
-<meta property="article:tag" content="图">
-<meta property="article:tag" content="广度优先搜索">
+<meta property="article:tag" content="前缀和">
+<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="序列DP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/clearSky/blogImg/202305232322.png">
   
   
   
-  <title>剑指Offer.II.107.矩阵中的距离 - clearskycpy</title>
+  <title>LC813_最大平均值和的分组 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="剑指Offer.II.107.矩阵中的距离"></span>
+            <span id="subtitle" data-typed-text="LC813_最大平均值和的分组"></span>
           
         </div>
 
@@ -217,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-23 23:17" pubdate>
-          2023年5月23日
+        <time datetime="2023-06-06 20:41" pubdate>
+          2023年6月6日
         </time>
       </span>
     
@@ -262,12 +261,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">剑指Offer.II.107.矩阵中的距离</h1>
+            <h1 style="display: none">LC813_最大平均值和的分组</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年5月23日
+                    本文最后更新于：2023年6月6日
                   
                 
               </p>
@@ -275,17 +274,35 @@
             
               <div class="markdown-body">
                 
-                <h2 id="剑指-Offer-II-107-矩阵中的距离"><a href="#剑指-Offer-II-107-矩阵中的距离" class="headerlink" title="剑指 Offer II 107. 矩阵中的距离"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/2bCMpM/">剑指 Offer II 107. 矩阵中的距离</a></h2><p>给定一个由 0 和 1 组成的矩阵 mat ，请输出一个大小相同的矩阵，其中每一个格子是 mat 中对应位置元素到最近的 0 的距离。</p>
-<p>两个相邻元素间的距离为 1 。</p>
-<p><img src="/img/clearSky/blogImg/202305232322.png" srcset="/img/loading.gif" lazyload alt="示例"></p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
-<li>使用了广度优先的方式遍历，首先遍历找到所有位置上为零的位置，</li>
-<li>然后类似于扩散的方式进行广度优先遍历，每<strong>遍历一圈</strong>就则离0 最近的位置则是里面的距离加1，</li>
-<li>同时为了不重复遍历需要个数组记录是否遍历过。</li>
+                <h2 id="813-最大平均值和的分组"><a href="#813-最大平均值和的分组" class="headerlink" title="813. 最大平均值和的分组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/largest-sum-of-averages/">813. 最大平均值和的分组</a></h2><p>给定数组 nums 和一个整数 k 。我们将给定的数组 nums 分成 最多 k 个相邻的非空子数组 。 分数 由每个子数组内的平均值的总和构成。</p>
+<ul>
+<li><p>注意我们必须使用 nums 数组中的每一个数进行分组，并且分数不一定需要是整数。</p>
+</li>
+<li><p>返回我们所能得到的最大 分数 是多少。答案误差在 10-6 内被视为是正确的。</p>
+</li>
 </ul>
-<h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">final</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] X = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>&#125;;<br>    <span class="hljs-keyword">final</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] Y = &#123;<span class="hljs-number">0</span>,-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>&#125;;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] updateMatrix(<span class="hljs-type">int</span>[][] mat) &#123;<br>        <span class="hljs-type">int</span>[][] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[mat.length][mat[<span class="hljs-number">0</span>].length];<br>        <span class="hljs-type">boolean</span>[][] used = <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[mat.length][mat[<span class="hljs-number">0</span>].length];<br>        Queue&lt;<span class="hljs-type">int</span>[]&gt; queue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; mat.length; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; mat[<span class="hljs-number">0</span>].length; j++) &#123;<br>                <span class="hljs-keyword">if</span> (mat[i][j] == <span class="hljs-number">0</span>)&#123;  <span class="hljs-comment">// 将所有的0 放入队列中</span><br>                    used[i][j] = <span class="hljs-literal">true</span>;<br>                    queue.offer(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[] &#123;i,j&#125;);<br><br>                &#125;<br>            &#125;<br>        &#125;<br><span class="hljs-comment">//        广度优先搜索</span><br>        <span class="hljs-keyword">while</span> (!queue.isEmpty()) &#123;<br>            <span class="hljs-type">int</span>[] poll = queue.poll();  <span class="hljs-comment">// 将结点取出一个</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> poll[<span class="hljs-number">0</span>], j = poll[<span class="hljs-number">1</span>];<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; <span class="hljs-number">4</span>; k++) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">ni</span> <span class="hljs-operator">=</span> i + X[k];<br>                <span class="hljs-type">int</span> <span class="hljs-variable">nj</span> <span class="hljs-operator">=</span> j + Y[k];<br>                <span class="hljs-keyword">if</span> (nj &gt;= <span class="hljs-number">0</span> &amp;&amp; ni &gt;= <span class="hljs-number">0</span> &amp;&amp; nj &lt; mat[<span class="hljs-number">0</span>].length &amp;&amp; ni &lt; mat.length &amp;&amp; !used[ni][nj]) &#123;<br>                    used[ni][nj] = <span class="hljs-literal">true</span>;<br>                    res[ni][nj] = res[i][j] + <span class="hljs-number">1</span>;<br>                    queue.offer(<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[] &#123;ni,nj&#125;);<br>                &#125;<br>            &#125;<br><br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">输入: nums = [<span class="hljs-number">9</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">9</span>], k = <span class="hljs-number">3</span><br>输出: <span class="hljs-number">20.00000</span><br>解释: <br>nums 的最优分组是[<span class="hljs-number">9</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">9</span>]. 得到的分数是 <span class="hljs-number">9</span> + (<span class="hljs-number">1</span> + <span class="hljs-number">2</span> + <span class="hljs-number">3</span>) / <span class="hljs-number">3</span> + <span class="hljs-number">9</span> = <span class="hljs-number">20.</span> <br>我们也可以把 nums 分成[<span class="hljs-number">9</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">9</span>]. <br>这样的分组得到的分数为 <span class="hljs-number">5</span> + <span class="hljs-number">2</span> + <span class="hljs-number">6</span> = <span class="hljs-number">13</span>, 但不是最大值.<br></code></pre></td></tr></table></figure>
 
-<p>这个解法确实不难，结合代码就能理解了</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这个题的难度在力扣上面是中等，但是属于偏难的那种，</p>
+<ul>
+<li>子数组问题 -&gt; 序列DP</li>
+<li>dp定义如何得到，如果接触过序列DP可以想到这样定义 dp[i] [j] 为 前 i 个 数分为 j 组的最大分数</li>
+<li>状态如何转移？ <ul>
+<li>我的想法里层循环i外层循环j ，因为  当  j &#x3D;&#x3D; 1 时，此时得分数就是nums[0 – i] &#x2F; i 的平均值了，但是后面发现根本是无法推导的。说明是<strong>不合理的</strong>。这么思考的时候一般都是简单的二维DP才能这么思考，通过位置关系来填dp表。</li>
+<li><strong>正确的做法</strong>应该是里层j外层 i （类似于竖着填图）。那么dp表达式应该是什么样子的呢？ <ul>
+<li>首先dp[i] [j]  当 j &#x3D;&#x3D; 1 的时候 毋庸置疑是 nums[0 – i] &#x2F; i  </li>
+<li>不是的情况，应该以 l 为 最后一组的起点 l ∈ [1,i]。此时dp[i] [j] &#x3D; Max(dp[i] [j], dp[l - 1] [j - 1] + sum[l - i] &#x2F; len)  也就是下面这个式子  </li>
+<li><strong>dp[i] [j] &#x3D; Math.max(dp[i] [j],dp[l - 1] [j - 1] + (sums[i] - sums[l - 1]) &#x2F; (i - l + 1));</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>sums是什么？  前缀和数组，为了方便每次 j &#x3D;&#x3D; 1 的时候取值，在求dp[i] [j] 时候方便计算</li>
+<li>动态规划的要义– 无后效性问题</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">largestSumOfAverages</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;  <span class="hljs-comment">// 数组长度</span><br>        <span class="hljs-type">double</span>[] sums = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[nums.length + <span class="hljs-number">10</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= n; i++) &#123; <span class="hljs-comment">// 求出前缀和</span><br>            sums[i] = sums[i - <span class="hljs-number">1</span>] + nums[i - <span class="hljs-number">1</span>];<br>        &#125;<br>        <span class="hljs-type">double</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[n + <span class="hljs-number">10</span>][k + <span class="hljs-number">10</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= nums.length; i++) &#123;   <span class="hljs-comment">// 为了使用前缀和方便 从1开始计算</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt;= Math.min(k,i); j++) &#123;  <span class="hljs-comment">// 求 dp[i][j]  // 为什么边界值是 Math.min(k,i)</span><br>                <span class="hljs-keyword">if</span> (j == <span class="hljs-number">1</span>) &#123;  <span class="hljs-comment">// 前 j 个元素分为一组的情况</span><br>                    dp[i][j] = sums[i]/i;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; l &lt;= i; l++) &#123;  <span class="hljs-comment">// 最后一份以 l 结尾的情况</span><br>                        dp[i][j] = Math.max(dp[i][j],dp[l - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>] + (sums[i] - sums[l - <span class="hljs-number">1</span>]) / (i - l + <span class="hljs-number">1</span>));<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n][k];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>代码有详细注释如果没完全理解说的东西的可以先看代码结合理解</p>
 
                 
               </div>
@@ -300,9 +317,11 @@
       
         <a href="/tags/%E8%93%9D%E6%A1%A5%E5%88%B7%E9%A2%98/">#蓝桥刷题</a>
       
-        <a href="/tags/%E5%9B%BE/">#图</a>
+        <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/">#前缀和</a>
       
-        <a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">#广度优先搜索</a>
+        <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
+      
+        <a href="/tags/%E5%BA%8F%E5%88%97DP/">#序列DP</a>
       
     </div>
   
@@ -314,8 +333,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>剑指Offer.II.107.矩阵中的距离</div>
-      <div>http://example.com/2023/05/23/剑指Offer-II-107-矩阵中的距离/</div>
+      <div>LC813_最大平均值和的分组</div>
+      <div>http://example.com/2023/06/06/LC813-最大平均值和的分组/</div>
     </div>
     <div class="license-meta">
       
@@ -327,7 +346,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月23日</div>
+          <div>2023年6月6日</div>
         </div>
       
       
@@ -359,18 +378,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/24/%E5%89%91%E6%8C%87-Offer-II-116-%E7%9C%81%E4%BB%BD%E6%95%B0%E9%87%8F/" title="剑指Offer_II_116_省份数量">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">剑指Offer_II_116_省份数量</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/23/LC1090-%E5%8F%97%E6%A0%87%E7%AD%BE%E5%BD%B1%E5%93%8D%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/" title="LC1090.受标签影响的最大值">
-                        <span class="hidden-mobile">LC1090.受标签影响的最大值</span>
+                      <a href="/2023/06/06/6-6-e%E7%AD%BE%E5%AE%9D%E7%AC%94%E8%AF%95/" title="6-6-e签宝笔试">
+                        <span class="hidden-mobile">6-6-e签宝笔试</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
