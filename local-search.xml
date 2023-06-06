@@ -4,6 +4,29 @@
   
   
   <entry>
+    <title>LC2352_相等行列对</title>
+    <link href="/2023/06/06/LC2352-%E7%9B%B8%E7%AD%89%E8%A1%8C%E5%88%97%E5%AF%B9/"/>
+    <url>/2023/06/06/LC2352-%E7%9B%B8%E7%AD%89%E8%A1%8C%E5%88%97%E5%AF%B9/</url>
+    
+    <content type="html"><![CDATA[<h2 id="2352-相等行列对"><a href="#2352-相等行列对" class="headerlink" title="2352. 相等行列对"></a><a href="https://leetcode.cn/problems/equal-row-and-column-pairs/">2352. 相等行列对</a></h2><p>给你一个下标从 0 开始、大小为 n x n 的整数矩阵 grid ，返回满足 Ri 行和 Cj 列相等的行列对 (Ri, Cj) 的数目。</p><p>如果行和列以相同的顺序包含相同的元素（即相等的数组），则认为二者是相等的。</p><p>![][&#x2F;img&#x2F;clearSKy&#x2F;blogImg&#x2F;image-20230606212115465.png]</p><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>遍历二维数组，并且一眼没有合适的前缀和法。数据规模也不大</p><ul><li>直接模拟遍历，分别遍历行和列比较，将比较过程抽象成一个函数</li></ul><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>     <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">equalPairs</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] grid)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> grid.length;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;  <span class="hljs-comment">// 行</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; n; j++) &#123;  <span class="hljs-comment">// 列</span><br>                <span class="hljs-keyword">if</span> (isValid(grid,i,j)) &#123;<br>                    cnt++;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isValid</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] grid, <span class="hljs-type">int</span> row, <span class="hljs-type">int</span> col)</span> &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; grid.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (grid[row][i] != grid[i][col]) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>数组</tag>
+      
+      <tag>蓝桥刷题</tag>
+      
+      <tag>模拟</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC813_最大平均值和的分组</title>
     <link href="/2023/06/06/LC813-%E6%9C%80%E5%A4%A7%E5%B9%B3%E5%9D%87%E5%80%BC%E5%92%8C%E7%9A%84%E5%88%86%E7%BB%84/"/>
     <url>/2023/06/06/LC813-%E6%9C%80%E5%A4%A7%E5%B9%B3%E5%9D%87%E5%80%BC%E5%92%8C%E7%9A%84%E5%88%86%E7%BB%84/</url>

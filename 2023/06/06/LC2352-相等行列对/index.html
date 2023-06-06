@@ -16,25 +16,24 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="813. 最大平均值和的分组给定数组 nums 和一个整数 k 。我们将给定的数组 nums 分成 最多 k 个相邻的非空子数组 。 分数 由每个子数组内的平均值的总和构成。  注意我们必须使用 nums 数组中的每一个数进行分组，并且分数不一定需要是整数。  返回我们所能得到的最大 分数 是多少。答案误差在 10-6 内被视为是正确的。   123456输入: nums &#x3D; [9,1,2,3,9">
+    <meta name="description" content="2352. 相等行列对给你一个下标从 0 开始、大小为 n x n 的整数矩阵 grid ，返回满足 Ri 行和 Cj 列相等的行列对 (Ri, Cj) 的数目。 如果行和列以相同的顺序包含相同的元素（即相等的数组），则认为二者是相等的。 ![][&#x2F;img&#x2F;clearSKy&#x2F;blogImg&#x2F;image-20230606212115465.png] 思路遍历二">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC813_最大平均值和的分组">
-<meta property="og:url" content="http://example.com/2023/06/06/LC813-%E6%9C%80%E5%A4%A7%E5%B9%B3%E5%9D%87%E5%80%BC%E5%92%8C%E7%9A%84%E5%88%86%E7%BB%84/index.html">
+<meta property="og:title" content="LC2352_相等行列对">
+<meta property="og:url" content="http://example.com/2023/06/06/LC2352-%E7%9B%B8%E7%AD%89%E8%A1%8C%E5%88%97%E5%AF%B9/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="813. 最大平均值和的分组给定数组 nums 和一个整数 k 。我们将给定的数组 nums 分成 最多 k 个相邻的非空子数组 。 分数 由每个子数组内的平均值的总和构成。  注意我们必须使用 nums 数组中的每一个数进行分组，并且分数不一定需要是整数。  返回我们所能得到的最大 分数 是多少。答案误差在 10-6 内被视为是正确的。   123456输入: nums &#x3D; [9,1,2,3,9">
+<meta property="og:description" content="2352. 相等行列对给你一个下标从 0 开始、大小为 n x n 的整数矩阵 grid ，返回满足 Ri 行和 Cj 列相等的行列对 (Ri, Cj) 的数目。 如果行和列以相同的顺序包含相同的元素（即相等的数组），则认为二者是相等的。 ![][&#x2F;img&#x2F;clearSKy&#x2F;blogImg&#x2F;image-20230606212115465.png] 思路遍历二">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-06T12:41:57.000Z">
-<meta property="article:modified_time" content="2023-06-06T13:05:13.181Z">
+<meta property="article:published_time" content="2023-06-06T13:18:29.000Z">
+<meta property="article:modified_time" content="2023-06-06T13:29:16.047Z">
 <meta property="article:author" content="clearSky">
+<meta property="article:tag" content="数组">
 <meta property="article:tag" content="蓝桥刷题">
-<meta property="article:tag" content="前缀和">
-<meta property="article:tag" content="动态规划">
-<meta property="article:tag" content="序列DP">
+<meta property="article:tag" content="模拟">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LC813_最大平均值和的分组 - clearskycpy</title>
+  <title>LC2352_相等行列对 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -194,13 +193,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/clearSky/banner02.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC813_最大平均值和的分组"></span>
+            <span id="subtitle" data-typed-text="LC2352_相等行列对"></span>
           
         </div>
 
@@ -216,7 +215,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-06 20:41" pubdate>
+        <time datetime="2023-06-06 21:18" pubdate>
           2023年6月6日
         </time>
       </span>
@@ -261,7 +260,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC813_最大平均值和的分组</h1>
+            <h1 style="display: none">LC2352_相等行列对</h1>
             
               <p class="note note-info">
                 
@@ -274,35 +273,15 @@
             
               <div class="markdown-body">
                 
-                <h2 id="813-最大平均值和的分组"><a href="#813-最大平均值和的分组" class="headerlink" title="813. 最大平均值和的分组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/largest-sum-of-averages/">813. 最大平均值和的分组</a></h2><p>给定数组 nums 和一个整数 k 。我们将给定的数组 nums 分成 最多 k 个相邻的非空子数组 。 分数 由每个子数组内的平均值的总和构成。</p>
+                <h2 id="2352-相等行列对"><a href="#2352-相等行列对" class="headerlink" title="2352. 相等行列对"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/equal-row-and-column-pairs/">2352. 相等行列对</a></h2><p>给你一个下标从 0 开始、大小为 n x n 的整数矩阵 grid ，返回满足 Ri 行和 Cj 列相等的行列对 (Ri, Cj) 的数目。</p>
+<p>如果行和列以相同的顺序包含相同的元素（即相等的数组），则认为二者是相等的。</p>
+<p>![][&#x2F;img&#x2F;clearSKy&#x2F;blogImg&#x2F;image-20230606212115465.png]</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>遍历二维数组，并且一眼没有合适的前缀和法。数据规模也不大</p>
 <ul>
-<li><p>注意我们必须使用 nums 数组中的每一个数进行分组，并且分数不一定需要是整数。</p>
-</li>
-<li><p>返回我们所能得到的最大 分数 是多少。答案误差在 10-6 内被视为是正确的。</p>
-</li>
+<li>直接模拟遍历，分别遍历行和列比较，将比较过程抽象成一个函数</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">输入: nums = [<span class="hljs-number">9</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">9</span>], k = <span class="hljs-number">3</span><br>输出: <span class="hljs-number">20.00000</span><br>解释: <br>nums 的最优分组是[<span class="hljs-number">9</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">9</span>]. 得到的分数是 <span class="hljs-number">9</span> + (<span class="hljs-number">1</span> + <span class="hljs-number">2</span> + <span class="hljs-number">3</span>) / <span class="hljs-number">3</span> + <span class="hljs-number">9</span> = <span class="hljs-number">20.</span> <br>我们也可以把 nums 分成[<span class="hljs-number">9</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">9</span>]. <br>这样的分组得到的分数为 <span class="hljs-number">5</span> + <span class="hljs-number">2</span> + <span class="hljs-number">6</span> = <span class="hljs-number">13</span>, 但不是最大值.<br></code></pre></td></tr></table></figure>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>     <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">equalPairs</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] grid)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> grid.length;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;  <span class="hljs-comment">// 行</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; n; j++) &#123;  <span class="hljs-comment">// 列</span><br>                <span class="hljs-keyword">if</span> (isValid(grid,i,j)) &#123;<br>                    cnt++;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isValid</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] grid, <span class="hljs-type">int</span> row, <span class="hljs-type">int</span> col)</span> &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; grid.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (grid[row][i] != grid[i][col]) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这个题的难度在力扣上面是中等，但是属于偏难的那种，</p>
-<ul>
-<li>子数组问题 -&gt; 序列DP</li>
-<li>dp定义如何得到，如果接触过序列DP可以想到这样定义 dp[i] [j] 为 前 i 个 数分为 j 组的最大分数</li>
-<li>状态如何转移？ <ul>
-<li>我的想法里层循环i外层循环j ，因为  当  j &#x3D;&#x3D; 1 时，此时得分数就是nums[0 – i] &#x2F; i 的平均值了，但是后面发现根本是无法推导的。说明是<strong>不合理的</strong>。这么思考的时候一般都是简单的二维DP才能这么思考，通过位置关系来填dp表。</li>
-<li><strong>正确的做法</strong>应该是里层j外层 i （类似于竖着填图）。那么dp表达式应该是什么样子的呢？ <ul>
-<li>首先dp[i] [j]  当 j &#x3D;&#x3D; 1 的时候 毋庸置疑是 nums[0 – i] &#x2F; i  </li>
-<li>不是的情况，应该以 l 为 最后一组的起点 l ∈ [1,i]。此时dp[i] [j] &#x3D; Max(dp[i] [j], dp[l - 1] [j - 1] + sum[l - i] &#x2F; len)  也就是下面这个式子  </li>
-<li><strong>dp[i] [j] &#x3D; Math.max(dp[i] [j],dp[l - 1] [j - 1] + (sums[i] - sums[l - 1]) &#x2F; (i - l + 1));</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>sums是什么？  前缀和数组，为了方便每次 j &#x3D;&#x3D; 1 的时候取值，在求dp[i] [j] 时候方便计算</li>
-<li>动态规划的要义– 无后效性问题</li>
-</ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">largestSumOfAverages</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;  <span class="hljs-comment">// 数组长度</span><br>        <span class="hljs-type">double</span>[] sums = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[nums.length + <span class="hljs-number">10</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= n; i++) &#123; <span class="hljs-comment">// 求出前缀和</span><br>            sums[i] = sums[i - <span class="hljs-number">1</span>] + nums[i - <span class="hljs-number">1</span>];<br>        &#125;<br>        <span class="hljs-type">double</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[n + <span class="hljs-number">10</span>][k + <span class="hljs-number">10</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= nums.length; i++) &#123;   <span class="hljs-comment">// 为了使用前缀和方便 从1开始计算</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt;= Math.min(k,i); j++) &#123;  <span class="hljs-comment">// 求 dp[i][j]  // 为什么边界值是 Math.min(k,i)</span><br>                <span class="hljs-keyword">if</span> (j == <span class="hljs-number">1</span>) &#123;  <span class="hljs-comment">// 前 j 个元素分为一组的情况</span><br>                    dp[i][j] = sums[i]/i;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; l &lt;= i; l++) &#123;  <span class="hljs-comment">// 最后一份以 l 结尾的情况</span><br>                        dp[i][j] = Math.max(dp[i][j],dp[l - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>] + (sums[i] - sums[l - <span class="hljs-number">1</span>]) / (i - l + <span class="hljs-number">1</span>));<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n][k];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>代码有详细注释如果没完全理解说的东西的可以先看代码结合理解</p>
 
                 
               </div>
@@ -315,13 +294,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E6%95%B0%E7%BB%84/">#数组</a>
+      
         <a href="/tags/%E8%93%9D%E6%A1%A5%E5%88%B7%E9%A2%98/">#蓝桥刷题</a>
       
-        <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/">#前缀和</a>
-      
-        <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
-      
-        <a href="/tags/%E5%BA%8F%E5%88%97DP/">#序列DP</a>
+        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
       
     </div>
   
@@ -333,8 +310,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC813_最大平均值和的分组</div>
-      <div>http://example.com/2023/06/06/LC813-最大平均值和的分组/</div>
+      <div>LC2352_相等行列对</div>
+      <div>http://example.com/2023/06/06/LC2352-相等行列对/</div>
     </div>
     <div class="license-meta">
       
@@ -378,18 +355,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/06/LC2352-%E7%9B%B8%E7%AD%89%E8%A1%8C%E5%88%97%E5%AF%B9/" title="LC2352_相等行列对">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC2352_相等行列对</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/06/6-6-e%E7%AD%BE%E5%AE%9D%E7%AC%94%E8%AF%95/" title="6-6-e签宝笔试">
-                        <span class="hidden-mobile">6-6-e签宝笔试</span>
+                      <a href="/2023/06/06/LC813-%E6%9C%80%E5%A4%A7%E5%B9%B3%E5%9D%87%E5%80%BC%E5%92%8C%E7%9A%84%E5%88%86%E7%BB%84/" title="LC813_最大平均值和的分组">
+                        <span class="hidden-mobile">LC813_最大平均值和的分组</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
