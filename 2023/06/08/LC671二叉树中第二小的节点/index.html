@@ -16,24 +16,23 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="2611. 老鼠和奶酪有两只老鼠和 n 块不同类型的奶酪，每块奶酪都只能被其中一只老鼠吃掉。 下标为 i 处的奶酪被吃掉的得分为： 如果第一只老鼠吃掉，则得分为 reward1[i] 。如果第二只老鼠吃掉，则得分为 reward2[i] 。给你一个正整数数组 reward1 ，一个正整数数组 reward2 ，和一个非负整数 k 。 请你返回第一只老鼠恰好吃掉 k 块奶酪的情况下，最大 得分为多少">
+    <meta name="description" content="671. 二叉树中第二小的节点给定一个非空特殊的二叉树，每个节点都是正数，并且每个节点的子节点数量只能为 2 或 0。如果一个节点有两个子节点的话，那么该节点的值等于两个子节点中较小的一个。 更正式地说，即 root.val &#x3D; min(root.left.val, root.right.val) 总成立。 给出这样的一个二叉树，你需要输出所有节点中的 第二小的值 。 如果第二小的值不存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 2611.老鼠和奶酪">
-<meta property="og:url" content="http://example.com/2023/06/07/LC2611%E8%80%81%E9%BC%A0%E5%92%8C%E5%A5%B6%E9%85%AA/index.html">
+<meta property="og:title" content="LC 671 二叉树中第二小的节点">
+<meta property="og:url" content="http://example.com/2023/06/08/LC671%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%B0%8F%E7%9A%84%E8%8A%82%E7%82%B9/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="2611. 老鼠和奶酪有两只老鼠和 n 块不同类型的奶酪，每块奶酪都只能被其中一只老鼠吃掉。 下标为 i 处的奶酪被吃掉的得分为： 如果第一只老鼠吃掉，则得分为 reward1[i] 。如果第二只老鼠吃掉，则得分为 reward2[i] 。给你一个正整数数组 reward1 ，一个正整数数组 reward2 ，和一个非负整数 k 。 请你返回第一只老鼠恰好吃掉 k 块奶酪的情况下，最大 得分为多少">
+<meta property="og:description" content="671. 二叉树中第二小的节点给定一个非空特殊的二叉树，每个节点都是正数，并且每个节点的子节点数量只能为 2 或 0。如果一个节点有两个子节点的话，那么该节点的值等于两个子节点中较小的一个。 更正式地说，即 root.val &#x3D; min(root.left.val, root.right.val) 总成立。 给出这样的一个二叉树，你需要输出所有节点中的 第二小的值 。 如果第二小的值不存">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-07T10:56:29.000Z">
-<meta property="article:modified_time" content="2023-06-07T11:54:57.744Z">
+<meta property="article:published_time" content="2023-06-08T11:22:20.000Z">
+<meta property="article:modified_time" content="2023-06-08T11:45:57.898Z">
 <meta property="article:author" content="clearSky">
-<meta property="article:tag" content="蓝桥刷题">
-<meta property="article:tag" content="贪心">
-<meta property="article:tag" content="排序">
+<meta property="article:tag" content="二叉树">
+<meta property="article:tag" content="深搜">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LC 2611.老鼠和奶酪 - clearskycpy</title>
+  <title>LC 671 二叉树中第二小的节点 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 2611.老鼠和奶酪"></span>
+            <span id="subtitle" data-typed-text="LC 671 二叉树中第二小的节点"></span>
           
         </div>
 
@@ -215,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-07 18:56" pubdate>
-          2023年6月7日
+        <time datetime="2023-06-08 19:22" pubdate>
+          2023年6月8日
         </time>
       </span>
     
@@ -260,12 +259,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC 2611.老鼠和奶酪</h1>
+            <h1 style="display: none">LC 671 二叉树中第二小的节点</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年6月7日
+                    本文最后更新于：2023年6月8日
                   
                 
               </p>
@@ -273,21 +272,26 @@
             
               <div class="markdown-body">
                 
-                <h2 id="2611-老鼠和奶酪"><a href="#2611-老鼠和奶酪" class="headerlink" title="2611. 老鼠和奶酪"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/mice-and-cheese/">2611. 老鼠和奶酪</a></h2><p>有两只老鼠和 n 块不同类型的奶酪，每块奶酪都只能被其中一只老鼠吃掉。</p>
-<p>下标为 i 处的奶酪被吃掉的得分为：</p>
-<p>如果第一只老鼠吃掉，则得分为 reward1[i] 。<br>如果第二只老鼠吃掉，则得分为 reward2[i] 。<br>给你一个正整数数组 reward1 ，一个正整数数组 reward2 ，和一个非负整数 k 。</p>
-<p>请你返回第一只老鼠恰好吃掉 k 块奶酪的情况下，最大 得分为多少。</p>
-<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs tap">输入：reward1 = [1,1,3,4], reward2 = [4,4,1,1], k = 2<br>输出：15<br>解释：这个例子中，第一只老鼠吃掉第 2 和<span class="hljs-number"> 3 </span>块奶酪（下标从<span class="hljs-number"> 0 </span>开始），第二只老鼠吃掉第<span class="hljs-number"> 0 </span>和<span class="hljs-number"> 1 </span>块奶酪。<br>总得分为<span class="hljs-number"> 4 </span>+<span class="hljs-number"> 4 </span>+<span class="hljs-number"> 3 </span>+<span class="hljs-number"> 4 </span>=<span class="hljs-number"> 15 </span>。<br>15 是最高得分。<br></code></pre></td></tr></table></figure>
-
-
-
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>因为两个老鼠吃到的奶酪都是固定的，怎么才能使总得分变成最高的呢？</p>
-<ul>
-<li>按照两个数组的对应位置的差值排序，也就是两只老鼠吃同一块奶酪对总得分贡献的差值。</li>
-<li>因为排序了，所以可以前k个给第一只老鼠，后面的给第二只老鼠，因为前k个给第一只老鼠能够得到的综合是最大的，可以假设不是吃前k的得到的值会不会更大。</li>
-<li>所以上面的就是结合了贪心和排序的解法</li>
+                <h2 id="671-二叉树中第二小的节点"><a href="#671-二叉树中第二小的节点" class="headerlink" title="671. 二叉树中第二小的节点"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/second-minimum-node-in-a-binary-tree/">671. 二叉树中第二小的节点</a></h2><p>给定一个非空特殊的二叉树，每个节点都是正数，并且每个节点的子节点数量只能为 2 或 0。如果一个节点有两个子节点的话，那么该节点的值等于两个子节点中较小的一个。</p>
+<p>更正式地说，即 root.val &#x3D; min(root.left.val, root.right.val) 总成立。</p>
+<p>给出这样的一个二叉树，你需要输出所有节点中的 第二小的值 。</p>
+<p>如果第二小的值不存在的话，输出 -1 。</p>
+<p>![实例一][&#x2F;img&#x2F;clearSky&#x2F;blogImg&#x2F;image-20230608192406324.png]</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ol>
+<li>哈希加排序<ol>
+<li>使用随便什么遍历方式将树遍历下来，再使用set表将数据存储起来。然后排序找到第二小的值</li>
+</ol>
+</li>
+<li>利用题目给出的特性<ol>
+<li><strong>root.val &#x3D; min(root.left.val, root.right.val)</strong>   和  <strong>每个节点的子节点数量只能为 2 或 0</strong></li>
+<li>通过这个特性就可以知道，根是最小的，当遍历到两个子节点的时候如果不一样的话，就说明这个子节点更小，通过比较左右两边两个更小的子节点哪个更小确定哪个第二小的结点。</li>
+</ol>
+</li>
+</ol>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><ul>
+<li>哈希表的方式不做实现</li>
 </ul>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">miceAndCheese</span><span class="hljs-params">(<span class="hljs-type">int</span>[] reward1, <span class="hljs-type">int</span>[] reward2, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-type">int</span>[][] rewords = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[reward1.length][<span class="hljs-number">2</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; rewords.length; i++) &#123;<br>            rewords[i][<span class="hljs-number">0</span>] = reward1[i];<br>            rewords[i][<span class="hljs-number">1</span>] = reward2[i];<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        Arrays.sort(rewords,(a,b) -&gt; (b[<span class="hljs-number">0</span>] - b[<span class="hljs-number">1</span>]) - (a[<span class="hljs-number">0</span>] - a[<span class="hljs-number">1</span>]));  <span class="hljs-comment">// 将数组按照reward1 降序排序 a</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; k; i++) &#123;<br>            res += rewords[i][<span class="hljs-number">0</span>];<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> k; i &lt;rewords.length; i++) &#123;<br>            res += rewords[i][<span class="hljs-number">1</span>];<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode() &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span><br><span class="hljs-comment"> *         this.val = val;</span><br><span class="hljs-comment"> *         this.left = left;</span><br><span class="hljs-comment"> *         this.right = right;</span><br><span class="hljs-comment"> *     &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findSecondMinimumValue</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>        dfs(root,root.val);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(TreeNode root, <span class="hljs-type">int</span> cur)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span>;<br>        <span class="hljs-keyword">if</span> (root.val != cur) &#123;<br>            <span class="hljs-keyword">if</span> (ans == -<span class="hljs-number">1</span>) ans = root.val;<br>            <span class="hljs-keyword">else</span> &#123;<br>                ans = Math.min(root.val,ans);<br>            &#125;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        dfs(root.left,cur);<br>        dfs(root.right,cur);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -301,11 +305,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%93%9D%E6%A1%A5%E5%88%B7%E9%A2%98/">#蓝桥刷题</a>
+        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
       
-        <a href="/tags/%E8%B4%AA%E5%BF%83/">#贪心</a>
-      
-        <a href="/tags/%E6%8E%92%E5%BA%8F/">#排序</a>
+        <a href="/tags/%E6%B7%B1%E6%90%9C/">#深搜</a>
       
     </div>
   
@@ -317,8 +319,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 2611.老鼠和奶酪</div>
-      <div>http://example.com/2023/06/07/LC2611老鼠和奶酪/</div>
+      <div>LC 671 二叉树中第二小的节点</div>
+      <div>http://example.com/2023/06/08/LC671二叉树中第二小的节点/</div>
     </div>
     <div class="license-meta">
       
@@ -330,7 +332,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年6月7日</div>
+          <div>2023年6月8日</div>
         </div>
       
       
@@ -362,9 +364,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/08/LC671%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%B0%8F%E7%9A%84%E8%8A%82%E7%82%B9/" title="LC 671 二叉树中第二小的节点">
+                      <a href="/2023/06/08/%E8%93%9D%E6%A1%A5java%E8%80%83%E8%AF%95%E6%8A%80%E5%B7%A7/" title="蓝桥java考试技巧">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 671 二叉树中第二小的节点</span>
+                        <span class="hidden-mobile">蓝桥java考试技巧</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -372,8 +374,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/06/LC2352-%E7%9B%B8%E7%AD%89%E8%A1%8C%E5%88%97%E5%AF%B9/" title="LC2352_相等行列对">
-                        <span class="hidden-mobile">LC2352_相等行列对</span>
+                      <a href="/2023/06/07/LC2611%E8%80%81%E9%BC%A0%E5%92%8C%E5%A5%B6%E9%85%AA/" title="LC 2611.老鼠和奶酪">
+                        <span class="hidden-mobile">LC 2611.老鼠和奶酪</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
