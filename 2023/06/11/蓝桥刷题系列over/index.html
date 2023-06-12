@@ -16,23 +16,23 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="132. 分割回文串 II给你一个字符串 s，请你将 s 分割成一些子串，使每个子串都是回文。返回符合要求的 最少分割次数 。 123输入：s &#x3D; &quot;aab&quot;输出：1解释：只需一次分割就可将 s 分割成 [&quot;aa&quot;,&quot;b&quot;] 这样两个回文子串。  解题思路首先总体上来说是动态规划，另 字符串 s 的 长度为 n  定义dp[i] 为 以i">
+    <meta name="description" content="蓝桥刷题系列到这也差不多结束了……从第一次接触蓝桥杯到国赛结束也有个将近一年半了把。 ​	那个时候是通过代码随想录入门算法的学习的。虽然之前也看过一些视频，好像叫啥蓝桥云课把，哔哩哔哩上面的，这个有用，但是效果不怎么好，建议想拿奖的还是老老实实的系统的学习一下算法。类似于代码随想录的教学有很多，都是可以的。bilibili上面还有一个左程云的算法视频。那个时间比较长，当然讲的也比较多，有些比较难，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="132. 分割回文串 II">
-<meta property="og:url" content="http://example.com/2023/06/08/%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B22/index.html">
+<meta property="og:title" content="蓝桥刷题系列over">
+<meta property="og:url" content="http://example.com/2023/06/11/%E8%93%9D%E6%A1%A5%E5%88%B7%E9%A2%98%E7%B3%BB%E5%88%97over/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="132. 分割回文串 II给你一个字符串 s，请你将 s 分割成一些子串，使每个子串都是回文。返回符合要求的 最少分割次数 。 123输入：s &#x3D; &quot;aab&quot;输出：1解释：只需一次分割就可将 s 分割成 [&quot;aa&quot;,&quot;b&quot;] 这样两个回文子串。  解题思路首先总体上来说是动态规划，另 字符串 s 的 长度为 n  定义dp[i] 为 以i">
+<meta property="og:description" content="蓝桥刷题系列到这也差不多结束了……从第一次接触蓝桥杯到国赛结束也有个将近一年半了把。 ​	那个时候是通过代码随想录入门算法的学习的。虽然之前也看过一些视频，好像叫啥蓝桥云课把，哔哩哔哩上面的，这个有用，但是效果不怎么好，建议想拿奖的还是老老实实的系统的学习一下算法。类似于代码随想录的教学有很多，都是可以的。bilibili上面还有一个左程云的算法视频。那个时间比较长，当然讲的也比较多，有些比较难，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-08T12:07:37.000Z">
-<meta property="article:modified_time" content="2023-06-11T15:47:06.833Z">
+<meta property="article:published_time" content="2023-06-11T14:47:18.000Z">
+<meta property="article:modified_time" content="2023-06-11T15:49:39.289Z">
 <meta property="article:author" content="clearSky">
 <meta property="article:tag" content="蓝桥刷题">
-<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="一些">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>132. 分割回文串 II - clearskycpy</title>
+  <title>蓝桥刷题系列over - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -192,13 +192,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/clearSky/banner03.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="132. 分割回文串 II"></span>
+            <span id="subtitle" data-typed-text="蓝桥刷题系列over"></span>
           
         </div>
 
@@ -214,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-08 20:07" pubdate>
-          2023年6月8日
+        <time datetime="2023-06-11 22:47" pubdate>
+          2023年6月11日
         </time>
       </span>
     
@@ -259,7 +259,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">132. 分割回文串 II</h1>
+            <h1 style="display: none">蓝桥刷题系列over</h1>
             
               <p class="note note-info">
                 
@@ -272,25 +272,16 @@
             
               <div class="markdown-body">
                 
-                <h2 id="132-分割回文串-II"><a href="#132-分割回文串-II" class="headerlink" title="132. 分割回文串 II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/palindrome-partitioning-ii/">132. 分割回文串 II</a></h2><p>给你一个字符串 <code>s</code>，请你将 <code>s</code> 分割成一些子串，使每个子串都是回文。返回符合要求的 <strong>最少分割次数</strong> 。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">输入：s = <span class="hljs-string">&quot;aab&quot;</span><br>输出：<span class="hljs-number">1</span><br>解释：只需一次分割就可将 s 分割成 [<span class="hljs-string">&quot;aa&quot;</span>,<span class="hljs-string">&quot;b&quot;</span>] 这样两个回文子串。<br></code></pre></td></tr></table></figure>
-
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>首先总体上来说是动态规划，另 字符串 s 的 长度为 n</p>
-<ul>
-<li>定义dp[i] 为 以i 结尾的字符串的最少回文分割次数,所以结果就是 dp[n]</li>
-<li>如何推导 dp[i] <ul>
-<li>如果整个0 - i 都是一个回文字符串，那么最少分割次数就是0.如果不是的话，我们假设最后一个分割出来的子字符串的起点为 j （j ∈ 0 - i）如果 i - j 是一个回文串的话，那么此时 dp[i] &#x3D; dp[j-1] + 1;</li>
-<li>遍历不同的起点取最小值</li>
-</ul>
-</li>
-</ul>
-<h4 id="回文串查找优化"><a href="#回文串查找优化" class="headerlink" title="回文串查找优化"></a>回文串查找优化</h4><ul>
-<li>这里会有很多次回文串的判断，如果每次都判断一遍显然是非常费时的。所以需要建立一个n * n 的数组对 i - j 范围是否是回文串进行预处理。</li>
-<li>预处理也有规律的 因为 i - j 依赖于 i+ 1 — j - 1 。 所以遍历的时候应该先从大到小遍历i 从小到大遍历j</li>
-</ul>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">minCut</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">char</span>[] cs = s.toCharArray();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> cs.length;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n + <span class="hljs-number">1</span>];  <span class="hljs-comment">// 从1 开始 0位置作为哨兵</span><br>        <span class="hljs-type">boolean</span>[][] g = <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[n + <span class="hljs-number">1</span>][n + <span class="hljs-number">1</span>];<br><span class="hljs-comment">//        预处理回文串</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> n; i &gt; <span class="hljs-number">0</span>; i--) &#123;  <span class="hljs-comment">// i 从大到小</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i; j &lt;= n; j++) &#123; <span class="hljs-comment">// j 从小到大</span><br>                <span class="hljs-keyword">if</span> (i == j) g[i][j] = <span class="hljs-literal">true</span>;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i + <span class="hljs-number">1</span> == j) &#123;  <span class="hljs-comment">// i 和 j 位置连续</span><br>                    g[i][j] = (cs[i - <span class="hljs-number">1</span>] == cs[j - <span class="hljs-number">1</span>]);<br>                &#125; <span class="hljs-keyword">else</span> g[i][j] = g[i + <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>] &amp;&amp; (cs[i - <span class="hljs-number">1</span>] == cs[j - <span class="hljs-number">1</span>]);<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; dp.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (g[<span class="hljs-number">1</span>][i]) &#123;  <span class="hljs-comment">// 如果是一整个回文串 直接返回 0</span><br>                dp[i] = <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">continue</span>;<br>            &#125;<br>            dp[i] = Integer.MAX_VALUE;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt;= i; j++) &#123;  <span class="hljs-comment">// 最后一个子序列的初始位置</span><br>                <span class="hljs-keyword">if</span> (g[j][i]) &#123;<br>                    dp[i] = Math.min(dp[i],dp[j - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[n];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
+                <h3 id="蓝桥刷题系列到这也差不多结束了……"><a href="#蓝桥刷题系列到这也差不多结束了……" class="headerlink" title="蓝桥刷题系列到这也差不多结束了……"></a>蓝桥刷题系列到这也差不多结束了……</h3><p>从第一次接触蓝桥杯到国赛结束也有个将近一年半了把。</p>
+<p>​	那个时候是通过代码随想录入门算法的学习的。虽然之前也看过一些视频，好像叫啥蓝桥云课把，哔哩哔哩上面的，这个有用，但是效果不怎么好，建议想拿奖的还是老老实实的系统的学习一下算法。类似于代码随想录的教学有很多，都是可以的。bilibili上面还有一个左程云的算法视频。那个时间比较长，当然讲的也比较多，有些比较难，他讲的动态规划很好，还有记忆化搜索。以及还有一些数据结构也会介绍。反正知识点很多，学全了基本上大多数题都能动手，所以理解起来也比较难</p>
+<p>​	在力扣上面也写了六百多个题了，有些数水题，也有些是详细的写的。都有，还记得刚刚开始写的时候一个冒泡排序都踉踉跄跄的。后面写得多了之后，基本上能够第一时间看出来是一个什么类型的题目，虽说还是很多做不出来。（或许是个人能力问题，脑子不够用哈哈）不过也有好的时候，</p>
+<p>​	相比较身边的人来说，我还是比较喜欢算法的那一类的，我可以为了一道题写上一两个小时，一两天。去查数据结构怎么实现，也偶尔喜欢写一写总结，虽然没什么影响，也就是将文章当做是自己诉说的对象，也就是想通过写文章理自己的思路，亦是加深自己的印象的效果。每次写完确实也能感觉到理解稍微会好那么一丢丢。逐渐有了自己的方法论。也认识到了一些厉害的博主其中印象最深的可以说是三叶把，毕竟我的博客都是他的同款主题。</p>
+<p>​	去年拿的是一个省二，所以也止步于省赛了。但是通过去年的竞赛，我能感受到我对算法的热爱，如果不是脑力不够还真是想多了解一下。然后比赛结束之后，我就有了力扣打卡的习惯，陆陆续续写到了现在。也就是说这一年里还是花了些时间去学习算法的。我觉得这个算是比较有意义的东西。所以理所当然的这一次拿到了省一，也进了决赛圈。也算是之前对自己的一种报答把。</p>
+<p>​	因为今年是大三，所以后续国赛前也没有准备很多的东西，就在前面一周左右把图稍微看了一下，也不知道算用上了还是没有用上。反正已经结束了。</p>
+<p>​	之前会觉得等比赛结束了我会有一种春风得意马蹄疾，一日看尽长安花的感觉，毕竟我们分院也就几个人进了决赛，甚至我们班只有我一个。后面经历一些事情之后，感觉其实也没有什么，我努力的方向或许也没有那么能够带给人成就感。只能说对自己有了一个交代把。</p>
+<p>​	国赛也在昨天结束了，依旧没有做出来动态规划，学的字典树，并查集也没有用上，正常发挥把。</p>
+<p>所以到这里我最认真对待的竞赛，也是我所认为的最重要的竞赛到此也结束了，后续应该也不会再有蓝桥刷题标签的log。</p>
+<h2 id="over"><a href="#over" class="headerlink" title="over~"></a>over~</h2>
                 
               </div>
             
@@ -304,7 +295,7 @@
       
         <a href="/tags/%E8%93%9D%E6%A1%A5%E5%88%B7%E9%A2%98/">#蓝桥刷题</a>
       
-        <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
+        <a href="/tags/%E4%B8%80%E4%BA%9B/">#一些</a>
       
     </div>
   
@@ -316,8 +307,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>132. 分割回文串 II</div>
-      <div>http://example.com/2023/06/08/分割回文串2/</div>
+      <div>蓝桥刷题系列over</div>
+      <div>http://example.com/2023/06/11/蓝桥刷题系列over/</div>
     </div>
     <div class="license-meta">
       
@@ -329,7 +320,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年6月8日</div>
+          <div>2023年6月11日</div>
         </div>
       
       
@@ -361,9 +352,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/09/%E5%9B%BD%E8%B5%9B%E5%A4%8D%E4%B9%A0%E7%AF%87/" title="国赛复习篇">
+                      <a href="/2023/06/11/e%E7%AD%BE%E5%AE%9D%E4%BA%8C%E9%9D%A2/" title="e签宝二面">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">国赛复习篇</span>
+                        <span class="hidden-mobile">e签宝二面</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -371,8 +362,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/08/%E8%93%9D%E6%A1%A5java%E8%80%83%E8%AF%95%E6%8A%80%E5%B7%A7/" title="蓝桥java考试技巧">
-                        <span class="hidden-mobile">蓝桥java考试技巧</span>
+                      <a href="/2023/06/09/LC576%E5%87%BA%E7%95%8C%E7%9A%84%E8%B7%AF%E5%BE%84%E6%95%B0/" title="LC576出界的路径数">
+                        <span class="hidden-mobile">LC576出界的路径数</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

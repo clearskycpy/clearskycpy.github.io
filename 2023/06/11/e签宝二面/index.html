@@ -1,0 +1,769 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/clearSky/ClearSky_tab.png">
+  <link rel="icon" href="/img/clearSky/ClearSky_tab.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="clearSky">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="自我介绍  面试官你好，我是陈鹏宇，是一位大三学生，我的专业是软件工程。我主修的是java相关的技术栈，对Java编程有一定的理解，并且学习了Spring框架，这使我能够进入执行应用程序的开发和构建。我曾参加过蓝桥杯和计算机作品大赛等项目，通过这些比赛锻造了我的技术和解决问题的能力。 也自己开发过一些项目，使用Java编程能力和Spring框架进行开发。我发现自己对软件测试产生了一定的兴趣，虽然我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="e签宝二面">
+<meta property="og:url" content="http://example.com/2023/06/11/e%E7%AD%BE%E5%AE%9D%E4%BA%8C%E9%9D%A2/index.html">
+<meta property="og:site_name" content="clearskycpy">
+<meta property="og:description" content="自我介绍  面试官你好，我是陈鹏宇，是一位大三学生，我的专业是软件工程。我主修的是java相关的技术栈，对Java编程有一定的理解，并且学习了Spring框架，这使我能够进入执行应用程序的开发和构建。我曾参加过蓝桥杯和计算机作品大赛等项目，通过这些比赛锻造了我的技术和解决问题的能力。 也自己开发过一些项目，使用Java编程能力和Spring框架进行开发。我发现自己对软件测试产生了一定的兴趣，虽然我">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-11T15:50:56.000Z">
+<meta property="article:modified_time" content="2023-06-12T04:59:49.362Z">
+<meta property="article:author" content="clearSky">
+<meta property="article:tag" content="面筋">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>e签宝二面 - clearskycpy</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"Copy"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>clearSky</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="e签宝二面"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        clearSky
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-11 23:50" pubdate>
+          2023年6月11日
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">e签宝二面</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年6月12日
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h3><p>  面试官你好，我是陈鹏宇，是一位大三学生，我的专业是软件工程。我主修的是java相关的技术栈，对Java编程有一定的理解，并且学习了Spring框架，这使我能够进入执行应用程序的开发和构建。我曾参加过蓝桥杯和计算机作品大赛等项目，通过这些比赛锻造了我的技术和解决问题的能力。</p>
+<p>也自己开发过一些项目，使用Java编程能力和Spring框架进行开发。我发现自己对软件测试产生了一定的兴趣，虽然我目前在测试方面的知识还有待提高，但我非常愿意学习和掌握相关的测试理论和方法。</p>
+<p>我有很强的学习能力和自我驱动力，我计划通过自学来丰富自己的软件测试知识，并熟悉经常使用的测试工具。我希望能足够在这个领地发展自己，不断提升自己的能力，并为团队的成功做出贡献。</p>
+<p>非常感谢您给我这个机会，我期待能够在面试中进行一步展示我的能力和潜能。谢谢！</p>
+<h3 id="redis相关知识"><a href="#redis相关知识" class="headerlink" title="redis相关知识"></a>redis相关知识</h3><h4 id="简要介绍一下redis"><a href="#简要介绍一下redis" class="headerlink" title="简要介绍一下redis"></a>简要介绍一下redis</h4><ul>
+<li>​	redis是一种开源的内存数据库，他可以用作缓存，消息队列，它支持多种数据结构，如 字符串、哈希表、列表、集合和有序集合。</li>
+<li>redis和传统的表结构的数据库有所不同，它是以键值对的形式存储数据，并且数据存储在内存中，这使得它具有更高的读写性能。</li>
+<li>Redis的主要特点包括：快速，持久化和高可用</li>
+<li>Redis的持久化机制包括RDB和AOF两种方式。<strong>RDB是一种快照机制</strong>，可以将当前内存中的数据保存到硬盘上的二进制文件中。AOF（Append-Only File）是一种日志机制，记录了所有对Redis服务器的写操作，通过重放日志来恢复数据。</li>
+<li>Redis通过单线程的方式处理并发访问。它使用了事件驱动的模型和非阻塞I&#x2F;O操作，可以处理大量并发连接，并且具有很低的延迟。</li>
+<li>Redis通过主从复制和哨兵机制实现高可用性。主从复制将数据从主节点复制到多个从节点，以实现数据的冗余和读写分离。哨兵机制监控主节点和从节点的状态，并在主节点故障时自动进行故障转移。</li>
+</ul>
+<h3 id="HashMap底层原理和扩容机制："><a href="#HashMap底层原理和扩容机制：" class="headerlink" title="HashMap底层原理和扩容机制："></a>HashMap底层原理和扩容机制：</h3><ul>
+<li>HashMap使用数组和链表&#x2F;红黑树实现。通过哈希函数将键映射到数组索引位置。</li>
+<li>当发生哈希冲突时，即多个键映射到同一数组索引位置，它们会以链表或红黑树的形式存储在该位置。</li>
+<li>当HashMap的容量超过阈值时，会触发扩容机制。扩容会创建一个新的更大的数组，并将所有键重新分配到新的数组位置上。</li>
+</ul>
+<h3 id="多线程的创建方式："><a href="#多线程的创建方式：" class="headerlink" title="多线程的创建方式："></a>多线程的创建方式：</h3><ul>
+<li>继承Thread类：创建一个继承自Thread类的子类，重写run()方法，并通过调用start()方法来启动线程。</li>
+<li>实现Runnable接口：实现Runnable接口，重写run()方法，并通过创建Thread对象并将Runnable实例作为参数传递，再调用start()方法来启动线程。</li>
+<li>使用线程池：使用Executor框架中的线程池来管理线程的创建和执行。</li>
+</ul>
+<h3 id="线程池参数和执行流程："><a href="#线程池参数和执行流程：" class="headerlink" title="线程池参数和执行流程："></a>线程池参数和执行流程：</h3><ul>
+<li>线程池的参数包括核心线程数、最大线程数、任务队列、线程存活时间等。</li>
+<li>执行流程：线程池首先会创建核心线程，当任务数量超过核心线程数时，任务会被放入任务队列中。当任务队列已满且线程数未达到最大线程数时，线程池会创建新线程执行任务。当线程池中的线程数量超过核心线程数且一段时间内无任务执行时，多余的线程会被回收。</li>
+</ul>
+<h3 id="MySQL索引分类："><a href="#MySQL索引分类：" class="headerlink" title="MySQL索引分类："></a>MySQL索引分类：</h3><ul>
+<li>主要的MySQL索引分类有聚集索引、非聚集索引、唯一索引、全文索引和空间索引。</li>
+</ul>
+<h3 id="索引为什么使用B-树："><a href="#索引为什么使用B-树：" class="headerlink" title="索引为什么使用B+树："></a>索引为什么使用B+树：</h3><ul>
+<li>B+树是一种平衡的多路搜索树，适用于范围查询和范围操作。</li>
+<li>B+树的叶子节点构成一个有序链表，便于范围查询和遍历。</li>
+<li>B+树的内部节点不存储数据，减少了磁盘IO操作，提高了查询效率。</li>
+<li>B+树适合磁盘存储，因为它的节点大小通常和磁盘页大小相当。</li>
+</ul>
+<h3 id="聚集索引和非聚集索引的区别："><a href="#聚集索引和非聚集索引的区别：" class="headerlink" title="聚集索引和非聚集索引的区别："></a>聚集索引和非聚集索引的区别：</h3><ul>
+<li>聚集索引的叶子节点存储了表的数据行，非聚集索引的叶子节点存储了索引的键值和指向对应数据行的指针。</li>
+<li>表中只能有一个聚集索引，它决定了数据在磁盘上的物理排序。非聚集索引可以有多个。</li>
+<li>聚集索引的叶子节点本身就是数据行，可以直接满足覆盖索引的查询。非聚集索引需要通过索引查找到主键值，然后再通过主键值找到对应的数据行。</li>
+</ul>
+<h3 id="InnoDB和MyISAM的区别："><a href="#InnoDB和MyISAM的区别：" class="headerlink" title="InnoDB和MyISAM的区别："></a>InnoDB和MyISAM的区别：</h3><ul>
+<li>InnoDB支持事务，而MyISAM不支持。</li>
+<li>InnoDB实现了行级锁定，可以提供更好的并发性能，而MyISAM实现的是表级锁定。</li>
+<li>InnoDB支持外键关系和崩溃恢复，MyISAM不支持。</li>
+<li>InnoDB的性能相对较好，适合多写多读的场景。MyISAM适用于以读为主的场景。</li>
+</ul>
+<h3 id="什么是mvcc"><a href="#什么是mvcc" class="headerlink" title="什么是mvcc"></a>什么是mvcc</h3><ul>
+<li>MVCC（多版本并发控制）是一种并发控制技术，用于数据库的并发读写操作。它通过为每个事务创建一个唯一的时间戳，并在事务执行期间保留数据的多个版本，实现了高并发性和隔离性。</li>
+</ul>
+<h3 id="jvm内存模型"><a href="#jvm内存模型" class="headerlink" title="jvm内存模型"></a>jvm内存模型</h3><ul>
+<li>JVM内存模型定义了Java程序在内存中的组织方式。它包括方法区、堆、栈、本地方法栈和程序计数器等部分。它规定了线程之间的共享变量的可见性、原子性和有序性。</li>
+</ul>
+<h3 id="常见的垃圾回收算法"><a href="#常见的垃圾回收算法" class="headerlink" title="常见的垃圾回收算法"></a>常见的垃圾回收算法</h3><ul>
+<li>常见的垃圾回收算法包括标记-清除、复制、标记-整理和分代收集等。这些算法用于检测和回收不再使用的对象，释放内存空间。</li>
+</ul>
+<h3 id="Redis的过期淘汰策略"><a href="#Redis的过期淘汰策略" class="headerlink" title="Redis的过期淘汰策略"></a>Redis的过期淘汰策略</h3><ul>
+<li>Redis的过期淘汰策略指定了在Redis中当键过期时如何释放内存。常见的过期淘汰策略有定时删除、惰性删除和定期删除等。</li>
+</ul>
+<h3 id="redis持久化方式"><a href="#redis持久化方式" class="headerlink" title="redis持久化方式"></a>redis持久化方式</h3><ul>
+<li>Redis的持久化有两种方式：RDB（快照）和AOF（日志）。RDB将Redis的内存数据以二进制格式保存到磁盘文件中，AOF则将写操作追加到日志文件中。这两种方式可根据需求选择，用于数据的持久化和恢复。</li>
+</ul>
+<h3 id="mysql部分"><a href="#mysql部分" class="headerlink" title="mysql部分"></a>mysql部分</h3><h4 id="请解释一下数据库事务的概念和ACID特性："><a href="#请解释一下数据库事务的概念和ACID特性：" class="headerlink" title="请解释一下数据库事务的概念和ACID特性："></a>请解释一下数据库事务的概念和ACID特性：</h4><p><strong>数据库事务是指一组数据库操作组成的逻辑工作单元，它要么全部成功执行，要么全部回滚到初始状态，以保证数据的一致性和完整性。</strong>ACID是指数据库事务应具备的四个特性：</p>
+<ol>
+<li><strong>原子性（Atomicity）</strong>：事务是一个不可分割的工作单元，要么全部执行成功，要么全部回滚到初始状态，不存在中间状态。如果事务中的任何一个操作失败，整个事务将被回滚，数据库状态不会受到影响。</li>
+<li><strong>一致性（Consistency）</strong>：事务在执行前和执行后，数据库的完整性约束没有被破坏。事务的执行将数据库从一个一致的状态转移到另一个一致的状态，不会出现数据冲突或矛盾。</li>
+<li><strong>隔离性（Isolation）</strong>：多个事务并发执行时，每个事务都应该像是在独立运行，相互之间不会产生干扰。隔离性确保每个事务在未提交之前对其他事务是不可见的，避免了并发执行时的数据不一致问题。</li>
+<li><strong>持久性（Durability）</strong>：一旦事务提交成功，其所做的修改将永久保存在数据库中，并且对于后续的数据访问和故障恢复都是可见的。即使在系统发生故障或重启后，事务提交的结果也不会丢失。</li>
+</ol>
+<p>ACID特性确保了数据库事务的可靠性和一致性。通过使用事务，可以将多个操作作为一个逻辑单元进行处理，保证数据的正确性和完整性，同时提供了并发控制和故障恢复的机制。在设计和实现数据库应用时，合理利用事务可以确保数据操作的可靠性和稳定性。</p>
+<h4 id="什么是数据库索引？请说明其作用和优势："><a href="#什么是数据库索引？请说明其作用和优势：" class="headerlink" title="什么是数据库索引？请说明其作用和优势："></a>什么是数据库索引？请说明其作用和优势：</h4><p><strong>数据库索引是一种数据结构，用于加快数据库表中数据的检索速度</strong>。它类似于书籍的目录，可以根据特定的列或字段值快速定位到对应的数据行，避免了全表扫描的开销。</p>
+<p>索引的作用和优势包括：</p>
+<ol>
+<li><strong>提高检索速度</strong>：索引可以大大减少数据库系统需要扫描的数据量。通过索引，数据库可以快速定位到符合查询条件的数据行，加快数据检索的速度。</li>
+<li><strong>加速排序和聚合操作</strong>：对于包含索引的列进行排序和聚合操作时，数据库可以利用索引的有序性，快速完成排序和聚合计算。</li>
+<li><strong>提高数据唯一性和完整性</strong>：通过在唯一列上创建唯一索引，可以保证数据的唯一性。通过在外键列上创建索引，可以确保引用完整性。</li>
+<li><strong>优化表连接操作</strong>：当多个表进行连接查询时，索引可以加快表连接的速度，避免全表扫描，提高查询效率。</li>
+<li><strong>减少磁盘IO开销</strong>：索引存储在磁盘上，可以减少数据库系统需要读取的磁盘数据量，从而减少磁盘IO开销。</li>
+</ol>
+<p>然而，索引的使用也存在一些<strong>限制和劣势</strong>：</p>
+<ol>
+<li><strong>索引需要占用存储空间</strong>：索引需要额外的存储空间来存储索引数据结构和索引值。</li>
+<li><strong>更新操作的开销</strong>：当对包含索引的列进行更新操作时，需要同时更新索引，可能会增加写操作的开销。</li>
+<li><strong>索引需要维护</strong>：当表中的数据发生变化时，索引需要进行维护，包括插入、更新和删除操作，这可能会对性能产生一定影响。</li>
+</ol>
+<p>因此，在设计数据库时，需要根据具体的应用场景和查询需求，合理地选择和使用索引，权衡索引的优势和劣势，以达到最佳的性能和可靠性。</p>
+<h4 id="请解释一下数据库连接池的作用和优势："><a href="#请解释一下数据库连接池的作用和优势：" class="headerlink" title="请解释一下数据库连接池的作用和优势："></a>请解释一下数据库连接池的作用和优势：</h4><p>数据库连接池是一种<strong>管理和复用数据库连接的技术</strong>。它通过<strong>预先创建一定数量的数据库连接</strong>，并将其保存在连接池中，<strong>供应用程序使用和复用</strong>，<strong>从而减少了数据库连接的创建和销毁开销</strong>。</p>
+<p>数据库连接池的作用和优势包括：</p>
+<ol>
+<li><p><strong>提高性能和响应速度</strong>：数据库连接的创建和销毁是一项开销较大的操作。通过使用连接池，可以避免频繁地创建和销毁数据库连接，减少了系统的开销，从而提高了性能和响应速度。</p>
+</li>
+<li><p><strong>资源的有效利用</strong>：连接池管理一组数据库连接，这些连接可以被多个线程共享和复用。每个线程在需要时从连接池中获取连接，并在使用完成后将其返回给连接池，避免了连接的浪费和过度占用。</p>
+</li>
+<li><p><strong>控制并发连接数</strong>：通过连接池可以限制并发连接数，防止过多的连接对数据库系统造成压力，确保系统的稳定性和可靠性。</p>
+</li>
+<li><p><strong>连接的重用：连接池能够复用已经创建的连接，避免了频繁地创建和销毁连接的开销，提高了系统的效率。</strong></p>
+</li>
+<li><p><strong>连接的管理和监控</strong>：连接池可以对连接进行管理和监控，包括连接的创建、销毁、空闲连接的回收等操作。它还可以检测并处理异常连接，确保连接的可用性和稳定性。</p>
+</li>
+<li><p><strong>连接的配置和优化</strong>：连接池可以根据应用程序的需求和数据库的配置进行灵活的调整和优化，包括最大连接数、最小空闲连接数、连接的最大存活时间等参数的配置。</p>
+</li>
+</ol>
+<p>总之，<strong>数据库连接池能够有效地管理和复用数据库连接，提高系统的性能和资源利用率。通过减少连接的创建和销毁开销，并控制并发连接数，连接池能够有效地提高数据库访问的效率和响应速度，同时降低了数据库系统的负载。</strong></p>
+<h4 id="请说明一下MySQL的存储引擎及其区别："><a href="#请说明一下MySQL的存储引擎及其区别：" class="headerlink" title="请说明一下MySQL的存储引擎及其区别："></a>请说明一下MySQL的存储引擎及其区别：</h4><p>MySQL支持多种存储引擎，不同的存储引擎具有不同的特点和适用场景。以下是一些常见的MySQL存储引擎及其区别：</p>
+<ol>
+<li><strong>InnoDB</strong>：<ul>
+<li>默认的MySQL存储引擎，被广泛使用。</li>
+<li>支持事务和行级锁定，提供高并发性和数据完整性。</li>
+<li>支持外键约束和崩溃恢复功能。</li>
+<li>适用于大多数应用场景，特别是需要事务支持和高并发读写的应用。</li>
+</ul>
+</li>
+<li><strong>MyISAM</strong>：<ul>
+<li>较早的MySQL存储引擎，已在MySQL 5.5之后被InnoDB取代。</li>
+<li>不支持事务和行级锁定，只支持表级锁定。</li>
+<li>具有较高的插入和查询速度，适合读密集型应用。</li>
+<li>不支持外键约束和崩溃恢复功能。</li>
+</ul>
+</li>
+<li><strong>Memory</strong>（或称为Heap）：<ul>
+<li>将数据存储在内存中的存储引擎，数据不会持久化到磁盘。</li>
+<li>具有非常快的读写速度，适合用于临时表或缓存数据。</li>
+<li>不支持事务和持久性，数据库重启后数据会丢失。</li>
+</ul>
+</li>
+<li>Archive：<ul>
+<li>用于存储大量历史数据的存储引擎。</li>
+<li>数据以高压缩率存储，适合于只偶尔需要查询的数据。</li>
+<li>不支持事务和索引，只支持插入和查询操作。</li>
+</ul>
+</li>
+<li><strong>CSV</strong>：<ul>
+<li>将数据存储为逗号分隔值（CSV）格式的存储引擎。</li>
+<li>数据以文本文件的形式存储，适合于数据导入和导出。</li>
+<li>不支持事务、索引和崩溃恢复功能。</li>
+</ul>
+</li>
+</ol>
+<p><strong>不同的存储引擎适用于不同的应用场景。选择适合的存储引擎需要考虑应用的读写需求、并发性要求、事务支持、数据完整性以及存储空间和性能等因素。</strong>在设计数据库架构时，了解各个存储引擎的特点和区别，根据具体需求进行选择，可以获得最佳的性能和可靠性。</p>
+<h4 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h4><ol>
+<li>请介绍一下MySQL的主从复制原理和用途。</li>
+<li>请解释一下数据库连接和数据库会话的区别。</li>
+<li>请说明一下MySQL的悲观锁和乐观锁的概念，并分别列举其应用场景。</li>
+<li>请解释一下数据库连接泄露的原因和如何避免。</li>
+<li>请说明一下SQL注入的概念和防范措施。</li>
+<li>请解释一下MySQL的事务隔离级别，并说明各级别的区别和适用场景。</li>
+<li>请说明一下MySQL的查询优化策略和工具。</li>
+<li>请解释一下MySQL的锁机制和死锁的原因及处理方法。</li>
+<li>请解释一下数据库的连接数、并发连接数和线程数的关系。</li>
+<li>请说明一下MySQL的分表和分库策略，并列举常见的分表分库方式。</li>
+</ol>
+<h2 id="e签宝面试题"><a href="#e签宝面试题" class="headerlink" title="e签宝面试题"></a>e签宝面试题</h2>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%9D%A2%E7%AD%8B/">#面筋</a>
+      
+        <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">#面试题</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>e签宝二面</div>
+      <div>http://example.com/2023/06/11/e签宝二面/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>clearSky</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/11/%E8%93%9D%E6%A1%A5%E5%88%B7%E9%A2%98%E7%B3%BB%E5%88%97over/" title="蓝桥刷题系列over">
+                        <span class="hidden-mobile">蓝桥刷题系列over</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
