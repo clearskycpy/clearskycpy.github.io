@@ -16,23 +16,23 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="矩阵中的和给你一个下标从 0 开始的二维整数数组 nums 。一开始你的分数为 0 。你需要执行以下操作直到矩阵变为空： 矩阵中每一行选取最大的一个数，并删除它。如果一行中有多个最大的数，选择任意一个并删除。在步骤 1 删除的所有数字中找到最大的一个数字，将它添加到你的 分数 中。请你返回最后的 分数 。 解题思路 大顶堆 使用Java自带的大顶堆，遍历nums[0].len 每次各堆弹出一个，取">
+    <meta name="description" content="QuickSort实现一个快速排序把 实现一个快速排序最常用的方式是填坑法，快速排序有一个递归的过程，一般由两个函数构成  quickSort  递归方法，作用是将 begin  - end 的元素排序成功 函数出口是是剩下一个元素的时候就不用继续递归了，可以直接返回   sort  快排的核心逻辑，选取一个中间值，将小于该元素的元素放左边，大于该元素的元素放右边 我这里实现的时候用的是填坑法，也">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC矩阵中的和">
-<meta property="og:url" content="http://example.com/2023/08/16/LC%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E5%92%8C/index.html">
+<meta property="og:title" content="quicksort">
+<meta property="og:url" content="http://example.com/2023/08/16/quicksort/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="矩阵中的和给你一个下标从 0 开始的二维整数数组 nums 。一开始你的分数为 0 。你需要执行以下操作直到矩阵变为空： 矩阵中每一行选取最大的一个数，并删除它。如果一行中有多个最大的数，选择任意一个并删除。在步骤 1 删除的所有数字中找到最大的一个数字，将它添加到你的 分数 中。请你返回最后的 分数 。 解题思路 大顶堆 使用Java自带的大顶堆，遍历nums[0].len 每次各堆弹出一个，取">
+<meta property="og:description" content="QuickSort实现一个快速排序把 实现一个快速排序最常用的方式是填坑法，快速排序有一个递归的过程，一般由两个函数构成  quickSort  递归方法，作用是将 begin  - end 的元素排序成功 函数出口是是剩下一个元素的时候就不用继续递归了，可以直接返回   sort  快排的核心逻辑，选取一个中间值，将小于该元素的元素放左边，大于该元素的元素放右边 我这里实现的时候用的是填坑法，也">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-16T11:50:59.000Z">
-<meta property="article:modified_time" content="2023-08-16T11:53:25.505Z">
+<meta property="article:published_time" content="2023-08-16T12:12:46.000Z">
+<meta property="article:modified_time" content="2023-08-16T12:14:44.647Z">
 <meta property="article:author" content="clearSky">
 <meta property="article:tag" content="排序">
-<meta property="article:tag" content="大顶堆">
+<meta property="article:tag" content="双指针">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LC矩阵中的和 - clearskycpy</title>
+  <title>quicksort - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -192,13 +192,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/clearSky/banner01.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC矩阵中的和"></span>
+            <span id="subtitle" data-typed-text="quicksort"></span>
           
         </div>
 
@@ -214,7 +214,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-16 19:50" pubdate>
+        <time datetime="2023-08-16 20:12" pubdate>
           2023年8月16日
         </time>
       </span>
@@ -259,7 +259,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC矩阵中的和</h1>
+            <h1 style="display: none">quicksort</h1>
             
               <p class="note note-info">
                 
@@ -272,22 +272,21 @@
             
               <div class="markdown-body">
                 
-                <h2 id="矩阵中的和"><a href="#矩阵中的和" class="headerlink" title="矩阵中的和"></a>矩阵中的和</h2><p>给你一个下标从 0 开始的二维整数数组 nums 。一开始你的分数为 0 。你需要执行以下操作直到矩阵变为空：</p>
-<p>矩阵中每一行选取最大的一个数，并删除它。如果一行中有多个最大的数，选择任意一个并删除。<br>在步骤 1 删除的所有数字中找到最大的一个数字，将它添加到你的 分数 中。<br>请你返回最后的 分数 。</p>
-<p>解题思路</p>
-<h4 id="大顶堆"><a href="#大顶堆" class="headerlink" title="大顶堆"></a>大顶堆</h4><ul>
-<li>使用Java自带的大顶堆，遍历nums[0].len</li>
-<li>每次各堆弹出一个，取最大值累加</li>
+                <h2 id="QuickSort"><a href="#QuickSort" class="headerlink" title="QuickSort"></a>QuickSort</h2><p>实现一个快速排序把</p>
+<p>实现一个快速排序最常用的方式是填坑法，快速排序有一个递归的过程，一般由两个函数构成</p>
+<ul>
+<li>quickSort <ul>
+<li>递归方法，作用是将 begin  - end 的元素排序成功</li>
+<li>函数出口是是剩下一个元素的时候就不用继续递归了，可以直接返回</li>
 </ul>
-<p>代码实现</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">matrixSum</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] nums)</span> &#123;<br>       <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums[<span class="hljs-number">0</span>].length; <span class="hljs-comment">// 数字的个数</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        List&lt;PriorityQueue&lt;Integer&gt;&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span>[] arr : nums) &#123;<br>            PriorityQueue&lt;Integer&gt; temp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PriorityQueue</span>&lt;&gt;((a,b) -&gt; b - a);<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i : arr) &#123;<br>               temp.add(i);<br>            &#125;<br>            list.add(temp);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> Integer.MIN_VALUE;<br>            <span class="hljs-keyword">for</span>(PriorityQueue&lt;Integer&gt; priorityQueue : list) &#123;<br>                <span class="hljs-type">Integer</span> <span class="hljs-variable">poll</span> <span class="hljs-operator">=</span> priorityQueue.poll();<br>                max = Math.max(max,poll);<br>            &#125;<br>            res += max;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>        <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h4 id="arrays排序"><a href="#arrays排序" class="headerlink" title="arrays排序"></a>arrays排序</h4><ul>
-<li>针对每一个一维数组先进行排序，再使用一个指针指向数组头部，不断移动指针到最后</li>
-<li>每次移动之前，先将每个数组这个当前位置求一个最大值累加</li>
+</li>
+<li>sort <ul>
+<li>快排的核心逻辑，选取一个中间值，将小于该元素的元素放左边，大于该元素的元素放右边</li>
+<li>我这里实现的时候用的是填坑法，也就是分别从begin 和 end 像中间靠拢，先找到一个右边但是属于左边的元素，然后和左边交换位置，然后再用同样的逻辑遍历左边指针。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">matrixSum</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] nums)</span> &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span>[] arr : nums) Arrays.sort(arr);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums[<span class="hljs-number">0</span>].length; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> Integer.MIN_VALUE;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; nums.length; j++) &#123;<br>                max = Math.max(max,nums[j][i]);<br>            &#125;<br>            res += max;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">QuickSort</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">QuickSort</span> <span class="hljs-variable">q</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">QuickSort</span>();<br>        <span class="hljs-type">int</span>[] arr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[] &#123;<span class="hljs-number">1</span>,<span class="hljs-number">34</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">45</span>,<span class="hljs-number">675</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">9</span>&#125;;<br>        q.quickSort(arr,<span class="hljs-number">0</span>, arr.length - <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i : arr)&#123;<br>        System.out.println(i);<br>        &#125;<br>    &#125;<br><span class="hljs-comment">//    Implement a Quicksort</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">quickSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr, <span class="hljs-type">int</span> begin, <span class="hljs-type">int</span> end)</span> &#123;<br>        <span class="hljs-keyword">if</span> (begin &gt;= end) <span class="hljs-keyword">return</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">mid</span> <span class="hljs-operator">=</span> sort(arr,begin,end);<br>        quickSort(arr,begin,mid - <span class="hljs-number">1</span>);<br>        quickSort(arr,mid + <span class="hljs-number">1</span>, end);<br>    &#125;<br>    <span class="hljs-comment">// 具体排序规则</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">sort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr, <span class="hljs-type">int</span> begin, <span class="hljs-type">int</span> end)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> arr[begin]; <span class="hljs-comment">// 中间值保存 避免被覆盖</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> begin;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> end;<br>        <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>            <span class="hljs-keyword">while</span> (left &lt; right &amp;&amp; arr[right] &gt;= key) &#123;<br>                right--;<br>            &#125;<br>            arr[left] = arr[right]; <span class="hljs-comment">// 填坑</span><br>            <span class="hljs-keyword">while</span> (left &lt; right &amp;&amp; arr[left] &lt;= key) &#123;<br>                left++;<br>            &#125;<br>            arr[right] = arr[left];<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> left;<br>        arr[m] = key;<br>        <span class="hljs-keyword">return</span> m;<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -302,7 +301,7 @@
       
         <a href="/tags/%E6%8E%92%E5%BA%8F/">#排序</a>
       
-        <a href="/tags/%E5%A4%A7%E9%A1%B6%E5%A0%86/">#大顶堆</a>
+        <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">#双指针</a>
       
     </div>
   
@@ -314,8 +313,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC矩阵中的和</div>
-      <div>http://example.com/2023/08/16/LC矩阵中的和/</div>
+      <div>quicksort</div>
+      <div>http://example.com/2023/08/16/quicksort/</div>
     </div>
     <div class="license-meta">
       
@@ -359,9 +358,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/16/quicksort/" title="quicksort">
+                      <a href="/2023/08/16/%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E4%B8%8B%E9%99%8D%E5%92%8C/" title="LC 931. 下降路径最小和">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">quicksort</span>
+                        <span class="hidden-mobile">LC 931. 下降路径最小和</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -369,8 +368,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/07/%E6%89%BE%E5%87%BA%E6%9C%80%E5%AE%89%E5%85%A8%E8%B7%AF%E5%BE%84/" title="找出最安全路径">
-                        <span class="hidden-mobile">找出最安全路径</span>
+                      <a href="/2023/08/16/LC%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E5%92%8C/" title="LC矩阵中的和">
+                        <span class="hidden-mobile">LC矩阵中的和</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

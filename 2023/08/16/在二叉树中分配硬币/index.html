@@ -16,23 +16,23 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="矩阵中的和给你一个下标从 0 开始的二维整数数组 nums 。一开始你的分数为 0 。你需要执行以下操作直到矩阵变为空： 矩阵中每一行选取最大的一个数，并删除它。如果一行中有多个最大的数，选择任意一个并删除。在步骤 1 删除的所有数字中找到最大的一个数字，将它添加到你的 分数 中。请你返回最后的 分数 。 解题思路 大顶堆 使用Java自带的大顶堆，遍历nums[0].len 每次各堆弹出一个，取">
+    <meta name="description" content="979. 在二叉树中分配硬币题目12345给你一个有 n 个结点的二叉树的根结点 root ，其中树中每个结点 node 都对应有 node.val 枚硬币。整棵树上一共有 n 枚硬币。在一次移动中，我们可以选择两个相邻的结点，然后将一枚硬币从其中一个结点移动到另一个结点。移动可以是从父结点到子结点，或者从子结点移动到父结点。返回使每个结点上 只有 一枚硬币所需的 最少 移动次数。  解题思路 一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC矩阵中的和">
-<meta property="og:url" content="http://example.com/2023/08/16/LC%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E5%92%8C/index.html">
+<meta property="og:title" content="在二叉树中分配硬币">
+<meta property="og:url" content="http://example.com/2023/08/16/%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%88%86%E9%85%8D%E7%A1%AC%E5%B8%81/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="矩阵中的和给你一个下标从 0 开始的二维整数数组 nums 。一开始你的分数为 0 。你需要执行以下操作直到矩阵变为空： 矩阵中每一行选取最大的一个数，并删除它。如果一行中有多个最大的数，选择任意一个并删除。在步骤 1 删除的所有数字中找到最大的一个数字，将它添加到你的 分数 中。请你返回最后的 分数 。 解题思路 大顶堆 使用Java自带的大顶堆，遍历nums[0].len 每次各堆弹出一个，取">
+<meta property="og:description" content="979. 在二叉树中分配硬币题目12345给你一个有 n 个结点的二叉树的根结点 root ，其中树中每个结点 node 都对应有 node.val 枚硬币。整棵树上一共有 n 枚硬币。在一次移动中，我们可以选择两个相邻的结点，然后将一枚硬币从其中一个结点移动到另一个结点。移动可以是从父结点到子结点，或者从子结点移动到父结点。返回使每个结点上 只有 一枚硬币所需的 最少 移动次数。  解题思路 一">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-16T11:50:59.000Z">
-<meta property="article:modified_time" content="2023-08-16T11:53:25.505Z">
+<meta property="article:published_time" content="2023-08-16T12:27:44.000Z">
+<meta property="article:modified_time" content="2023-08-16T12:31:08.914Z">
 <meta property="article:author" content="clearSky">
-<meta property="article:tag" content="排序">
-<meta property="article:tag" content="大顶堆">
+<meta property="article:tag" content="二叉树">
+<meta property="article:tag" content="dfs">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LC矩阵中的和 - clearskycpy</title>
+  <title>在二叉树中分配硬币 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -192,13 +192,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/clearSky/banner05.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC矩阵中的和"></span>
+            <span id="subtitle" data-typed-text="在二叉树中分配硬币"></span>
           
         </div>
 
@@ -214,7 +214,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-16 19:50" pubdate>
+        <time datetime="2023-08-16 20:27" pubdate>
           2023年8月16日
         </time>
       </span>
@@ -259,7 +259,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC矩阵中的和</h1>
+            <h1 style="display: none">在二叉树中分配硬币</h1>
             
               <p class="note note-info">
                 
@@ -272,21 +272,19 @@
             
               <div class="markdown-body">
                 
-                <h2 id="矩阵中的和"><a href="#矩阵中的和" class="headerlink" title="矩阵中的和"></a>矩阵中的和</h2><p>给你一个下标从 0 开始的二维整数数组 nums 。一开始你的分数为 0 。你需要执行以下操作直到矩阵变为空：</p>
-<p>矩阵中每一行选取最大的一个数，并删除它。如果一行中有多个最大的数，选择任意一个并删除。<br>在步骤 1 删除的所有数字中找到最大的一个数字，将它添加到你的 分数 中。<br>请你返回最后的 分数 。</p>
-<p>解题思路</p>
-<h4 id="大顶堆"><a href="#大顶堆" class="headerlink" title="大顶堆"></a>大顶堆</h4><ul>
-<li>使用Java自带的大顶堆，遍历nums[0].len</li>
-<li>每次各堆弹出一个，取最大值累加</li>
-</ul>
-<p>代码实现</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">matrixSum</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] nums)</span> &#123;<br>       <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums[<span class="hljs-number">0</span>].length; <span class="hljs-comment">// 数字的个数</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        List&lt;PriorityQueue&lt;Integer&gt;&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span>[] arr : nums) &#123;<br>            PriorityQueue&lt;Integer&gt; temp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PriorityQueue</span>&lt;&gt;((a,b) -&gt; b - a);<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i : arr) &#123;<br>               temp.add(i);<br>            &#125;<br>            list.add(temp);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> Integer.MIN_VALUE;<br>            <span class="hljs-keyword">for</span>(PriorityQueue&lt;Integer&gt; priorityQueue : list) &#123;<br>                <span class="hljs-type">Integer</span> <span class="hljs-variable">poll</span> <span class="hljs-operator">=</span> priorityQueue.poll();<br>                max = Math.max(max,poll);<br>            &#125;<br>            res += max;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>        <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="979-在二叉树中分配硬币"><a href="#979-在二叉树中分配硬币" class="headerlink" title="979. 在二叉树中分配硬币"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/distribute-coins-in-binary-tree/">979. 在二叉树中分配硬币</a></h1><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">给你一个有 n 个结点的二叉树的根结点 root ，其中树中每个结点 node 都对应有 node.val 枚硬币。整棵树上一共有 n 枚硬币。<br><br>在一次移动中，我们可以选择两个相邻的结点，然后将一枚硬币从其中一个结点移动到另一个结点。移动可以是从父结点到子结点，或者从子结点移动到父结点。<br><br>返回使每个结点上 只有 一枚硬币所需的 最少 移动次数。<br></code></pre></td></tr></table></figure>
 
-<h4 id="arrays排序"><a href="#arrays排序" class="headerlink" title="arrays排序"></a>arrays排序</h4><ul>
-<li>针对每一个一维数组先进行排序，再使用一个指针指向数组头部，不断移动指针到最后</li>
-<li>每次移动之前，先将每个数组这个当前位置求一个最大值累加</li>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>一开始我考虑的太局限了，想的是常规的思路，如果这个子树的底层的硬币多了走出去这个节点所需要的花费就更多，一个硬币的代价就变大了，但是其实可以将这种情况变成一种情况，就是每个子树都考虑一遍。这样不用计算离得远的硬币怎么挪出去了，因为会在它所在的子树统计</li>
+<li>从每个子树考虑，每个子树的根能经过多少个节点，怎么算？</li>
+<li>通过的节点肯定是子树的节点和 和硬币和 的差 的绝对值，如果硬币多了要出去走向其他的子树，如果硬币少了要进来硬币</li>
+<li>这种一遍方法可以用深度优先归纳  当前节点需要通过的硬币就是 左树的节点数加上右数的节点数 加上当前这个节点 用 总的硬币数减去</li>
+<li>既然要用到树的节点数和硬币数那么就可以用 int[] 作为返回值</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">matrixSum</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] nums)</span> &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span>[] arr : nums) Arrays.sort(arr);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums[<span class="hljs-number">0</span>].length; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> Integer.MIN_VALUE;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; nums.length; j++) &#123;<br>                max = Math.max(max,nums[j][i]);<br>            &#125;<br>            res += max;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode() &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span><br><span class="hljs-comment"> *         this.val = val;</span><br><span class="hljs-comment"> *         this.left = left;</span><br><span class="hljs-comment"> *         this.right = right;</span><br><span class="hljs-comment"> *     &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">distributeCoins</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>        dfs(root);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[] dfs(TreeNode root) &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[] &#123;<span class="hljs-number">0</span>,<span class="hljs-number">0</span>&#125;;<br>        <span class="hljs-type">int</span>[] leftRes = dfs(root.left);<br>        <span class="hljs-type">int</span>[] rightRes = dfs(root.right);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cntNode</span> <span class="hljs-operator">=</span> leftRes[<span class="hljs-number">0</span>] + rightRes[<span class="hljs-number">0</span>] + <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cntCoins</span> <span class="hljs-operator">=</span> leftRes[<span class="hljs-number">1</span>] + rightRes[<span class="hljs-number">1</span>] + root.val;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> cntCoins - cntNode;<br>        ans += Math.abs(d);<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[] &#123;cntNode,cntCoins&#125;;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="解题思路二"><a href="#解题思路二" class="headerlink" title="解题思路二"></a>解题思路二</h4><p>上面是计算的返回的每个子树的节点数和硬币数，但是其实可以直接算经过的边，左边经过的边加上右边经过的边加上当前边多出来的硬币就是当前节点经过的边，返回值也应该定义为int</p>
+<h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode() &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span><br><span class="hljs-comment"> *         this.val = val;</span><br><span class="hljs-comment"> *         this.left = left;</span><br><span class="hljs-comment"> *         this.right = right;</span><br><span class="hljs-comment"> *     &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">distributeCoins</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>        dfs(root);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> dfs(root.left) + dfs(root.right) + root.val - <span class="hljs-number">1</span>;<br>        ans += Math.abs(d);<br>        <span class="hljs-keyword">return</span> d;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -300,9 +298,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%8E%92%E5%BA%8F/">#排序</a>
+        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
       
-        <a href="/tags/%E5%A4%A7%E9%A1%B6%E5%A0%86/">#大顶堆</a>
+        <a href="/tags/dfs/">#dfs</a>
       
     </div>
   
@@ -314,8 +312,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC矩阵中的和</div>
-      <div>http://example.com/2023/08/16/LC矩阵中的和/</div>
+      <div>在二叉树中分配硬币</div>
+      <div>http://example.com/2023/08/16/在二叉树中分配硬币/</div>
     </div>
     <div class="license-meta">
       
@@ -359,9 +357,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/16/quicksort/" title="quicksort">
+                      <a href="/2023/08/16/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/" title="状态模式">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">quicksort</span>
+                        <span class="hidden-mobile">状态模式</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -369,8 +367,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/07/%E6%89%BE%E5%87%BA%E6%9C%80%E5%AE%89%E5%85%A8%E8%B7%AF%E5%BE%84/" title="找出最安全路径">
-                        <span class="hidden-mobile">找出最安全路径</span>
+                      <a href="/2023/08/16/%E5%AD%90%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%92%8C%E9%97%AE%E9%A2%98/" title="子数组最大和问题-两道题">
+                        <span class="hidden-mobile">子数组最大和问题-两道题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
