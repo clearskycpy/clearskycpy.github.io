@@ -224,6 +224,92 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/08/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%B7%AF%E7%94%B1%E7%BB%84%E4%BB%B6/" target="_self">
+          数据库路由组件-水平分库分表
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%B7%AF%E7%94%B1%E7%BB%84%E4%BB%B6/" target="_self">
+        <div>
+          DBRouter分库分表首先我们要知道为什么要用分库分表，其实就是由于业务体量较大，数据增长较快，所以需要把用户数据拆分到不同的库表中去，减轻数据库压力。 分库分表操作主要有垂直拆分和水平拆分：  垂直拆分：指按照业务将表进行分类，分布到不同的数据库上，这样也就将数据的压力分担到不同的库上面。最终一个数据库由很多表的构成，每个表对应着不同的业务，也就是专库专用。 水平拆分：如果垂直拆分后遇到单机瓶
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-22 15:25" pubdate>
+              2023-08-22
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/java/">#java</a>
+            
+              <a href="/tags/springboot/">#springboot</a>
+            
+              <a href="/tags/DBRouter/">#DBRouter</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/08/22/LC-%E5%88%B0%E4%BA%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%9D%E7%A6%BB/" target="_self">
+          LC 到人的最大距离
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/22/LC-%E5%88%B0%E4%BA%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%9D%E7%A6%BB/" target="_self">
+        <div>
+          849. 到最近的人的最大距离 给你一个数组 seats 表示一排座位，其中 seats[i] = 1 代表有人坐在第 i 个座位上，seats[i] = 0 代表座位 i 上是空的（下标从 0 开始）。 至少有一个空座位，且至少有一人已经坐在座位上。 亚历克斯希望坐在一个能够使他与离他最近的人之间的距离达到最大化的座位上。 返回他到离他最近的人的最大距离。  123456输入：seats = [
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-22 09:58" pubdate>
+              2023-08-22
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
+            
+              <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">#双指针</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/08/21/MySQL%E9%94%81%E7%AF%87/" target="_self">
           MySQL锁篇
         </a>
@@ -541,88 +627,6 @@
               <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
             
               <a href="/tags/%E5%AD%90%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/">#子数组问题</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/08/16/%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E4%B8%8B%E9%99%8D%E5%92%8C/" target="_self">
-          LC 931. 下降路径最小和
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/16/%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E4%B8%8B%E9%99%8D%E5%92%8C/" target="_self">
-        <div>
-          LC 931. 下降路径最小和解题思路 写的多了就会发现这个其实和机器人走路是十分相似的，不过他的状态转移有一点不一样，机器人走路是从左边和上边转移过来的，但是这个是从上面和左上，右上转移过来的。我们定义dp[i] [j] 为到达ij位置的最小消耗，那么这个位置只会从哪里转移过来呢？ 那就只能从上面和左上，右上 这三个位置有可能转移过来了，所以到达这个位置的花费就是 dp[i] [j] &#x3D
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-16 20:15" pubdate>
-              2023-08-16
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/08/16/quicksort/" target="_self">
-          quicksort
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/16/quicksort/" target="_self">
-        <div>
-          QuickSort实现一个快速排序把 实现一个快速排序最常用的方式是填坑法，快速排序有一个递归的过程，一般由两个函数构成  quickSort  递归方法，作用是将 begin  - end 的元素排序成功 xxxxxxxxxx class Solution {    public int minFallingPathSum(int[][] matrix) {        for(int i &
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-16 20:12" pubdate>
-              2023-08-16
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%8E%92%E5%BA%8F/">#排序</a>
-            
-              <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">#双指针</a>
             
           </div>
         
