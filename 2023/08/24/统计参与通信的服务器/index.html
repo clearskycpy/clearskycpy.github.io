@@ -16,23 +16,23 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="编程式事务简介编程式事务是一种管理事务的方式，其中事务控制的逻辑直接嵌入到应用程序的代码中。在编程式事务中，开发人员通过编写代码来显式地开始、提交和回滚事务，以及处理异常情况。这种方式与声明式事务相对，后者是通过配置来定义事务的行为，而不需要在代码中显式地管理事务。 在编程式事务中，通常涉及以下几个关键概念：  事务开始（Begin）： 在事务开始之前，你需要明确地启动事务。这可以通过事务管理器提">
+    <meta name="description" content="LC 1267. 统计参与通信的服务器 这里有一幅服务器分布图，服务器的位置标识在 m * n 的整数矩阵网格 grid 中，1 表示单元格上有服务器，0 表示没有。 如果两台服务器位于同一行或者同一列，我们就认为它们之间可以进行通信。 请你统计并返回能够与至少一台其他服务器进行通信的服务器的数量。  思路 分别统计每一行的机器个数，再统计每一列的机器个数，总的机器个数 再遍历一遍，如果当前位置为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编程式事务review">
-<meta property="og:url" content="http://example.com/2023/08/23/%E7%BC%96%E7%A8%8B%E5%BC%8F%E4%BA%8B%E5%8A%A1review/index.html">
+<meta property="og:title" content="LC 1267. 统计参与通信的服务器">
+<meta property="og:url" content="http://example.com/2023/08/24/%E7%BB%9F%E8%AE%A1%E5%8F%82%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="编程式事务简介编程式事务是一种管理事务的方式，其中事务控制的逻辑直接嵌入到应用程序的代码中。在编程式事务中，开发人员通过编写代码来显式地开始、提交和回滚事务，以及处理异常情况。这种方式与声明式事务相对，后者是通过配置来定义事务的行为，而不需要在代码中显式地管理事务。 在编程式事务中，通常涉及以下几个关键概念：  事务开始（Begin）： 在事务开始之前，你需要明确地启动事务。这可以通过事务管理器提">
+<meta property="og:description" content="LC 1267. 统计参与通信的服务器 这里有一幅服务器分布图，服务器的位置标识在 m * n 的整数矩阵网格 grid 中，1 表示单元格上有服务器，0 表示没有。 如果两台服务器位于同一行或者同一列，我们就认为它们之间可以进行通信。 请你统计并返回能够与至少一台其他服务器进行通信的服务器的数量。  思路 分别统计每一行的机器个数，再统计每一列的机器个数，总的机器个数 再遍历一遍，如果当前位置为">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-23T07:53:54.000Z">
-<meta property="article:modified_time" content="2023-08-24T03:09:00.904Z">
+<meta property="article:published_time" content="2023-08-24T06:50:58.000Z">
+<meta property="article:modified_time" content="2023-08-24T07:44:00.272Z">
 <meta property="article:author" content="clearSky">
-<meta property="article:tag" content="java">
-<meta property="article:tag" content="spring">
+<meta property="article:tag" content="数组">
+<meta property="article:tag" content="模拟">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>编程式事务review - clearskycpy</title>
+  <title>LC 1267. 统计参与通信的服务器 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -192,13 +192,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/clearSky/banner13.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="编程式事务review"></span>
+            <span id="subtitle" data-typed-text="LC 1267. 统计参与通信的服务器"></span>
           
         </div>
 
@@ -214,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-23 15:53" pubdate>
-          2023年8月23日
+        <time datetime="2023-08-24 14:50" pubdate>
+          2023年8月24日
         </time>
       </span>
     
@@ -259,7 +259,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">编程式事务review</h1>
+            <h1 style="display: none">LC 1267. 统计参与通信的服务器</h1>
             
               <p class="note note-info">
                 
@@ -272,44 +272,17 @@
             
               <div class="markdown-body">
                 
-                <h1 id="编程式事务"><a href="#编程式事务" class="headerlink" title="编程式事务"></a>编程式事务</h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><strong>编程式事务是一种管理事务的方式</strong>，其中事务控制的逻辑直接嵌入到应用程序的代码中。<strong>在编程式事务中，开发人员通过编写代码来显式地开始、提交和回滚事务，以及处理异常情况。</strong>这种方式与声明式事务相对，后者是通过配置来定义事务的行为，而不需要在代码中显式地管理事务。</p>
-<p>在编程式事务中，通常涉及以下几个关键概念：</p>
-<ol>
-<li><p><strong>事务开始（Begin）：</strong> 在事务开始之前，你需要明确地启动事务。这可以通过事务管理器提供的方法来实现。</p>
-</li>
-<li><p><strong>事务操作（Transaction Logic）：</strong> 在事务范围内，你可以执行一系列数据库操作或其他事务性操作。这些操作被视为一个事务单元，要么全部成功提交，要么全部回滚。</p>
-</li>
-<li><p><strong>事务提交（Commit）：</strong> 一旦事务范围内的所有操作都执行成功且没有异常，你可以显式地提交事务。这将使事务中的所有操作成为永久性的更改。</p>
-</li>
-<li><p><strong>事务回滚（Rollback）：</strong> 如果在事务范围内发生了异常，你可以显式地回滚事务，以撤消之前的操作，从而保持数据的一致性。</p>
-</li>
-</ol>
-<p>编程式事务的优点包括：</p>
-<ul>
-<li><strong>精确控制：</strong> 你可以在代码级别精确地控制事务的开始、提交和回滚，使得事务的范围更加明确。</li>
-<li><strong>灵活性：</strong> 编程式事务允许你在事务中进行更复杂的控制逻辑，比如根据条件决定是否提交事务。</li>
-<li><strong>异常处理：</strong> 你可以捕获异常并根据需要选择是否回滚事务，以确保数据的完整性。</li>
+                <h1 id="LC-1267-统计参与通信的服务器"><a href="#LC-1267-统计参与通信的服务器" class="headerlink" title="LC 1267. 统计参与通信的服务器"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-servers-that-communicate/">LC 1267. 统计参与通信的服务器</a></h1><ul>
+<li>这里有一幅服务器分布图，服务器的位置标识在 <code>m * n</code> 的整数矩阵网格 <code>grid</code> 中，1 表示单元格上有服务器，0 表示没有。</li>
+<li>如果两台服务器位于同一行或者同一列，我们就认为它们之间可以进行通信。</li>
+<li>请你统计并返回能够与至少一台其他服务器进行通信的服务器的数量。</li>
 </ul>
-<p>然而，编程式事务也可能导致以下问题：</p>
-<ul>
-<li><strong>代码冗余：</strong> 每个事务单元都需要显式地处理事务的启动、提交和回滚，可能会导致代码冗余。</li>
-<li><strong>事务的外部可见性：</strong> 编程式事务将事务控制逻辑嵌入到应用代码中，可能导致事务的细节对应用的外部可见性。</li>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>分别统计每一行的机器个数，再统计每一列的机器个数，总的机器个数</li>
+<li>再遍历一遍，如果当前位置为机器，行列都没有其他的机器就说明当前机器是不能参与通信的，取补集</li>
 </ul>
-<p>在实际开发中，应根据具体情况选择适合的事务管理方式，通常结合业务逻辑和数据访问的需求来决定是采用编程式事务还是声明式事务。</p>
-<h3 id="summarize"><a href="#summarize" class="headerlink" title="summarize"></a>summarize</h3><p>通常情况下，大多数都会采用声明式事务，因为spring提供了一个特别好用的注解 <code>@Transactional</code>一般如果有事务的要求的情况下，基本都是在方法中加<code>@Transactional</code> 注解即可，那为什么这里不用呢？</p>
-<ul>
-<li>问题：如果一个场景需要在同一个事务下，连续操作不同的DAO操作，那么就会涉及到在 DAO 上使用注解 @DBRouter(key &#x3D; “uId”) 反复切换路由的操作。虽然都是一个数据源，但这样切换后，事务就没法处理了。</li>
-<li>解决：这里选择了一个较低的成本的解决方案，就是把数据源的切换放在事务处理前，而事务操作也通过编程式编码进行处理。<em>具体可以参考 db-router-spring-boot-starter 源码</em></li>
-</ul>
-<p>这里提到了一个具体的问题，就是当连续进行DAO操作的时候，会导致不断切换路由。因为每次DAO操作结束后都会执行一次<code>dbRouterStrategy.clear()</code> ，将路由策略清除，所以就会导致事务失效</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Around(&quot;aopPoint() &amp;&amp; @annotation(dbRouter)&quot;)</span><br><span class="hljs-keyword">public</span> Object <span class="hljs-title function_">doRouter</span><span class="hljs-params">(ProceedingJoinPoint jp, DBRouter dbRouter)</span> <span class="hljs-keyword">throws</span> Throwable &#123;<br>    <span class="hljs-type">String</span> <span class="hljs-variable">dbKey</span> <span class="hljs-operator">=</span> dbRouter.key();<br>    <span class="hljs-keyword">if</span> (StringUtils.isBlank(dbKey) &amp;&amp; StringUtils.isBlank(dbRouterConfig.getRouterKey())) &#123;<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;annotation DBRouter key is null！&quot;</span>);<br>    &#125;<br>    dbKey = StringUtils.isNotBlank(dbKey) ? dbKey : dbRouterConfig.getRouterKey();<br>    <span class="hljs-comment">// 路由属性</span><br>    <span class="hljs-type">String</span> <span class="hljs-variable">dbKeyAttr</span> <span class="hljs-operator">=</span> getAttrValue(dbKey, jp.getArgs());<br>    <span class="hljs-comment">// 路由策略</span><br>    dbRouterStrategy.doRouter(dbKeyAttr);<br>    <span class="hljs-comment">// 返回结果</span><br>    <span class="hljs-keyword">try</span> &#123;<br>        <span class="hljs-keyword">return</span> jp.proceed();<br>    &#125; <span class="hljs-keyword">finally</span> &#123;<br>       dbRouterStrategy.clear();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">countServers</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] grid)</span> &#123;<br>        <span class="hljs-type">int</span>[] row = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[grid.length];<br>        <span class="hljs-type">int</span>[] coll = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[grid[<span class="hljs-number">0</span>].length];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; grid.length; i++) &#123; <span class="hljs-comment">// 遍历行</span><br>            <span class="hljs-type">int</span>[] row1 = grid[i];<br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j : row1) &#123;<br>                temp += j;<br>            &#125;<br>            row[i] = temp;<br>            cnt += temp;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; grid[<span class="hljs-number">0</span>].length; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; grid.length; j++) &#123;<br>                temp += grid[j][i];<br>            &#125;<br>            coll[i] = temp;<br>        &#125;<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">unValid</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; grid[<span class="hljs-number">0</span>].length; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; grid.length; j++) &#123;<br>                <span class="hljs-keyword">if</span>((grid[j][i] == <span class="hljs-number">1</span>) &amp;&amp; row[j] == <span class="hljs-number">1</span> &amp;&amp; coll[i] == <span class="hljs-number">1</span>) &#123;<br>                    unVlide++;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt - unVlide;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>所以要用编程式事务解决 </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">protected</span> Result <span class="hljs-title function_">grabActivity</span><span class="hljs-params">(PartakeReq partake, ActivityBillVO bill)</span> &#123;<br>    <span class="hljs-keyword">try</span> &#123;<br>        dbRouter.doRouter(partake.getuId());<br>        <span class="hljs-keyword">return</span> transactionTemplate.execute(status -&gt; &#123;<br>            <span class="hljs-keyword">try</span> &#123;<br>                <span class="hljs-comment">// 扣减个人已参与次数</span><br>                <span class="hljs-type">int</span> <span class="hljs-variable">updateCount</span> <span class="hljs-operator">=</span> userTakeActivityRepository.subtractionLeftCount(bill.getActivityId(), bill.getActivityName(), bill.getTakeCount(), bill.getUserTakeLeftCount(), partake.getuId(), partake.getPartakeDate());<br>                <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> == updateCount) &#123;<br>                    status.setRollbackOnly();<br>                    logger.error(<span class="hljs-string">&quot;领取活动，扣减个人已参与次数失败 activityId：&#123;&#125; uId：&#123;&#125;&quot;</span>, partake.getActivityId(), partake.getuId());<br>                    <span class="hljs-keyword">return</span> Result.buildResult(Constants.ResponseCode.NO_UPDATE);<br>                &#125;<br><br>                <span class="hljs-comment">// 插入领取活动信息</span><br>                <span class="hljs-type">Long</span> <span class="hljs-variable">takeId</span> <span class="hljs-operator">=</span> idGeneratorMap.get(Constants.Ids.SnowFlake).nextId();<br>                userTakeActivityRepository.takeActivity(bill.getActivityId(), bill.getActivityName(), bill.getTakeCount(), bill.getUserTakeLeftCount(), partake.getuId(), partake.getPartakeDate(), takeId);<br>            &#125; <span class="hljs-keyword">catch</span> (DuplicateKeyException e) &#123;<br>                status.setRollbackOnly();<br>                logger.error(<span class="hljs-string">&quot;领取活动，唯一索引冲突 activityId：&#123;&#125; uId：&#123;&#125;&quot;</span>, partake.getActivityId(), partake.getuId(), e);<br>                <span class="hljs-keyword">return</span> Result.buildResult(Constants.ResponseCode.INDEX_DUP);<br>            &#125;<br>            <span class="hljs-keyword">return</span> Result.buildSuccessResult();<br>        &#125;);<br>    &#125; <span class="hljs-keyword">finally</span> &#123;<br>        dbRouter.clear();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>也就是选择自己开启和清除路由 通过<code>dbRouter.clear();</code> 和 <code>dbRouter.doRouter(partake.getuId());</code> 方法</p>
-<p>先切换好数据源，后面的DAO都只在这一个数据源里面进行。同时使用编程式事务进行DAO操作  return <code>transactionTemplate.execute(status -&gt; &#123;&#125;</code>  这种方式就能实现事务控制了。</p>
-<p>需要注意的是，数据库路由中的注解和这种函数式路由不能混着用，会出问题，所以以后的这几个DAO方法要在别的地方用到的话，还是需要手动路由</p>
 
                 
               </div>
@@ -322,9 +295,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/java/">#java</a>
+        <a href="/tags/%E6%95%B0%E7%BB%84/">#数组</a>
       
-        <a href="/tags/spring/">#spring</a>
+        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
       
     </div>
   
@@ -336,8 +309,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>编程式事务review</div>
-      <div>http://example.com/2023/08/23/编程式事务review/</div>
+      <div>LC 1267. 统计参与通信的服务器</div>
+      <div>http://example.com/2023/08/24/统计参与通信的服务器/</div>
     </div>
     <div class="license-meta">
       
@@ -349,7 +322,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月23日</div>
+          <div>2023年8月24日</div>
         </div>
       
       
@@ -381,18 +354,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/24/%E7%BB%9F%E8%AE%A1%E5%8F%82%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="LC 1267. 统计参与通信的服务器">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 1267. 统计参与通信的服务器</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%B7%AF%E7%94%B1%E7%BB%84%E4%BB%B6/" title="数据库路由组件-水平分库分表">
-                        <span class="hidden-mobile">数据库路由组件-水平分库分表</span>
+                      <a href="/2023/08/23/%E7%BC%96%E7%A8%8B%E5%BC%8F%E4%BA%8B%E5%8A%A1review/" title="编程式事务review">
+                        <span class="hidden-mobile">编程式事务review</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
