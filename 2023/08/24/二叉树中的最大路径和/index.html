@@ -16,23 +16,25 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LC 1267. 统计参与通信的服务器 这里有一幅服务器分布图，服务器的位置标识在 m * n 的整数矩阵网格 grid 中，1 表示单元格上有服务器，0 表示没有。 如果两台服务器位于同一行或者同一列，我们就认为它们之间可以进行通信。 请你统计并返回能够与至少一台其他服务器进行通信的服务器的数量。  思路 分别统计每一行的机器个数，再统计每一列的机器个数，总的机器个数 再遍历一遍，如果当前位置为">
+    <meta name="description" content="LC 124. 二叉树中的最大路径和二叉树中的 路径 被定义为一条节点序列，序列中每对相邻节点之间都存在一条边。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。 路径和 是路径中各节点值的总和。 给你一个二叉树的根节点 root ，返回其 最大路径和 。 示例 解题思路 第一条思路是错误的，但是也记录一下，奇奇怪怪但是又有迹可循的dfs定义，理解dfs定">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 1267. 统计参与通信的服务器">
-<meta property="og:url" content="http://example.com/2023/08/24/%E7%BB%9F%E8%AE%A1%E5%8F%82%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
+<meta property="og:title" content="LC 124. 二叉树中的最大路径和">
+<meta property="og:url" content="http://example.com/2023/08/24/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="LC 1267. 统计参与通信的服务器 这里有一幅服务器分布图，服务器的位置标识在 m * n 的整数矩阵网格 grid 中，1 表示单元格上有服务器，0 表示没有。 如果两台服务器位于同一行或者同一列，我们就认为它们之间可以进行通信。 请你统计并返回能够与至少一台其他服务器进行通信的服务器的数量。  思路 分别统计每一行的机器个数，再统计每一列的机器个数，总的机器个数 再遍历一遍，如果当前位置为">
+<meta property="og:description" content="LC 124. 二叉树中的最大路径和二叉树中的 路径 被定义为一条节点序列，序列中每对相邻节点之间都存在一条边。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。 路径和 是路径中各节点值的总和。 给你一个二叉树的根节点 root ，返回其 最大路径和 。 示例 解题思路 第一条思路是错误的，但是也记录一下，奇奇怪怪但是又有迹可循的dfs定义，理解dfs定">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-24T06:50:58.000Z">
-<meta property="article:modified_time" content="2023-08-24T07:44:00.272Z">
+<meta property="og:image" content="http://example.com/img/clearSky/blogImg/image-20230824161134304.png">
+<meta property="article:published_time" content="2023-08-24T08:10:15.000Z">
+<meta property="article:modified_time" content="2023-08-24T08:38:57.073Z">
 <meta property="article:author" content="clearSky">
-<meta property="article:tag" content="数组">
-<meta property="article:tag" content="模拟">
+<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="DFS">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/clearSky/blogImg/image-20230824161134304.png">
   
   
   
-  <title>LC 1267. 统计参与通信的服务器 - clearskycpy</title>
+  <title>LC 124. 二叉树中的最大路径和 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -192,13 +194,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/clearSky/banner13.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 1267. 统计参与通信的服务器"></span>
+            <span id="subtitle" data-typed-text="LC 124. 二叉树中的最大路径和"></span>
           
         </div>
 
@@ -214,7 +216,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-24 14:50" pubdate>
+        <time datetime="2023-08-24 16:10" pubdate>
           2023年8月24日
         </time>
       </span>
@@ -259,7 +261,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC 1267. 统计参与通信的服务器</h1>
+            <h1 style="display: none">LC 124. 二叉树中的最大路径和</h1>
             
               <p class="note note-info">
                 
@@ -272,18 +274,42 @@
             
               <div class="markdown-body">
                 
-                <h1 id="LC-1267-统计参与通信的服务器"><a href="#LC-1267-统计参与通信的服务器" class="headerlink" title="LC 1267. 统计参与通信的服务器"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-servers-that-communicate/">LC 1267. 统计参与通信的服务器</a></h1><ul>
-<li>这里有一幅服务器分布图，服务器的位置标识在 <code>m * n</code> 的整数矩阵网格 <code>grid</code> 中，1 表示单元格上有服务器，0 表示没有。</li>
-<li>如果两台服务器位于同一行或者同一列，我们就认为它们之间可以进行通信。</li>
-<li>请你统计并返回能够与至少一台其他服务器进行通信的服务器的数量。</li>
+                <h1 id="LC-124-二叉树中的最大路径和"><a href="#LC-124-二叉树中的最大路径和" class="headerlink" title="LC 124. 二叉树中的最大路径和"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-maximum-path-sum/">LC 124. 二叉树中的最大路径和</a></h1><p>二叉树中的 <strong>路径</strong> 被定义为一条节点序列，序列中每对相邻节点之间都存在一条边。同一个节点在一条路径序列中 <strong>至多出现一次</strong> 。该路径 <strong>至少包含一个</strong> 节点，且不一定经过根节点。</p>
+<p><strong>路径和</strong> 是路径中各节点值的总和。</p>
+<p>给你一个二叉树的根节点 <code>root</code> ，返回其 <strong>最大路径和</strong> 。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p><img src="/img/clearSky/blogImg/image-20230824161134304.png" srcset="/img/loading.gif" lazyload alt="image-20230824161134304.png"></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>第一条思路是错误的，但是也记录一下，奇奇怪怪但是又有迹可循的dfs定义，理解dfs定义所导致的错误结果才是这个题的真正收获</li>
+<li>题目的意思是求二叉树路径的最大和，所以就可以对原函数进行递归，原函数的意义就是返回最大路径和，那最大路径和怎么构成呢？ <ul>
+<li>包含当前节点，左边的最大路径和加上右边的最大路径和加上当前节点的值</li>
+<li>不包括当前节点，也就是不经过当前节点，那么就是 l 或者 r  两种情况</li>
+<li>最后求最大值然后返回即可</li>
 </ul>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ul>
-<li>分别统计每一行的机器个数，再统计每一列的机器个数，总的机器个数</li>
-<li>再遍历一遍，如果当前位置为机器，行列都没有其他的机器就说明当前机器是不能参与通信的，取补集</li>
+</li>
+<li>思路还算简单，能够写下下面这样的代码就说明听懂了</li>
 </ul>
-<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">countServers</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] grid)</span> &#123;<br>        <span class="hljs-type">int</span>[] row = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[grid.length];<br>        <span class="hljs-type">int</span>[] coll = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[grid[<span class="hljs-number">0</span>].length];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; grid.length; i++) &#123; <span class="hljs-comment">// 遍历行</span><br>            <span class="hljs-type">int</span>[] row1 = grid[i];<br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j : row1) &#123;<br>                temp += j;<br>            &#125;<br>            row[i] = temp;<br>            cnt += temp;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; grid[<span class="hljs-number">0</span>].length; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; grid.length; j++) &#123;<br>                temp += grid[j][i];<br>            &#125;<br>            coll[i] = temp;<br>        &#125;<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">unValid</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; grid[<span class="hljs-number">0</span>].length; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; grid.length; j++) &#123;<br>                <span class="hljs-keyword">if</span>((grid[j][i] == <span class="hljs-number">1</span>) &amp;&amp; row[j] == <span class="hljs-number">1</span> &amp;&amp; coll[i] == <span class="hljs-number">1</span>) &#123;<br>                    unVlide++;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt - unVlide;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode() &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span><br><span class="hljs-comment"> *         this.val = val;</span><br><span class="hljs-comment"> *         this.left = left;</span><br><span class="hljs-comment"> *         this.right = right;</span><br><span class="hljs-comment"> *     &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxPathSum</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">rootVal</span> <span class="hljs-operator">=</span> root.val;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">leftVal</span> <span class="hljs-operator">=</span> maxPathSum(root.left);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">rightVal</span> <span class="hljs-operator">=</span> maxPathSum(root.right);<br>        <span class="hljs-keyword">return</span> Math.max(leftVal,Math.max(rightVal,leftVal + rightVal + rootVal));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<p>超级简单，以至于我都无法理解这居然是一个hard题。但是实际上是这样吗？</p>
+<ul>
+<li>并不能跑通</li>
+</ul>
+<p><strong>纠正一下刚刚看似完全的逻辑</strong></p>
+<ul>
+<li>假如只有一个节点的情况 例如 -3 会返回什么？ 会返回 0 因为 root &#x3D; null 的时候就是返回 0 </li>
+<li>再说说函数的定义，我们求的是两个子树的最大路径值，但是能保证连起来之后还是一个可以一次遍历完的子树吗？ 不可以，因为每个子树都是独立的最大路径值，每次递归的思路就是这个。所以其实递归的思路上面已经出现了问题，所以得到的答案就肯定是错的</li>
+<li>既然递归求子树的最大路径无法实现？那么试试递归一下别的吧</li>
+</ul>
+<h4 id="正确思路"><a href="#正确思路" class="headerlink" title="正确思路"></a>正确思路</h4><ul>
+<li>我们刚刚的困难是什么？ 连起来不一定是一个通路径。所以这个时候就不要那么死板</li>
+<li>换一个定义，递归求当前节点的能够提供最大贡献值</li>
+<li>再求贡献值的时候，可以穿插进去求最大同路径，这个时候再求最值就没有错了</li>
+<li>那当前节点的最大贡献值是什么呢？ 就是当前节点的值加上左右子树的最大贡献值，不是同时加上左右子树，通过之前的例子可以理解为什么不能全加，</li>
+<li>这样的话就没有问题了，还有一个小点就是，求左右子树的最大贡献值的时候如果小于0，那么就不算进去，不取即可。</li>
+</ul>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode() &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span><br><span class="hljs-comment"> *         this.val = val;</span><br><span class="hljs-comment"> *         this.left = left;</span><br><span class="hljs-comment"> *         this.right = right;</span><br><span class="hljs-comment"> *     &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> Integer.MIN_VALUE;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxPathSum</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>        dfs(root);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-title function_">dfs</span> <span class="hljs-params">(TreeNode root)</span> &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">leftVal</span> <span class="hljs-operator">=</span> Math.max(dfs(root.left), <span class="hljs-number">0</span>);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">rightVal</span> <span class="hljs-operator">=</span> Math.max(dfs(root.right), <span class="hljs-number">0</span>);<br>        res = Math.max(leftVal + rightVal + root.val, res);<br>        <span class="hljs-keyword">return</span> Math.max(leftVal, rightVal) + root.val;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<h6 id="转变一下函数的定义，换一个方向求解有时候也是一个不错的思路"><a href="#转变一下函数的定义，换一个方向求解有时候也是一个不错的思路" class="headerlink" title="转变一下函数的定义，换一个方向求解有时候也是一个不错的思路"></a>转变一下函数的定义，换一个方向求解有时候也是一个不错的思路</h6>
                 
               </div>
             
@@ -295,9 +321,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%95%B0%E7%BB%84/">#数组</a>
+        <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
       
-        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
+        <a href="/tags/DFS/">#DFS</a>
       
     </div>
   
@@ -309,8 +335,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 1267. 统计参与通信的服务器</div>
-      <div>http://example.com/2023/08/24/统计参与通信的服务器/</div>
+      <div>LC 124. 二叉树中的最大路径和</div>
+      <div>http://example.com/2023/08/24/二叉树中的最大路径和/</div>
     </div>
     <div class="license-meta">
       
@@ -354,18 +380,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/24/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C/" title="LC 124. 二叉树中的最大路径和">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 124. 二叉树中的最大路径和</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/23/%E7%BC%96%E7%A8%8B%E5%BC%8F%E4%BA%8B%E5%8A%A1review/" title="编程式事务review">
-                        <span class="hidden-mobile">编程式事务review</span>
+                      <a href="/2023/08/24/%E7%BB%9F%E8%AE%A1%E5%8F%82%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="LC 1267. 统计参与通信的服务器">
+                        <span class="hidden-mobile">LC 1267. 统计参与通信的服务器</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
