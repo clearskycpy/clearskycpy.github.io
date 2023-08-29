@@ -16,22 +16,23 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1448. 统计二叉树中好节点的数目 给你一棵根为 root 的二叉树，请你返回二叉树中好节点的数目。 「好节点」X 定义为：从根到该节点 X 所经过的节点中，没有任何节点的值大于 X 的值。  思路 从路径可以得出采用一个深度优先遍历即可，那么由于条件是路径，所以要保存之前的状态， 当然因为是路径，所以也应该每个节点都统计一次是否合理，最后递归一下，答案就出来了  实现1234567891011">
+    <meta name="description" content="312. 戳气球 有 n 个气球，编号为0 到 n - 1，每个气球上都标有一个数字，这些数字存在数组 nums 中。 现在要求你戳破所有的气球。戳破第 i 个气球，你可以获得 nums[i - 1] * nums[i] * nums[i + 1] 枚硬币。 这里的 i - 1 和 i + 1 代表和 i 相邻的两个气球的序号。如果 i - 1或 i + 1 超出了数组的边界，那么就当它是一个数字">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 1448. 统计二叉树中好节点的数目">
-<meta property="og:url" content="http://example.com/2023/08/25/%E7%BB%9F%E8%AE%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%A5%BD%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%AA%E6%95%B0/index.html">
+<meta property="og:title" content="戳气球">
+<meta property="og:url" content="http://example.com/2023/08/29/%E6%88%B3%E6%B0%94%E7%90%83/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="1448. 统计二叉树中好节点的数目 给你一棵根为 root 的二叉树，请你返回二叉树中好节点的数目。 「好节点」X 定义为：从根到该节点 X 所经过的节点中，没有任何节点的值大于 X 的值。  思路 从路径可以得出采用一个深度优先遍历即可，那么由于条件是路径，所以要保存之前的状态， 当然因为是路径，所以也应该每个节点都统计一次是否合理，最后递归一下，答案就出来了  实现1234567891011">
+<meta property="og:description" content="312. 戳气球 有 n 个气球，编号为0 到 n - 1，每个气球上都标有一个数字，这些数字存在数组 nums 中。 现在要求你戳破所有的气球。戳破第 i 个气球，你可以获得 nums[i - 1] * nums[i] * nums[i + 1] 枚硬币。 这里的 i - 1 和 i + 1 代表和 i 相邻的两个气球的序号。如果 i - 1或 i + 1 超出了数组的边界，那么就当它是一个数字">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-25T06:17:17.000Z">
-<meta property="article:modified_time" content="2023-08-25T06:21:23.765Z">
+<meta property="article:published_time" content="2023-08-29T02:34:54.000Z">
+<meta property="article:modified_time" content="2023-08-29T05:36:45.684Z">
 <meta property="article:author" content="clearSky">
-<meta property="article:tag" content="二叉树">
+<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="序列dp">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LC 1448. 统计二叉树中好节点的数目 - clearskycpy</title>
+  <title>戳气球 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -191,13 +192,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/clearSky/banner07.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 1448. 统计二叉树中好节点的数目"></span>
+            <span id="subtitle" data-typed-text="戳气球"></span>
           
         </div>
 
@@ -213,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-25 14:17" pubdate>
-          2023年8月25日
+        <time datetime="2023-08-29 10:34" pubdate>
+          2023年8月29日
         </time>
       </span>
     
@@ -258,12 +259,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC 1448. 统计二叉树中好节点的数目</h1>
+            <h1 style="display: none">戳气球</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年8月25日
+                    本文最后更新于：2023年8月29日
                   
                 
               </p>
@@ -271,15 +272,22 @@
             
               <div class="markdown-body">
                 
-                <h1 id="1448-统计二叉树中好节点的数目"><a href="#1448-统计二叉树中好节点的数目" class="headerlink" title="1448. 统计二叉树中好节点的数目"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-good-nodes-in-binary-tree/">1448. 统计二叉树中好节点的数目</a></h1><ul>
-<li>给你一棵根为 <code>root</code> 的二叉树，请你返回二叉树中好节点的数目。</li>
-<li>「好节点」X 定义为：从根到该节点 X 所经过的节点中，没有任何节点的值大于 X 的值。</li>
+                <h1 id="312-戳气球"><a href="#312-戳气球" class="headerlink" title="312. 戳气球"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/burst-balloons/">312. 戳气球</a></h1><ul>
+<li>有 <code>n</code> 个气球，编号为<code>0</code> 到 <code>n - 1</code>，每个气球上都标有一个数字，这些数字存在数组 <code>nums</code> 中。</li>
+<li>现在要求你戳破所有的气球。戳破第 <code>i</code> 个气球，你可以获得 <code>nums[i - 1] * nums[i] * nums[i + 1]</code> 枚硬币。 这里的 <code>i - 1</code> 和 <code>i + 1</code> 代表和 <code>i</code> 相邻的两个气球的序号。如果 <code>i - 1</code>或 <code>i + 1</code> 超出了数组的边界，那么就当它是一个数字为 <code>1</code> 的气球。</li>
+<li>求所能获得硬币的最大数量。</li>
 </ul>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
-<li>从路径可以得出采用一个深度优先遍历即可，那么由于条件是路径，所以要保存之前的状态，</li>
-<li>当然因为是路径，所以也应该每个节点都统计一次是否合理，最后递归一下，答案就出来了</li>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs routeros">输入：nums = [3,1,5,8]<br>输出：167<br>解释：<br>nums = [3,1,5,8] --&gt; [3,5,8] --&gt; [3,8] --&gt; [8] --&gt; []<br>coins =  3<span class="hljs-number">*1</span><span class="hljs-number">*5</span>    +   3<span class="hljs-number">*5</span><span class="hljs-number">*8</span>   +  1<span class="hljs-number">*3</span><span class="hljs-number">*8</span>  + 1<span class="hljs-number">*8</span><span class="hljs-number">*1</span> = 167<br></code></pre></td></tr></table></figure>
+
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h5 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h5><ul>
+<li>定义 dp[i] [j] 为 （i,j）所能贡献的最大价值，开区间。左右两边不考虑</li>
+<li>为了得到最终答案，对原数组进行扩充，左右两边都加上一个1，也符合题意，默认两边会补充</li>
+<li>dp的表达式应该怎么写呢， 假如在l 到 r 的区间内最后消耗的下标为 k ，那么 l  到 r 的消耗为 dp[l] [k] + dp[k] [r] + arr[l] * arr[k] * arr[r] k 的 可能取值为 l ~ r  求一个max</li>
+<li>优先计算小区间，因为大的区间在计算的 过程中要用到小的区间。 所以应该再循环一个区间区间大小从 3开始。</li>
+<li>从局部到整体，这个用代码标识有点抽象，但是如果画个图的话还是很好理解的</li>
 </ul>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode() &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span><br><span class="hljs-comment"> *         this.val = val;</span><br><span class="hljs-comment"> *         this.left = left;</span><br><span class="hljs-comment"> *         this.right = right;</span><br><span class="hljs-comment"> *     &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">goodNodes</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>        <span class="hljs-keyword">return</span> dfs(root, Integer.MIN_VALUE);<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(TreeNode root, <span class="hljs-type">int</span> max)</span> &#123;<br>        <span class="hljs-keyword">if</span>(root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span> (root.val &gt;= max) &#123;<br>            res++;<br>        &#125;<br>        res += dfs(root.left, Math.max(max,root.val));<br>        res += dfs(root.right, Math.max(max,root.val));<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxCoins</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>        <span class="hljs-type">int</span>[] arr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n + <span class="hljs-number">2</span>];<br>        arr[<span class="hljs-number">0</span>] = arr[n + <span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= n; i++) arr[i] = nums[i -<span class="hljs-number">1</span>]; <span class="hljs-comment">// 装填数组</span><br>        <span class="hljs-type">int</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n + <span class="hljs-number">2</span>][n + <span class="hljs-number">2</span>];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>; len &lt;= n + <span class="hljs-number">2</span>; len++) &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; l + len - <span class="hljs-number">1</span> &lt;= n +<span class="hljs-number">1</span>; l++) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> l + len - <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> l + <span class="hljs-number">1</span>; k &lt; r; k++) &#123;<br>                    dp[l][r] = Math.max(dp[l][r],dp[l][k] + dp[k][r] + arr[k] * arr[r] * arr[l]);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[<span class="hljs-number">0</span>][n + <span class="hljs-number">1</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -293,7 +301,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
+        <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
+      
+        <a href="/tags/%E5%BA%8F%E5%88%97dp/">#序列dp</a>
       
     </div>
   
@@ -305,8 +315,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 1448. 统计二叉树中好节点的数目</div>
-      <div>http://example.com/2023/08/25/统计二叉树好节点的个数/</div>
+      <div>戳气球</div>
+      <div>http://example.com/2023/08/29/戳气球/</div>
     </div>
     <div class="license-meta">
       
@@ -318,7 +328,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月25日</div>
+          <div>2023年8月29日</div>
         </div>
       
       
@@ -350,18 +360,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/25/PO-VO-DTO%E8%AF%A6%E8%A7%A3/" title="PO_VO_DTO详解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">PO_VO_DTO详解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/24/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C/" title="LC 124. 二叉树中的最大路径和">
-                        <span class="hidden-mobile">LC 124. 二叉树中的最大路径和</span>
+                      <a href="/2023/08/28/%E5%A4%A9%E5%8D%B06%E4%B8%9A%E5%8A%A1%E5%85%A5%E9%97%A8/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
