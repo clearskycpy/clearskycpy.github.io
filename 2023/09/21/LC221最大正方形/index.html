@@ -16,23 +16,22 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LC 413. 等差数列划分题目如果一个数列 至少有三个元素 ，并且任意两个相邻元素之差相同，则称该数列为等差数列。  例如，[1,3,5,7,9]、[7,7,7,7] 和 [3,-1,-5,-9] 都是等差数列。  给你一个整数数组 nums ，返回数组 nums 中所有为等差数组的 子数组 个数。 子数组 是数组中的一个连续序列。 解题思路 明确定义是子数组 也就是连续的，这点很重要 确定dp">
+    <meta name="description" content="221. 最大正方形 在一个由 &#39;0&#39; 和 &#39;1&#39; 组成的二维矩阵内，找到只包含 &#39;1&#39; 的最大正方形，并返回其面积。  解题思路 ​	题目很短，求一个二维矩阵中最大的正方形（全为1的） 怎么求呢 定义dp[i] [j] 为 以i ， j 为右下角的最大矩阵 分析一下转换式子 chars[i] [j]&#x3D; 0 ,这个时候当前位置是构成不了正方">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 413. 等差数列划分">
-<meta property="og:url" content="http://example.com/2023/09/21/413%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/index.html">
+<meta property="og:title" content="LC_221_最大正方形">
+<meta property="og:url" content="http://example.com/2023/09/21/LC221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="LC 413. 等差数列划分题目如果一个数列 至少有三个元素 ，并且任意两个相邻元素之差相同，则称该数列为等差数列。  例如，[1,3,5,7,9]、[7,7,7,7] 和 [3,-1,-5,-9] 都是等差数列。  给你一个整数数组 nums ，返回数组 nums 中所有为等差数组的 子数组 个数。 子数组 是数组中的一个连续序列。 解题思路 明确定义是子数组 也就是连续的，这点很重要 确定dp">
+<meta property="og:description" content="221. 最大正方形 在一个由 &#39;0&#39; 和 &#39;1&#39; 组成的二维矩阵内，找到只包含 &#39;1&#39; 的最大正方形，并返回其面积。  解题思路 ​	题目很短，求一个二维矩阵中最大的正方形（全为1的） 怎么求呢 定义dp[i] [j] 为 以i ， j 为右下角的最大矩阵 分析一下转换式子 chars[i] [j]&#x3D; 0 ,这个时候当前位置是构成不了正方">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-21T03:12:02.000Z">
-<meta property="article:modified_time" content="2023-09-21T12:14:01.896Z">
+<meta property="article:published_time" content="2023-09-21T12:28:11.000Z">
+<meta property="article:modified_time" content="2023-09-21T14:20:00.107Z">
 <meta property="article:author" content="clearSky">
-<meta property="article:tag" content="哈希表">
 <meta property="article:tag" content="动态规划">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LC 413. 等差数列划分 - clearskycpy</title>
+  <title>LC_221_最大正方形 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -192,13 +191,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('http://s1c9a5ra9.hd-bkt.clouddn.com/202309212219360.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 413. 等差数列划分"></span>
+            <span id="subtitle" data-typed-text="LC_221_最大正方形"></span>
           
         </div>
 
@@ -214,7 +213,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-21 11:12" pubdate>
+        <time datetime="2023-09-21 20:28" pubdate>
           2023年9月21日
         </time>
       </span>
@@ -259,7 +258,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC 413. 等差数列划分</h1>
+            <h1 style="display: none">LC_221_最大正方形</h1>
             
               <p class="note note-info">
                 
@@ -272,43 +271,32 @@
             
               <div class="markdown-body">
                 
-                <h1 id="LC-413-等差数列划分"><a href="#LC-413-等差数列划分" class="headerlink" title="LC 413. 等差数列划分"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/arithmetic-slices/">LC 413. 等差数列划分</a></h1><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>如果一个数列 <strong>至少有三个元素</strong> ，并且任意两个相邻元素之差相同，则称该数列为等差数列。</p>
-<ul>
-<li>例如，<code>[1,3,5,7,9]</code>、<code>[7,7,7,7]</code> 和 <code>[3,-1,-5,-9]</code> 都是等差数列。</li>
+                <h1 id="221-最大正方形"><a href="#221-最大正方形" class="headerlink" title="221. 最大正方形"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximal-square/">221. 最大正方形</a></h1><ul>
+<li>在一个由 <code>&#39;0&#39;</code> 和 <code>&#39;1&#39;</code> 组成的二维矩阵内，找到只包含 <code>&#39;1&#39;</code> 的最大正方形，并返回其面积。</li>
 </ul>
-<p>给你一个整数数组 <code>nums</code> ，返回数组 <code>nums</code> 中所有为等差数组的 <strong>子数组</strong> 个数。</p>
-<p><strong>子数组</strong> 是数组中的一个连续序列。</p>
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
-<li>明确定义是<strong>子数组 也就是连续的</strong>，这点很重要</li>
-<li>确定<strong>dp[i] 的含义</strong>   根据经验可以定义为两种，但是肯定是有一种是错的，或许两种都是错的。但是还是从一般再推特殊<ul>
-<li><strong>以i 结尾的等差子数组个数</strong></li>
-<li><strong>0~i 的子数组个数</strong></li>
-</ul>
-</li>
-<li>现在通过逻辑思考一下这两种的<strong>可行性</strong><ul>
-<li>第一种<ul>
-<li>先知道以i结尾的子数组个数怎么求。</li>
-<li>首先等差数列的等差值是确定的 nums[i] - nums[i - 1]</li>
-<li>其次 如果 nums[i - 1] - nums[ i - 2] 不等于等差值。那么说明无法构成。 dp[i] &#x3D; 0;</li>
-<li>如果等于的话 说明至少有一种可能。所以就可以为 dp[i -1] + 1</li>
-<li>结果应当求和</li>
-<li>通过分析，该推断是符合动态规划要求（无后效性。重叠子问题）。</li>
-</ul>
-</li>
-<li>第二种<ul>
-<li>根本没有思路可以分析，因为找不到合适的递推式</li>
+<li>​	题目很短，求一个二维矩阵中最大的正方形（全为1的）</li>
+<li>怎么求呢<ul>
+<li>定义dp[i] [j] 为 以i ， j 为右下角的最大矩阵<ul>
+<li>分析一下转换式子<ul>
+<li>chars[i] [j]&#x3D; 0 ,这个时候当前位置是构成不了正方形的。所以 dp[i] [j] &#x3D; 0</li>
+<li>不等于的时候求dp[i - 1] [j -1] dp[i - 1] [j] dp[i] [j -1] 的min（min是边长），所以当前位置能够构成的边长最多为min + 1  。 </li>
+<li>如何求证第二点是正确的呢？ 通过图可以很明显的看出来。因为任何一条边小于min，那么当前位置也构成不了min+1 长边的矩阵</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><h4 id="实现一"><a href="#实现一" class="headerlink" title="实现一"></a>实现一</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numberOfArithmeticSlices</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> dp[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[nums.length];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt; nums.length; i++) &#123;<br>            <span class="hljs-keyword">if</span>(nums[i - <span class="hljs-number">1</span>] - nums[ i - <span class="hljs-number">2</span>] != nums[i] - nums[i - <span class="hljs-number">1</span>]) &#123;<br>                dp[i] = <span class="hljs-number">0</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                dp[i] = dp[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>            &#125;<br>            res += dp[i];<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
-<h4 id="实现二-空间优化"><a href="#实现二-空间优化" class="headerlink" title="实现二 - 空间优化"></a>实现二 - 空间优化</h4><p>提交完了实现一的代码后，发现一个问题。内存击败的用户太少了。再看看发现确实可以空间优化，因为当前递推式只依赖前面的一项。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numberOfArithmeticSlices</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">dpi</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt; nums.length; i++) &#123;<br>            <span class="hljs-keyword">if</span>(nums[i - <span class="hljs-number">1</span>] - nums[ i - <span class="hljs-number">2</span>] != nums[i] - nums[i - <span class="hljs-number">1</span>]) &#123;<br>                dpi = <span class="hljs-number">0</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                dpi++;<br>            &#125;<br>            res += dpi;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+</li>
+</ul>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><ul>
+<li>通过递推式可以发现，所求位置依赖的是左上，左， 上。这三个位置，和其他位置没有什么关系。</li>
+<li>假如要使用滚动数组的方式。应该怎么做呢<ul>
+<li>上不用管，上不会被覆盖，再分析一下可以看出，会被覆盖的是左上，所以只需要定义一个变量保存左上即可。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maximalSquare</span><span class="hljs-params">(<span class="hljs-type">char</span>[][] matrix)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> matrix[<span class="hljs-number">0</span>].length;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        <span class="hljs-comment">// 初始化</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            dp[i] = matrix[<span class="hljs-number">0</span>][i] - <span class="hljs-string">&#x27;0&#x27;</span>;  <br>            res = Math.max(res, dp[i]);<br>        &#125;<br>        <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; matrix.length; i++) &#123;<br>            <span class="hljs-comment">// 处理第一个位置</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">dpIJ</span> <span class="hljs-operator">=</span> dp[<span class="hljs-number">0</span>];<br>            dp[<span class="hljs-number">0</span>] = matrix[i][<span class="hljs-number">0</span>] - <span class="hljs-string">&#x27;0&#x27;</span>;<br>            res = Math.max(res, dp[<span class="hljs-number">0</span>]);<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt; n; j++) &#123;<br>                <span class="hljs-keyword">if</span>(matrix[i][j] == <span class="hljs-string">&#x27;0&#x27;</span>) &#123;<br>                    dpIJ = dp[j];<br>                    dp[j] = <span class="hljs-number">0</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span> Math.min(dp[j],Math.min(dp[j - <span class="hljs-number">1</span>], dpIJ)) + <span class="hljs-number">1</span>;<br>                    res = Math.max(res, min * min);  <span class="hljs-comment">// 保存值</span><br>                    dpIJ = dp[j];<br>                    dp[j] = min;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -320,8 +308,6 @@
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">#哈希表</a>
       
         <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
       
@@ -335,8 +321,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 413. 等差数列划分</div>
-      <div>http://example.com/2023/09/21/413等差数列划分/</div>
+      <div>LC_221_最大正方形</div>
+      <div>http://example.com/2023/09/21/LC221最大正方形/</div>
     </div>
     <div class="license-meta">
       
@@ -380,18 +366,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/21/LC221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/" title="LC_221_最大正方形">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC_221_最大正方形</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/20/xxl-job-study/" title="xxl_job分布式任务调度">
-                        <span class="hidden-mobile">xxl_job分布式任务调度</span>
+                      <a href="/2023/09/21/413%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/" title="LC 413. 等差数列划分">
+                        <span class="hidden-mobile">LC 413. 等差数列划分</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
