@@ -1,0 +1,713 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/clearSky/ClearSky_tab.png">
+  <link rel="icon" href="/img/clearSky/ClearSky_tab.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="clearSky">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="xxl_job分布式任务调度git仓库地址https:&#x2F;&#x2F;github.com&#x2F;xuxueli&#x2F;xxl-job&#x2F; xxl_job可以用来干嘛？首先在学习之前需要先了解这个东西的的作用，然后再考虑为什么要用 “XXL-Job” 是一个分布式任务调度平台，通常用于管理和调度大规模的任务。它提供了一种可扩展的方式来执行各种类型的任务，如数据处理、定时任务、ETL（抽取、转换、加载）工作等。下面是一些 X">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xxl_job分布式任务调度">
+<meta property="og:url" content="http://example.com/2023/09/20/xxl-job-study/index.html">
+<meta property="og:site_name" content="clearskycpy">
+<meta property="og:description" content="xxl_job分布式任务调度git仓库地址https:&#x2F;&#x2F;github.com&#x2F;xuxueli&#x2F;xxl-job&#x2F; xxl_job可以用来干嘛？首先在学习之前需要先了解这个东西的的作用，然后再考虑为什么要用 “XXL-Job” 是一个分布式任务调度平台，通常用于管理和调度大规模的任务。它提供了一种可扩展的方式来执行各种类型的任务，如数据处理、定时任务、ETL（抽取、转换、加载）工作等。下面是一些 X">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-20T08:31:02.000Z">
+<meta property="article:modified_time" content="2023-09-21T02:15:36.462Z">
+<meta property="article:author" content="clearSky">
+<meta property="article:tag" content="xxl—job">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>xxl_job分布式任务调度 - clearskycpy</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"Copy"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>clearSky</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="xxl_job分布式任务调度"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        clearSky
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-20 16:31" pubdate>
+          2023年9月20日
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">xxl_job分布式任务调度</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年9月21日
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="xxl-job分布式任务调度"><a href="#xxl-job分布式任务调度" class="headerlink" title="xxl_job分布式任务调度"></a>xxl_job分布式任务调度</h1><p><strong>git仓库地址</strong><a target="_blank" rel="noopener" href="https://github.com/xuxueli/xxl-job/">https://github.com/xuxueli/xxl-job/</a></p>
+<h2 id="xxl-job可以用来干嘛？"><a href="#xxl-job可以用来干嘛？" class="headerlink" title="xxl_job可以用来干嘛？"></a>xxl_job可以用来干嘛？</h2><p><strong>首先在学习之前需要先了解这个东西的的作用，然后再考虑为什么要用</strong></p>
+<p>“XXL-Job” 是一个分布式任务调度平台，通常用于管理和调度大规模的任务。它提供了一种<strong>可扩展的方式来执行各种类型的任务</strong>，如数据处理、定时任务、ETL（抽取、转换、加载）工作等。下面是一些 XXL-Job 的主要用途和功能：</p>
+<ol>
+<li><p><strong>任务调度与执行</strong>：XXL-Job 允许你创建、调度和执行任务，确保它们按照计划自动运行。这对于<strong>定期执行重复性任务非常有用。</strong></p>
+</li>
+<li><p><strong>分布式任务</strong>：它支持分布式任务执行，可以将任务分散在多个执行器节点上，以加快任务处理速度和容量。</p>
+</li>
+<li><p><strong>任务监控与日志</strong>：XXL-Job 提供了任务运行状态的监控和日志记录，以便你能够实时查看任务的执行情况和问题排查。</p>
+</li>
+<li><p><strong>任务调度中心</strong>：任务可以通过调度中心统一管理，可以在 UI 界面上轻松创建、编辑和删除任务，也能够查看任务的历史运行情况。</p>
+</li>
+<li><p><strong>任务依赖关系</strong>：你可以设置任务之间的依赖关系，确保某些任务在其他任务完成后才能执行。</p>
+</li>
+<li><p><strong>报警与告警</strong>：XXL-Job 支持任务执行结果的报警与告警，可以通过邮件、短信等方式通知相关人员。</p>
+</li>
+<li><p><strong>动态添加执行器</strong>：你可以根据需求动态添加执行器节点，以提高任务的处理能力。</p>
+</li>
+<li><p><strong>多语言支持</strong>：XXL-Job 提供了多种语言的客户端 SDK，包括 Java、Python、Node.js 等，使开发任务变得更加灵活。</p>
+</li>
+</ol>
+<p>总之，<strong>XXL-Job 可以帮助组织更有效地管理和执行各种任务，从而提高工作效率、降低人工干预和减少错误。这一平台通常被用于数据处理、定时任务、后台作业管理等场景。</strong></p>
+<p><strong>为什么要用</strong></p>
+<ul>
+<li>通过定期处理这个关键词可以发现，和Listener 这个的作用有点相似，但是又有不同，都是处理任务，但是通过Listener是一直等待任务到来进行处理，而使用任务调度的形式，可以手动配置什么时候去查询任务，对任务的处理时机，和可拓展性有很大的提升。</li>
+</ul>
+<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><h3 id="下载xxl-job-解压"><a href="#下载xxl-job-解压" class="headerlink" title="下载xxl-job 解压"></a>下载xxl-job 解压</h3><ul>
+<li><p><strong>git仓库地址</strong><a target="_blank" rel="noopener" href="https://github.com/xuxueli/xxl-job/">https://github.com/xuxueli/xxl-job/</a></p>
+</li>
+<li><p><strong>项目使用的版本</strong><a target="_blank" rel="noopener" href="https://github.com/xuxueli/xxl-job/releases/tag/2.3.0">https://github.com/xuxueli/xxl-job/releases/tag/2.3.0</a></p>
+</li>
+<li><p>使用idea打开，<strong>修改admin下配置文件</strong> 主要修改端口号，因为默认8080 </p>
+</li>
+<li><p>这个是任务调度中心的后台管理系统，通过启动后台管理系统，可以在web ui 中对任务进行配置</p>
+</li>
+<li><p>像启动 SpringBoot 程序一样，启动这个 xxl-job 任务调度后台，如果你是部署到云服务器，则需要打包构架部署</p>
+</li>
+</ul>
+<p><strong>访问页面</strong></p>
+<ul>
+<li>地址：<a href="http://localhost:`7397`/xxl-job-admin">http://localhost:`7397`/xxl-job-admin</a> <code>我修改端口为7397了，你按照自己的端口就可以</code></li>
+<li>账号：admin</li>
+<li>密码：123456</li>
+</ul>
+<h3 id="运行示例"><a href="#运行示例" class="headerlink" title="运行示例"></a>运行示例</h3><ul>
+<li>任务调度后台启动后，则可以启动测试任务，这样就可以通过任务调度后来管理任务了。</li>
+</ul>
+<p><strong>任务类 com.xxl.job.executor.service.jobhandler.SampleXxlJob</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SampleXxlJob</span> &#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> LoggerFactory.getLogger(SampleXxlJob.class);<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 1、简单任务示例（Bean模式）</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@XxlJob(&quot;demoJobHandler&quot;)</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">demoJobHandler</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        logger.info(<span class="hljs-string">&quot;XXL-JOB, Hello World.&quot;</span>);<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;<br>            XxlJobHelper.log(<span class="hljs-string">&quot;beat at:&quot;</span> + i);<br>            TimeUnit.SECONDS.sleep(<span class="hljs-number">2</span>);<br>        &#125;<br>        <span class="hljs-comment">// default success</span><br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>这里面使用任务的方式也比较多，目前先看这个最简单的方式，因为这个基本就够接下来的使用了。</li>
+</ul>
+<p><strong>xxl-job-executor-samples#xxl-job-executor-sample-springboot</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-meta">@SpringBootApplication</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">XxlJobExecutorApplication</span> &#123;<br><br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">void</span> <span class="hljs-title function_">main</span>(<span class="hljs-params"><span class="hljs-built_in">String</span>[] args</span>) &#123;<br>        <span class="hljs-title class_">SpringApplication</span>.<span class="hljs-title function_">run</span>(<span class="hljs-title class_">XxlJobExecutorApplication</span>.<span class="hljs-property">class</span>, args);<br>	&#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>正常启动即可，运行后就可以在任务调度后台管理任务了。</li>
+</ul>
+<p><strong>可以在后台配置和使用当前任务</strong></p>
+<ul>
+<li>正常步骤应该配置一个执行器，但是这里不用，示例执行器已经配置进去了，所以可以在任务管理中直接执行任务，执行的方式有多中，通过CRON 表达式可以控制。也可以选执行一次（测试装填下执行一个即可）。通过后台可以看到，SamplexlJob已经被执行了一次。这里我们并没有让这个SampleXxlJob一直监听执行，而是通过后台管理的方式，在需要它执行的时候就执行，应该能体会到这个xxl-job的作用了。</li>
+</ul>
+<h3 id="项目中使用"><a href="#项目中使用" class="headerlink" title="项目中使用"></a>项目中使用</h3><h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><ul>
+<li>解决第一个分布式任务场景问题，扫描抽奖活动状态，把审核通过的活动扫描为活动中，把已过期活动中的状态扫描为关闭。</li>
+<li>如果写一个监听器一直监听，是可以。但是性能的消耗是无与伦比的。 在这里就可以使用xxl-job。对任务进行管理，可以管理它执行的时机，还有执行的次数</li>
+</ul>
+<h4 id="使用的方式"><a href="#使用的方式" class="headerlink" title="使用的方式"></a>使用的方式</h4><ol>
+<li><p><strong>导入pom  导入的pom 和 使用的xxl-job 版本应该尽量一致</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- xxl-job-core https://github.com/xuxueli/xxl-job/--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.xuxueli<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>xxl-job-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.3.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>**配置一下yml ** 主要配置的是后台管理的地址，还有就是执行器的相关信息，接下来注册执行器的时候要用到</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># xxl-job</span><br><span class="hljs-comment"># 官网：https://github.com/xuxueli/xxl-job/</span><br><span class="hljs-comment"># 地址：http://localhost:7397/xxl-job-admin 【需要先启动 xxl-job】</span><br><span class="hljs-comment"># 账号：admin</span><br><span class="hljs-comment"># 密码：123456</span><br><span class="hljs-attr">xxl:</span><br>  <span class="hljs-attr">job:</span><br>    <span class="hljs-attr">admin:</span><br>      <span class="hljs-attr">addresses:</span> <span class="hljs-string">http://127.0.0.1:7397/xxl-job-admin</span><br>    <span class="hljs-attr">executor:</span><br>      <span class="hljs-attr">address:</span><br>      <span class="hljs-attr">appname:</span> <span class="hljs-string">lottery-job</span><br>      <span class="hljs-attr">ip:</span><br>      <span class="hljs-attr">port:</span> <span class="hljs-number">9999</span><br>      <span class="hljs-attr">logpath:</span> <span class="hljs-string">/Users/fuzhengwei/itstack/data/applogs/xxl-job/jobhandler</span><br>      <span class="hljs-attr">logretentiondays:</span> <span class="hljs-number">50</span><br>    <span class="hljs-attr">accessToken:</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>使用bean的方式注册一个执行器，将执行器交给spring管理，<strong>后面在任务调度中心添加进去，前提是对应配置都对</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LotteryXxlJobConfig</span> &#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> LoggerFactory.getLogger(LotteryXxlJobConfig.class);<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;xxl.job.admin.addresses&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String adminAddresses;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;xxl.job.accessToken&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String accessToken;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;xxl.job.executor.appname&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String appname;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;xxl.job.executor.address&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String address;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;xxl.job.executor.ip&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String ip;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;xxl.job.executor.port&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> port;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;xxl.job.executor.logpath&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String logPath;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;xxl.job.executor.logretentiondays&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> logRetentionDays;<br><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-keyword">public</span> XxlJobSpringExecutor <span class="hljs-title function_">xxlJobExecutor</span><span class="hljs-params">()</span> &#123;<br>        logger.info(<span class="hljs-string">&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; xxl-job config init.&quot;</span>);<br><br>        <span class="hljs-type">XxlJobSpringExecutor</span> <span class="hljs-variable">xxlJobSpringExecutor</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XxlJobSpringExecutor</span>();<br>        xxlJobSpringExecutor.setAdminAddresses(adminAddresses);<br>        xxlJobSpringExecutor.setAppname(appname);<br>        xxlJobSpringExecutor.setAddress(address);<br>        xxlJobSpringExecutor.setIp(ip);<br>        xxlJobSpringExecutor.setPort(port);<br>        xxlJobSpringExecutor.setAccessToken(accessToken);<br>        xxlJobSpringExecutor.setLogPath(logPath);<br>        xxlJobSpringExecutor.setLogRetentionDays(logRetentionDays);<br><br>        <span class="hljs-keyword">return</span> xxlJobSpringExecutor;<br>    &#125;<br><br>    <span class="hljs-comment">/**********************************************************************************************</span><br><span class="hljs-comment">     * 针对多网卡、容器内部署等情况，可借助 &quot;spring-cloud-commons&quot; 提供的 &quot;InetUtils&quot; 组件灵活定制注册IP；</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     *      1、引入依赖：</span><br><span class="hljs-comment">     *          &lt;dependency&gt;</span><br><span class="hljs-comment">     *             &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="hljs-comment">     *             &lt;artifactId&gt;spring-cloud-commons&lt;/artifactId&gt;</span><br><span class="hljs-comment">     *             &lt;version&gt;$&#123;version&#125;&lt;/version&gt;</span><br><span class="hljs-comment">     *         &lt;/dependency&gt;</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     *      2、配置文件，或者容器启动变量</span><br><span class="hljs-comment">     *          spring.cloud.inetutils.preferred-networks: &#x27;xxx.xxx.xxx.&#x27;</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     *      3、获取IP</span><br><span class="hljs-comment">     *          String ip_ = inetUtils.findFirstNonLoopbackHostInfo().getIpAddress();</span><br><span class="hljs-comment">     **********************************************************************************************/</span><br><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>既然执行器有了，那么就可以创建任务了。后面将任务根据任务名添加到当前执行器里面即可</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LotteryXxlJob</span> &#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> LoggerFactory.getLogger(LotteryXxlJob.class);<br><br>    <span class="hljs-meta">@Resource</span><br>    <span class="hljs-keyword">private</span> IActivityDeploy activityDeploy;<br><br>    <span class="hljs-meta">@Resource</span><br>    <span class="hljs-keyword">private</span> IStateHandler stateHandler;<br><br>    <span class="hljs-meta">@XxlJob(&quot;lotteryActivityStateJobHandler&quot;)</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">lotteryActivityStateJobHandler</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        logger.info(<span class="hljs-string">&quot;扫描活动状态 Begin&quot;</span>);<br><br>        List&lt;ActivityVO&gt; activityVOList = activityDeploy.scanToDoActivityList(<span class="hljs-number">0L</span>);<br>        <span class="hljs-keyword">if</span> (activityVOList.isEmpty())&#123;<br>            logger.info(<span class="hljs-string">&quot;扫描活动状态 End 暂无符合需要扫描的活动列表&quot;</span>);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">while</span> (!activityVOList.isEmpty()) &#123;<br>            <span class="hljs-keyword">for</span> (ActivityVO activityVO : activityVOList) &#123;<br>                <span class="hljs-type">Integer</span> <span class="hljs-variable">state</span> <span class="hljs-operator">=</span> activityVO.getState();<br>                <span class="hljs-keyword">switch</span> (state) &#123;<br>                    <span class="hljs-comment">// 活动状态为审核通过，在临近活动开启时间前，审核活动为活动中。在使用活动的时候，需要依照活动状态核时间两个字段进行判断和使用。</span><br>                    <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:<br>                        <span class="hljs-type">Result</span> <span class="hljs-variable">state4Result</span> <span class="hljs-operator">=</span> stateHandler.doing(activityVO.getActivityId(), Constants.ActivityState.PASS);<br>                        logger.info(<span class="hljs-string">&quot;扫描活动状态为活动中 结果：&#123;&#125; activityId：&#123;&#125; activityName：&#123;&#125; creator：&#123;&#125;&quot;</span>, JSON.toJSONString(state4Result), activityVO.getActivityId(), activityVO.getActivityName(), activityVO.getCreator());<br>                        <span class="hljs-keyword">break</span>;<br>                    <span class="hljs-comment">// 扫描时间已过期的活动，从活动中状态变更为关闭状态</span><br>                    <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:<br>                        <span class="hljs-keyword">if</span> (activityVO.getEndDateTime().before(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>()))&#123;<br>                            <span class="hljs-type">Result</span> <span class="hljs-variable">state5Result</span> <span class="hljs-operator">=</span> stateHandler.close(activityVO.getActivityId(), Constants.ActivityState.DOING);<br>                            logger.info(<span class="hljs-string">&quot;扫描活动状态为关闭 结果：&#123;&#125; activityId：&#123;&#125; activityName：&#123;&#125; creator：&#123;&#125;&quot;</span>, JSON.toJSONString(state5Result), activityVO.getActivityId(), activityVO.getActivityName(), activityVO.getCreator());<br>                        &#125;<br>                        <span class="hljs-keyword">break</span>;<br>                    <span class="hljs-keyword">default</span>:<br>                        <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br><br>            <span class="hljs-comment">// 获取集合中最后一条记录，继续扫描后面10条记录</span><br>            <span class="hljs-type">ActivityVO</span> <span class="hljs-variable">activityVO</span> <span class="hljs-operator">=</span> activityVOList.get(activityVOList.size() - <span class="hljs-number">1</span>);<br>            activityVOList = activityDeploy.scanToDoActivityList(activityVO.getId());<br>        &#125;<br><br>        logger.info(<span class="hljs-string">&quot;扫描活动状态 End&quot;</span>);<br><br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在任务调度中心添加当前执行器，前提是xxl-job-admin 和 lottery已经启动了</p>
+<ol>
+<li>appname需要对应填写，名称不做要求</li>
+</ol>
+</li>
+<li><p>在任务管理选择到当前执行器，新增任务。<strong>JobHandler的选择为lotteryActivityStateJobHandler</strong>名字不能错，和项目中任务的名称要一致。定义执行时机</p>
+</li>
+<li><p>启动任务之后就会去扫描活动表中满足转移条件的活动，然后进行状态转换</p>
+</li>
+</ol>
+<p>任务的具体代码就不看了，主要用到了一个状态转换的上下文。这个上下文的实现逻辑用的状态模式。前面有提过。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/xxl%E2%80%94job/">#xxl—job</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>xxl_job分布式任务调度</div>
+      <div>http://example.com/2023/09/20/xxl-job-study/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>clearSky</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/21/413%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/" title="LC 413. 等差数列划分">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LC 413. 等差数列划分</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/19/%E5%85%B7%E4%BD%93%E4%B8%9A%E5%8A%A1%E4%B8%AD%E4%BD%BF%E7%94%A8MQ/" title="具体业务中使用MQ - kafka">
+                        <span class="hidden-mobile">具体业务中使用MQ - kafka</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,681 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/clearSky/ClearSky_tab.png">
+  <link rel="icon" href="/img/clearSky/ClearSky_tab.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="clearSky">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="具体业务中使用MQ为什么要使用MQ？既然是要在业务中使用MQ，那么就先明确一下为什么要使用MQ吧，MQ的使用场景。 消息队列（MQ，Message Queue）是一种在分布式系统中广泛使用的通信机制，它提供了一种异步、松耦合的通信方式，用于在不同组件、服务或系统之间传递消息。以下是为什么要使用消息队列的一些常见原因：  异步通信：消息队列允许发送者将消息发送到队列并继续执行，而不必等待接收者立即处">
+<meta property="og:type" content="article">
+<meta property="og:title" content="具体业务中使用MQ - kafka">
+<meta property="og:url" content="http://example.com/2023/09/19/%E5%85%B7%E4%BD%93%E4%B8%9A%E5%8A%A1%E4%B8%AD%E4%BD%BF%E7%94%A8MQ/index.html">
+<meta property="og:site_name" content="clearskycpy">
+<meta property="og:description" content="具体业务中使用MQ为什么要使用MQ？既然是要在业务中使用MQ，那么就先明确一下为什么要使用MQ吧，MQ的使用场景。 消息队列（MQ，Message Queue）是一种在分布式系统中广泛使用的通信机制，它提供了一种异步、松耦合的通信方式，用于在不同组件、服务或系统之间传递消息。以下是为什么要使用消息队列的一些常见原因：  异步通信：消息队列允许发送者将消息发送到队列并继续执行，而不必等待接收者立即处">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-19T13:26:49.000Z">
+<meta property="article:modified_time" content="2023-09-20T00:33:03.674Z">
+<meta property="article:author" content="clearSky">
+<meta property="article:tag" content="kafka">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>具体业务中使用MQ - kafka - clearskycpy</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"Copy"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>clearSky</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="具体业务中使用MQ - kafka"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        clearSky
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-19 21:26" pubdate>
+          2023年9月19日
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">具体业务中使用MQ - kafka</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年9月20日
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="具体业务中使用MQ"><a href="#具体业务中使用MQ" class="headerlink" title="具体业务中使用MQ"></a>具体业务中使用MQ</h1><h2 id="为什么要使用MQ？"><a href="#为什么要使用MQ？" class="headerlink" title="为什么要使用MQ？"></a>为什么要使用MQ？</h2><p><strong>既然是要在业务中使用MQ，那么就先明确一下为什么要使用MQ吧，MQ的使用场景。</strong></p>
+<p><strong>消息队列（MQ，Message Queue）</strong>是一种在分布式系统中广泛使用的通信机制，它提供了一种<strong>异步、松耦合</strong>的通信方式，用于在不同组件、服务或系统之间传递消息。以下是为什么要使用消息队列的一些常见原因：</p>
+<ol>
+<li><p><strong>异步通信</strong>：消息队列允许发送者将消息发送到队列并继续执行，而不必等待接收者立即处理消息。这种异步通信可以<strong>提高系统的响应速度和吞吐量</strong>。</p>
+<ol>
+<li>也就是<strong>出现长流程的业务，有些可以延迟处理的流程</strong>，可以通过MQ的方式，将流程异步处理，先返回，然后在处理MQ存放的消息</li>
+</ol>
+</li>
+<li><p><strong>降低系统耦合度</strong>：使用消息队列可以降低系统之间的耦合度。<strong>发送者和接收者之间不需要直接通信</strong>，它们只需通过共享的消息队列进行通信。<strong>这使得系统更加灵活</strong>，<strong>允许独立开发和维护不同的组件</strong>。</p>
+</li>
+<li><p><strong>提高可伸缩性</strong>：消息队列可以帮助构建可伸缩的系统。新的消费者可以轻松地添加到队列以处理更多的消息，从而提高系统的处理能力。</p>
+</li>
+<li><p><strong>消息持久化</strong>：消息队列通常支持消息的持久化，确保即使在<strong>系统故障或重启后，消息也不会丢失。</strong></p>
+</li>
+<li><p><strong>解耦分布式系统</strong>：在分布式系统中，不同的微服务或组件需要进行通信。消息队列可以帮助解耦这些组件，使它们能够独立演化和扩展。</p>
+</li>
+<li><p><strong>消息重试和处理顺序</strong>：消息队列可以处理消息的重试和确保消息按照特定顺序进行处理，这对于一些需要顺序性和可靠性的应用场景非常重要。</p>
+</li>
+<li><p><strong>削峰填谷</strong>：消息队列可以帮助<strong>平滑处理系统的请求峰值，确保系统不会因突发的高负载而崩溃。</strong></p>
+</li>
+<li><p><strong>消息传递保证</strong>：许多消息队列提供消息传递保证，如至少一次传递、精确一次传递等，<strong>确保消息不会丢失或重复。</strong></p>
+</li>
+<li><p><strong>日志和审计</strong>：消息队列可以用于记录系统的操作和生成审计日志，以追踪和调查问题。</p>
+</li>
+<li><p><strong>跨语言和跨平台通信</strong>：消息队列通常支持多种编程语言和不同操作系统之间的通信，使得构建多语言和多平台的分布式系统更容易。</p>
+</li>
+</ol>
+<p>总的来说，<strong>消息队列是构建高性能、高可用性、松耦合和可伸缩的分布式系统的重要组件。它们在各种应用场景中都有广泛的用途，包括微服务架构、大数据处理、事件驱动架构、日志收集和实时数据处理等。</strong></p>
+<ul>
+<li><strong>这次业务中为什么要使用MQ呢？</strong><ul>
+<li>在整个抽奖流程中，从选取活动id 进行抽奖结束，得到抽奖结果，这个是用户需要立刻得到反馈的。但是至于后面的奖品发放，调用库存等可拓展的相关操作其实是<strong>可以延迟处理</strong>的，加入同时抽奖的人特别多，那么如果要走完整个流程，是会降低系统响应速度的。所以在抽奖和奖品发放这两个环节可以进行一个解构的操作。</li>
+</ul>
+</li>
+</ul>
+<h2 id="接入流程"><a href="#接入流程" class="headerlink" title="接入流程"></a>接入流程</h2><h3 id="启动zookeeper"><a href="#启动zookeeper" class="headerlink" title="启动zookeeper"></a>启动zookeeper</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties<br></code></pre></td></tr></table></figure>
+
+<h3 id="启动kafka"><a href="#启动kafka" class="headerlink" title="启动kafka"></a>启动kafka</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">.\bin\windows\kafka-server-start.bat .\config\server.properties<br></code></pre></td></tr></table></figure>
+
+<h3 id="创建一个对应主题"><a href="#创建一个对应主题" class="headerlink" title="创建一个对应主题"></a>创建一个对应主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic lottery_invoice<br></code></pre></td></tr></table></figure>
+
+<p>这里通过抽奖结束后，用户抽到的奖品落库表的mq_state字段，来标志消息是否已经被处理，防止重复消费</p>
+<h3 id="创建消费者"><a href="#创建消费者" class="headerlink" title="创建消费者"></a>创建消费者</h3><ul>
+<li>生产者依旧是使用kafkaTemplate封装的一个方法，这个方法里面定义了当前生产者的主题，</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">KafkaProducer</span> &#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> LoggerFactory.getLogger(KafkaProducer.class);<br><br>    <span class="hljs-meta">@Resource</span><br>    <span class="hljs-keyword">private</span> KafkaTemplate&lt;String, Object&gt; kafkaTemplate;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * MQ主题：中奖发货单</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * 启动zk：bin/zookeeper-server-start.sh -daemon config/zookeeper.properties</span><br><span class="hljs-comment">     * 启动kafka：bin/kafka-server-start.sh -daemon config/server.properties</span><br><span class="hljs-comment">     * 创建topic：bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic lottery_invoice</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">TOPIC_INVOICE</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;lottery_invoice&quot;</span>;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 发送中奖物品发货单消息</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> invoice 发货单</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> ListenableFuture&lt;SendResult&lt;String, Object&gt;&gt; <span class="hljs-title function_">sendLotteryInvoice</span><span class="hljs-params">(InvoiceVO invoice)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">objJson</span> <span class="hljs-operator">=</span> JSON.toJSONString(invoice);<br>        logger.info(<span class="hljs-string">&quot;发送MQ消息 topic：&#123;&#125; bizId：&#123;&#125; message：&#123;&#125;&quot;</span>, TOPIC_INVOICE, invoice.getuId(), objJson);<br>        <span class="hljs-keyword">return</span> kafkaTemplate.send(TOPIC_INVOICE, objJson);<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>可以把所有的生产消息都放到 <strong>KafkaProducer</strong> 中，并对外提供一个可以发送 MQ 消息的方法。</li>
+<li>因为配置的类型转换为 <strong>StringDeserializer</strong> 所以发送消息的方式是 JSON 字符串，当然这个编解码器是可以重写的，满足发送其他类型的数据。</li>
+</ul>
+<h3 id="消费者代码"><a href="#消费者代码" class="headerlink" title="消费者代码"></a>消费者代码</h3><p><strong>每一个 MQ 消息的消费都会有一个对应的 XxxListener 来处理消息体</strong>，如果你使用一些其他的 MQ 可能还会看到一些抽象类来处理 MQ 消息集合。</p>
+<p>在这个 LotteryInvoiceListener 消息监听类中，主要就是通过<strong>消息中的发奖类型获取到对应的奖品发货工厂</strong>，处理奖品的发送操作。</p>
+<p>在奖品发送操作中，已经补全了 <code>DistributionBase#updateUserAwardState</code> 更新奖品发送状态的操作。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LotteryInvoiceListener</span> &#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> LoggerFactory.getLogger(LotteryInvoiceListener.class);<br><br>    <span class="hljs-meta">@Resource</span><br>    <span class="hljs-keyword">private</span> DistributionGoodsFactory distributionGoodsFactory;<br><br>    <span class="hljs-meta">@KafkaListener(topics = &quot;lottery_invoice&quot;, groupId = &quot;lottery&quot;)</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onMessage</span><span class="hljs-params">(ConsumerRecord&lt;?, ?&gt; record, Acknowledgment ack, <span class="hljs-meta">@Header(KafkaHeaders.RECEIVED_TOPIC)</span> String topic)</span> &#123;<br>        Optional&lt;?&gt; message = Optional.ofNullable(record.value());<br><br>        <span class="hljs-comment">// 1. 判断消息是否存在</span><br>        <span class="hljs-keyword">if</span> (!message.isPresent()) &#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br><br>        <span class="hljs-comment">// 2. 处理 MQ 消息</span><br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-comment">// 1. 转化对象（或者你也可以重写Serializer&lt;T&gt;）</span><br>            <span class="hljs-type">InvoiceVO</span> <span class="hljs-variable">invoiceVO</span> <span class="hljs-operator">=</span> JSON.parseObject((String) message.get(), InvoiceVO.class);<br><br>            <span class="hljs-comment">// 2. 获取发送奖品工厂，执行发奖</span><br>            <span class="hljs-type">IDistributionGoods</span> <span class="hljs-variable">distributionGoodsService</span> <span class="hljs-operator">=</span> distributionGoodsFactory.getDistributionGoodsService(invoiceVO.getAwardType());<br>            <span class="hljs-type">DistributionRes</span> <span class="hljs-variable">distributionRes</span> <span class="hljs-operator">=</span> distributionGoodsService.doDistribution(<span class="hljs-keyword">new</span> <span class="hljs-title class_">GoodsReq</span>(invoiceVO.getuId(), invoiceVO.getOrderId(), invoiceVO.getAwardId(), invoiceVO.getAwardName(), invoiceVO.getAwardContent()));<br><br>            Assert.isTrue(Constants.AwardState.SUCCESS.getCode().equals(distributionRes.getCode()), distributionRes.getInfo());<br><br>            <span class="hljs-comment">// 3. 打印日志</span><br>            logger.info(<span class="hljs-string">&quot;消费MQ消息，完成 topic：&#123;&#125; bizId：&#123;&#125; 发奖结果：&#123;&#125;&quot;</span>, topic, invoiceVO.getuId(), JSON.toJSONString(distributionRes));<br><br>            <span class="hljs-comment">// 4. 消息消费完成</span><br>            ack.acknowledge();<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-comment">// 发奖环节失败，消息重试。所有到环节，发货、更新库，都需要保证幂等。</span><br>            logger.error(<span class="hljs-string">&quot;消费MQ消息，失败 topic：&#123;&#125; message：&#123;&#125;&quot;</span>, topic, message.get());<br>            <span class="hljs-keyword">throw</span> e;<br>        &#125;<br>    &#125;<br><br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="业务流程中的代码"><a href="#业务流程中的代码" class="headerlink" title="业务流程中的代码"></a>业务流程中的代码</h3><ul>
+<li>业务流程消息发送有两个出口，第一消息发送成功了，第二消息发送失败了。并且做对应的消息标记</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">InvoiceVO</span> <span class="hljs-variable">invoiceVO</span> <span class="hljs-operator">=</span> buildInvoiceVO(drawOrderVO);<br>ListenableFuture&lt;SendResult&lt;String, Object&gt;&gt; future = kafkaProducer.sendLotteryInvoice(invoiceVO);<br>future.addCallback(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ListenableFutureCallback</span>&lt;SendResult&lt;String, Object&gt;&gt;() &#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onSuccess</span><span class="hljs-params">(SendResult&lt;String, Object&gt; stringObjectSendResult)</span> &#123;<br>        <span class="hljs-comment">// 4.1 MQ 消息发送完成，更新数据库表 user_strategy_export.mq_state = 1</span><br>        activityPartake.updateInvoiceMqState(invoiceVO.getuId(), invoiceVO.getOrderId(), Constants.MQState.COMPLETE.getCode());<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onFailure</span><span class="hljs-params">(Throwable throwable)</span> &#123;<br>        <span class="hljs-comment">// 4.2 MQ 消息发送失败，更新数据库表 user_strategy_export.mq_state = 2 【等待定时任务扫码补偿MQ消息】</span><br>        activityPartake.updateInvoiceMqState(invoiceVO.getuId(), invoiceVO.getOrderId(), Constants.MQState.FAIL.getCode());<br>    &#125;<br><br>&#125;);<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/kafka/">#kafka</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>具体业务中使用MQ - kafka</div>
+      <div>http://example.com/2023/09/19/具体业务中使用MQ/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>clearSky</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月19日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/20/xxl-job-study/" title="xxl_job分布式任务调度">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">xxl_job分布式任务调度</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/18/kafka%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="kafka安装以及环境配置">
+                        <span class="hidden-mobile">kafka安装以及环境配置</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
