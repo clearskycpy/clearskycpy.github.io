@@ -16,22 +16,22 @@
   <meta name="author" content="clearSky">
   <meta name="keywords" content="">
   
-    <meta name="description" content="221. 最大正方形 在一个由 &#39;0&#39; 和 &#39;1&#39; 组成的二维矩阵内，找到只包含 &#39;1&#39; 的最大正方形，并返回其面积。  解题思路 ​	题目很短，求一个二维矩阵中最大的正方形（全为1的） 怎么求呢 定义dp[i] [j] 为 以i ， j 为右下角的最大矩阵 分析一下转换式子 chars[i] [j]&#x3D; 0 ,这个时候当前位置是构成不了正方">
+    <meta name="description" content="手动部署部署步骤第一步: 通过IDEA自带的Maven面板的package指令将SpringBoot项目打成jar包并自动放在target目录下 第二步: 将jar包上传到linux服务器,可以创建一个&#x2F;usr&#x2F;local&#x2F;app目录专门存放 第三步: 执行命令启动jar包java -jar [打包好的jar包名,注意后缀],确保8080和3306端口是开放的  .j">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC_221_最大正方形">
-<meta property="og:url" content="http://example.com/2023/09/21/LC221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/index.html">
+<meta property="og:title" content="项目部署">
+<meta property="og:url" content="http://example.com/2023/10/07/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="clearskycpy">
-<meta property="og:description" content="221. 最大正方形 在一个由 &#39;0&#39; 和 &#39;1&#39; 组成的二维矩阵内，找到只包含 &#39;1&#39; 的最大正方形，并返回其面积。  解题思路 ​	题目很短，求一个二维矩阵中最大的正方形（全为1的） 怎么求呢 定义dp[i] [j] 为 以i ， j 为右下角的最大矩阵 分析一下转换式子 chars[i] [j]&#x3D; 0 ,这个时候当前位置是构成不了正方">
+<meta property="og:description" content="手动部署部署步骤第一步: 通过IDEA自带的Maven面板的package指令将SpringBoot项目打成jar包并自动放在target目录下 第二步: 将jar包上传到linux服务器,可以创建一个&#x2F;usr&#x2F;local&#x2F;app目录专门存放 第三步: 执行命令启动jar包java -jar [打包好的jar包名,注意后缀],确保8080和3306端口是开放的  .j">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-21T12:28:11.000Z">
-<meta property="article:modified_time" content="2023-09-21T14:20:00.107Z">
+<meta property="article:published_time" content="2023-10-07T12:15:41.000Z">
+<meta property="article:modified_time" content="2023-10-07T12:17:34.205Z">
 <meta property="article:author" content="clearSky">
-<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LC_221_最大正方形 - clearskycpy</title>
+  <title>项目部署 - clearskycpy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -191,13 +191,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('http://s1c9a5ra9.hd-bkt.clouddn.com/202309212219360.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner_img.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC_221_最大正方形"></span>
+            <span id="subtitle" data-typed-text="项目部署"></span>
           
         </div>
 
@@ -213,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-21 20:28" pubdate>
-          2023年9月21日
+        <time datetime="2023-10-07 20:15" pubdate>
+          2023年10月7日
         </time>
       </span>
     
@@ -258,12 +258,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC_221_最大正方形</h1>
+            <h1 style="display: none">项目部署</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年9月21日
+                    本文最后更新于：2023年10月7日
                   
                 
               </p>
@@ -271,32 +271,43 @@
             
               <div class="markdown-body">
                 
-                <h1 id="221-最大正方形"><a href="#221-最大正方形" class="headerlink" title="221. 最大正方形"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximal-square/">221. 最大正方形</a></h1><ul>
-<li>在一个由 <code>&#39;0&#39;</code> 和 <code>&#39;1&#39;</code> 组成的二维矩阵内，找到只包含 <code>&#39;1&#39;</code> 的最大正方形，并返回其面积。</li>
+                <h2 id="手动部署"><a href="#手动部署" class="headerlink" title="手动部署"></a>手动部署</h2><h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><p><strong>第一步: 通过IDEA自带的Maven面板的package指令将SpringBoot项目打成jar包并自动放在target目录下</strong></p>
+<p><strong>第二步: 将jar包上传到linux服务器,可以创建一个&#x2F;usr&#x2F;local&#x2F;app目录专门存放</strong></p>
+<p><strong>第三步: 执行命令启动jar包<code>java -jar [打包好的jar包名,注意后缀]</code>,确保8080和3306端口是开放的</strong></p>
+<ul>
+<li><code>.jar.original</code>用来给别的项目用: 是普通jar包，不包含依赖</li>
+<li><code>.jar</code>文件专门用来部署: 可以直接用java -jar命令执行,包含了pom中的所有依赖</li>
+<li>这种方式是采用控制台霸屏的形式运行程序,一旦终端退出就无法访问</li>
 </ul>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
-<li>​	题目很短，求一个二维矩阵中最大的正方形（全为1的）</li>
-<li>怎么求呢<ul>
-<li>定义dp[i] [j] 为 以i ， j 为右下角的最大矩阵<ul>
-<li>分析一下转换式子<ul>
-<li>chars[i] [j]&#x3D; 0 ,这个时候当前位置是构成不了正方形的。所以 dp[i] [j] &#x3D; 0</li>
-<li>不等于的时候求dp[i - 1] [j -1] dp[i - 1] [j] dp[i] [j -1] 的min（min是边长），所以当前位置能够构成的边长最多为min + 1  。 </li>
-<li>如何求证第二点是正确的呢？ 通过图可以很明显的看出来。因为任何一条边小于min，那么当前位置也构成不了min+1 长边的矩阵</li>
+<p><strong>第四步: 在浏览器访问<code>ip地址:端口/路径</code></strong></p>
+<p><strong>使用线上程序的好处</strong></p>
+<ul>
+<li>不会采用控制台霸屏的形式运行程序而是将程序在后台运行</li>
+<li>不会将日志输出到控制台，而是输出到日志文件，方便运维查阅信息</li>
 </ul>
-</li>
+<p><code>nohup(no hang up不挂起) Command[Arg ...][&amp;]</code>: 用于不挂断地运行指定命令，退出终端不会影响程序的运行</p>
+<ul>
+<li>Command: 要执行的命令</li>
+<li>Arg:一些参数如可以指定输出的日志文件(相对路径和绝对路径都可以)</li>
+<li>&amp;:让命令在后台运行</li>
 </ul>
-</li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">后台运行java -jar命令，并将日志输出到hello.log文件</span><br>nohup java -jar [打包好的jar包名] &amp;&gt; hello.log &amp;<br>nohup java -jar MyRobot-0.0.1-SNAPSHOT.jar &amp;&gt; MyRobot.log &amp;<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">通过杀进程的方式停止SpringBoot程序</span><br>ps -ef | grep java -jar #查看进程号<br>kill -9 进程号<br></code></pre></td></tr></table></figure>
+
+<h2 id="自动部署"><a href="#自动部署" class="headerlink" title="自动部署"></a>自动部署</h2><h3 id="部署步骤-1"><a href="#部署步骤-1" class="headerlink" title="部署步骤"></a>部署步骤</h3><p><strong>编写Shell脚本(拉取代码,编译,打包,启动),为用户授予执行Shell脚本的权限,执行Shell脚本程序</strong></p>
+<ul>
+<li>在Linux中安装Git克隆远程仓库的项目代码到本地仓库: <code>git clone 仓库地址(自动生成目录)</code>,这样下次拉取最新代码的时候就不用指定仓库的位置了</li>
+<li>安装Maven对项目编译,打包</li>
+<li>使用<code>java -jar</code>命令启动项目</li>
 </ul>
-</li>
-</ul>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><ul>
-<li>通过递推式可以发现，所求位置依赖的是左上，左， 上。这三个位置，和其他位置没有什么关系。</li>
-<li>假如要使用滚动数组的方式。应该怎么做呢<ul>
-<li>上不用管，上不会被覆盖，再分析一下可以看出，会被覆盖的是左上，所以只需要定义一个变量保存左上即可。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maximalSquare</span><span class="hljs-params">(<span class="hljs-type">char</span>[][] matrix)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> matrix[<span class="hljs-number">0</span>].length;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        <span class="hljs-comment">// 初始化</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            dp[i] = matrix[<span class="hljs-number">0</span>][i] - <span class="hljs-string">&#x27;0&#x27;</span>;  <br>            res = Math.max(res, dp[i]);<br>        &#125;<br>        <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; matrix.length; i++) &#123;<br>            <span class="hljs-comment">// 处理第一个位置</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">dpIJ</span> <span class="hljs-operator">=</span> dp[<span class="hljs-number">0</span>];<br>            dp[<span class="hljs-number">0</span>] = matrix[i][<span class="hljs-number">0</span>] - <span class="hljs-string">&#x27;0&#x27;</span>;<br>            res = Math.max(res, dp[<span class="hljs-number">0</span>]);<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; j &lt; n; j++) &#123;<br>                <span class="hljs-keyword">if</span>(matrix[i][j] == <span class="hljs-string">&#x27;0&#x27;</span>) &#123;<br>                    dpIJ = dp[j];<br>                    dp[j] = <span class="hljs-number">0</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span> Math.min(dp[j],Math.min(dp[j - <span class="hljs-number">1</span>], dpIJ)) + <span class="hljs-number">1</span>;<br>                    res = Math.max(res, min * min);  <span class="hljs-comment">// 保存值</span><br>                    dpIJ = dp[j];<br>                    dp[j] = min;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br><span class="hljs-built_in">echo</span> =================================<br><span class="hljs-built_in">echo</span>  自动化部署脚本启动<br><span class="hljs-built_in">echo</span> =================================<br> <br><span class="hljs-built_in">echo</span> 停止原来运行中的工程<br>APP_NAME=工程名<br> <br>tpid=`ps -ef|grep <span class="hljs-variable">$APP_NAME</span>|grep -v grep|grep -v <span class="hljs-built_in">kill</span>|awk <span class="hljs-string">&#x27;&#123;print $2&#125;&#x27;</span>`<br><span class="hljs-keyword">if</span> [ <span class="hljs-variable">$&#123;tpid&#125;</span> ]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;Stop Process...&#x27;</span><br>    <span class="hljs-built_in">kill</span> -15 <span class="hljs-variable">$tpid</span><br><span class="hljs-keyword">fi</span><br><span class="hljs-comment"># 两秒后再次查询进程确保进程被杀死</span><br><span class="hljs-built_in">sleep</span> 2<br>tpid=`ps -ef|grep <span class="hljs-variable">$APP_NAME</span>|grep -v grep|grep -v <span class="hljs-built_in">kill</span>|awk <span class="hljs-string">&#x27;&#123;print $2&#125;&#x27;</span>`<br><span class="hljs-keyword">if</span> [ <span class="hljs-variable">$&#123;tpid&#125;</span> ]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;Kill Process!&#x27;</span><br>    <span class="hljs-built_in">kill</span> -9 <span class="hljs-variable">$tpid</span><br><span class="hljs-keyword">else</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;Stop Success!&#x27;</span><br><span class="hljs-keyword">fi</span><br> <br><span class="hljs-built_in">echo</span> 准备从Git仓库拉取最新代码<br><span class="hljs-built_in">cd</span> /usr/local/克隆到本地的项目所在的目录<br> <br><span class="hljs-built_in">echo</span> 开始从Git仓库拉取最新代码<br>git pull<br><span class="hljs-built_in">echo</span> 代码拉取完成<br> <br><span class="hljs-built_in">echo</span> 开始打包<br>output=`mvn clean package -Dmaven.test.skip=<span class="hljs-literal">true</span>`<br> <br><span class="hljs-built_in">cd</span> target<br> <br><span class="hljs-built_in">echo</span> 启动项目<br><span class="hljs-built_in">nohup</span> java -jar 工程名-1.0-SNAPSHOT.jar &amp;&gt; 工程名.<span class="hljs-built_in">log</span> &amp;<br><span class="hljs-built_in">echo</span> 项目启动完成<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-meta">#!/bin/sh</span><br><span class="hljs-built_in">echo</span> =================================<br><span class="hljs-built_in">echo</span>  自动化部署脚本启动<br><span class="hljs-built_in">echo</span> =================================<br> <br><span class="hljs-built_in">echo</span> 停止原来运行中的工程<br>APP_NAME=hm-dianping<br> <br>tpid=`ps -ef|grep <span class="hljs-variable">$APP_NAME</span>|grep -v grep|grep -v <span class="hljs-built_in">kill</span>|awk <span class="hljs-string">&#x27;&#123;print $2&#125;&#x27;</span>`<br><span class="hljs-keyword">if</span> [ <span class="hljs-variable">$&#123;tpid&#125;</span> ]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;Stop Process...&#x27;</span><br>    <span class="hljs-built_in">kill</span> -15 <span class="hljs-variable">$tpid</span><br><span class="hljs-keyword">fi</span><br><span class="hljs-comment"># 两秒后再次查询进程确保进程被杀死</span><br><span class="hljs-built_in">sleep</span> 2<br>tpid=`ps -ef|grep <span class="hljs-variable">$APP_NAME</span>|grep -v grep|grep -v <span class="hljs-built_in">kill</span>|awk <span class="hljs-string">&#x27;&#123;print $2&#125;&#x27;</span>`<br><span class="hljs-keyword">if</span> [ <span class="hljs-variable">$&#123;tpid&#125;</span> ]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;Kill Process!&#x27;</span><br>    <span class="hljs-built_in">kill</span> -9 <span class="hljs-variable">$tpid</span><br><span class="hljs-keyword">else</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;Stop Success!&#x27;</span><br><span class="hljs-keyword">fi</span><br> <br><span class="hljs-built_in">echo</span> 准备从Git仓库拉取最新代码<br><span class="hljs-built_in">cd</span> /usr/local/dian_ping<br> <br><span class="hljs-built_in">echo</span> 开始从Git仓库拉取最新代码<br>git pull<br><span class="hljs-built_in">echo</span> 代码拉取完成<br> <br><span class="hljs-built_in">echo</span> 开始打包<br>output=`mvn clean package -Dmaven.test.skip=<span class="hljs-literal">true</span>`<br> <br><span class="hljs-built_in">cd</span> target<br> <br><span class="hljs-built_in">echo</span> 启动项目<br><span class="hljs-built_in">nohup</span> java -jar hm-dianping-1.0-SNAPSHOT.jar &amp;&gt; hm-dianping.log &amp;<br><span class="hljs-built_in">echo</span> 项目启动完成<br></code></pre></td></tr></table></figure>
+
+<p><strong>为用户授予执行Shell脚本的权限然后执行Shell脚本启动项目</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">7表示rwx三个权限都有</span><br>chmod 777 bootStart.sh<br><span class="hljs-meta prompt_"># </span><span class="language-bash">执行Shell脚本</span><br>./bootStart.sh<br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看进程</span><br>ps -ef | grep hm-dianping<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">firewall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd</span> <span class="hljs-literal">--</span><span class="hljs-comment">zone=public</span> <span class="hljs-literal">--</span><span class="hljs-comment">add</span><span class="hljs-literal">-</span><span class="hljs-comment">port=8888/tcp</span> <span class="hljs-literal">--</span><span class="hljs-comment">permanent</span><br><span class="hljs-comment">firewall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd</span> <span class="hljs-literal">--</span><span class="hljs-comment">reload</span><br><span class="hljs-comment">firewall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd</span> <span class="hljs-literal">--</span><span class="hljs-comment">zone=public</span> <span class="hljs-literal">--</span><span class="hljs-comment">list</span><span class="hljs-literal">-</span><span class="hljs-comment">ports</span><br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -309,7 +320,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
+        <a href="/tags/Linux/">#Linux</a>
       
     </div>
   
@@ -321,8 +332,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC_221_最大正方形</div>
-      <div>http://example.com/2023/09/21/LC221最大正方形/</div>
+      <div>项目部署</div>
+      <div>http://example.com/2023/10/07/项目部署/</div>
     </div>
     <div class="license-meta">
       
@@ -334,7 +345,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年9月21日</div>
+          <div>2023年10月7日</div>
         </div>
       
       
@@ -366,9 +377,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">
+                      <a href="/2023/10/10/10-10-%E4%BA%8C%E5%88%86-review/" title="10.10_二分_review">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算机网络</span>
+                        <span class="hidden-mobile">10.10_二分_review</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -376,8 +387,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/21/413%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/" title="LC 413. 等差数列划分">
-                        <span class="hidden-mobile">LC 413. 等差数列划分</span>
+                      <a href="/2023/09/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">
+                        <span class="hidden-mobile">计算机网络</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
